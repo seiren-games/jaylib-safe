@@ -7,9 +7,7 @@ import java.util.Map;
 
 public class RaylibWrapper {
 
-
     public enum ConfigFlags {
-
     
         FLAG_VSYNC_HINT(Raylib.ConfigFlags.FLAG_VSYNC_HINT),
         FLAG_FULLSCREEN_MODE(Raylib.ConfigFlags.FLAG_FULLSCREEN_MODE),
@@ -47,8 +45,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum TraceLogLevel {
 
+    public enum TraceLogLevel {
     
         LOG_ALL(Raylib.TraceLogLevel.LOG_ALL),
         LOG_TRACE(Raylib.TraceLogLevel.LOG_TRACE),
@@ -78,8 +76,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum KeyboardKey {
 
+    public enum KeyboardKey {
     
         KEY_NULL(Raylib.KeyboardKey.KEY_NULL),
         KEY_APOSTROPHE(Raylib.KeyboardKey.KEY_APOSTROPHE),
@@ -211,8 +209,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum MouseButton {
 
+    public enum MouseButton {
     
         MOUSE_BUTTON_LEFT(Raylib.MouseButton.MOUSE_BUTTON_LEFT),
         MOUSE_BUTTON_RIGHT(Raylib.MouseButton.MOUSE_BUTTON_RIGHT),
@@ -241,8 +239,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum MouseCursor {
 
+    public enum MouseCursor {
     
         MOUSE_CURSOR_DEFAULT(Raylib.MouseCursor.MOUSE_CURSOR_DEFAULT),
         MOUSE_CURSOR_ARROW(Raylib.MouseCursor.MOUSE_CURSOR_ARROW),
@@ -275,8 +273,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum GamepadButton {
 
+    public enum GamepadButton {
     
         GAMEPAD_BUTTON_UNKNOWN(Raylib.GamepadButton.GAMEPAD_BUTTON_UNKNOWN),
         GAMEPAD_BUTTON_LEFT_FACE_UP(Raylib.GamepadButton.GAMEPAD_BUTTON_LEFT_FACE_UP),
@@ -316,8 +314,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum GamepadAxis {
 
+    public enum GamepadAxis {
     
         GAMEPAD_AXIS_LEFT_X(Raylib.GamepadAxis.GAMEPAD_AXIS_LEFT_X),
         GAMEPAD_AXIS_LEFT_Y(Raylib.GamepadAxis.GAMEPAD_AXIS_LEFT_Y),
@@ -345,8 +343,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum MaterialMapIndex {
 
+    public enum MaterialMapIndex {
     
         MATERIAL_MAP_ALBEDO(Raylib.MaterialMapIndex.MATERIAL_MAP_ALBEDO),
         MATERIAL_MAP_METALNESS(Raylib.MaterialMapIndex.MATERIAL_MAP_METALNESS),
@@ -379,8 +377,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum ShaderLocationIndex {
 
+    public enum ShaderLocationIndex {
     
         SHADER_LOC_VERTEX_POSITION(Raylib.ShaderLocationIndex.SHADER_LOC_VERTEX_POSITION),
         SHADER_LOC_VERTEX_TEXCOORD01(Raylib.ShaderLocationIndex.SHADER_LOC_VERTEX_TEXCOORD01),
@@ -431,8 +429,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum ShaderUniformDataType {
 
+    public enum ShaderUniformDataType {
     
         SHADER_UNIFORM_FLOAT(Raylib.ShaderUniformDataType.SHADER_UNIFORM_FLOAT),
         SHADER_UNIFORM_VEC2(Raylib.ShaderUniformDataType.SHADER_UNIFORM_VEC2),
@@ -463,8 +461,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum ShaderAttributeDataType {
 
+    public enum ShaderAttributeDataType {
     
         SHADER_ATTRIB_FLOAT(Raylib.ShaderAttributeDataType.SHADER_ATTRIB_FLOAT),
         SHADER_ATTRIB_VEC2(Raylib.ShaderAttributeDataType.SHADER_ATTRIB_VEC2),
@@ -490,8 +488,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum PixelFormat {
 
+    public enum PixelFormat {
     
         PIXELFORMAT_UNCOMPRESSED_GRAYSCALE(Raylib.PixelFormat.PIXELFORMAT_UNCOMPRESSED_GRAYSCALE),
         PIXELFORMAT_UNCOMPRESSED_GRAY_ALPHA(Raylib.PixelFormat.PIXELFORMAT_UNCOMPRESSED_GRAY_ALPHA),
@@ -537,8 +535,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum TextureFilter {
 
+    public enum TextureFilter {
     
         TEXTURE_FILTER_POINT(Raylib.TextureFilter.TEXTURE_FILTER_POINT),
         TEXTURE_FILTER_BILINEAR(Raylib.TextureFilter.TEXTURE_FILTER_BILINEAR),
@@ -566,8 +564,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum TextureWrap {
 
+    public enum TextureWrap {
     
         TEXTURE_WRAP_REPEAT(Raylib.TextureWrap.TEXTURE_WRAP_REPEAT),
         TEXTURE_WRAP_CLAMP(Raylib.TextureWrap.TEXTURE_WRAP_CLAMP),
@@ -593,8 +591,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum CubemapLayout {
 
+    public enum CubemapLayout {
     
         CUBEMAP_LAYOUT_AUTO_DETECT(Raylib.CubemapLayout.CUBEMAP_LAYOUT_AUTO_DETECT),
         CUBEMAP_LAYOUT_LINE_VERTICAL(Raylib.CubemapLayout.CUBEMAP_LAYOUT_LINE_VERTICAL),
@@ -621,8 +619,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum FontType {
 
+    public enum FontType {
     
         FONT_DEFAULT(Raylib.FontType.FONT_DEFAULT),
         FONT_BITMAP(Raylib.FontType.FONT_BITMAP),
@@ -647,8 +645,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum BlendMode {
 
+    public enum BlendMode {
     
         BLEND_ALPHA(Raylib.BlendMode.BLEND_ALPHA),
         BLEND_ADDITIVE(Raylib.BlendMode.BLEND_ADDITIVE),
@@ -678,8 +676,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum Gesture {
 
+    public enum Gesture {
     
         GESTURE_NONE(Raylib.Gesture.GESTURE_NONE),
         GESTURE_TAP(Raylib.Gesture.GESTURE_TAP),
@@ -712,8 +710,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum CameraMode {
 
+    public enum CameraMode {
     
         CAMERA_CUSTOM(Raylib.CameraMode.CAMERA_CUSTOM),
         CAMERA_FREE(Raylib.CameraMode.CAMERA_FREE),
@@ -740,8 +738,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum CameraProjection {
 
+    public enum CameraProjection {
     
         CAMERA_PERSPECTIVE(Raylib.CameraProjection.CAMERA_PERSPECTIVE),
         CAMERA_ORTHOGRAPHIC(Raylib.CameraProjection.CAMERA_ORTHOGRAPHIC)
@@ -765,8 +763,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum NPatchLayout {
 
+    public enum NPatchLayout {
     
         NPATCH_NINE_PATCH(Raylib.NPatchLayout.NPATCH_NINE_PATCH),
         NPATCH_THREE_PATCH_VERTICAL(Raylib.NPatchLayout.NPATCH_THREE_PATCH_VERTICAL),
@@ -791,8 +789,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum rlGlVersion {
 
+    public enum rlGlVersion {
     
         RL_OPENGL_11(Raylib.rlGlVersion.RL_OPENGL_11),
         RL_OPENGL_21(Raylib.rlGlVersion.RL_OPENGL_21),
@@ -820,8 +818,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum rlTraceLogLevel {
 
+    public enum rlTraceLogLevel {
     
         RL_LOG_ALL(Raylib.rlTraceLogLevel.RL_LOG_ALL),
         RL_LOG_TRACE(Raylib.rlTraceLogLevel.RL_LOG_TRACE),
@@ -851,8 +849,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum rlPixelFormat {
 
+    public enum rlPixelFormat {
     
         RL_PIXELFORMAT_UNCOMPRESSED_GRAYSCALE(Raylib.rlPixelFormat.RL_PIXELFORMAT_UNCOMPRESSED_GRAYSCALE),
         RL_PIXELFORMAT_UNCOMPRESSED_GRAY_ALPHA(Raylib.rlPixelFormat.RL_PIXELFORMAT_UNCOMPRESSED_GRAY_ALPHA),
@@ -898,8 +896,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum rlTextureFilter {
 
+    public enum rlTextureFilter {
     
         RL_TEXTURE_FILTER_POINT(Raylib.rlTextureFilter.RL_TEXTURE_FILTER_POINT),
         RL_TEXTURE_FILTER_BILINEAR(Raylib.rlTextureFilter.RL_TEXTURE_FILTER_BILINEAR),
@@ -927,8 +925,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum rlBlendMode {
 
+    public enum rlBlendMode {
     
         RL_BLEND_ALPHA(Raylib.rlBlendMode.RL_BLEND_ALPHA),
         RL_BLEND_ADDITIVE(Raylib.rlBlendMode.RL_BLEND_ADDITIVE),
@@ -958,8 +956,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum rlShaderLocationIndex {
 
+    public enum rlShaderLocationIndex {
     
         RL_SHADER_LOC_VERTEX_POSITION(Raylib.rlShaderLocationIndex.RL_SHADER_LOC_VERTEX_POSITION),
         RL_SHADER_LOC_VERTEX_TEXCOORD01(Raylib.rlShaderLocationIndex.RL_SHADER_LOC_VERTEX_TEXCOORD01),
@@ -1007,8 +1005,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum rlShaderUniformDataType {
 
+    public enum rlShaderUniformDataType {
     
         RL_SHADER_UNIFORM_FLOAT(Raylib.rlShaderUniformDataType.RL_SHADER_UNIFORM_FLOAT),
         RL_SHADER_UNIFORM_VEC2(Raylib.rlShaderUniformDataType.RL_SHADER_UNIFORM_VEC2),
@@ -1043,8 +1041,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum rlShaderAttributeDataType {
 
+    public enum rlShaderAttributeDataType {
     
         RL_SHADER_ATTRIB_FLOAT(Raylib.rlShaderAttributeDataType.RL_SHADER_ATTRIB_FLOAT),
         RL_SHADER_ATTRIB_VEC2(Raylib.rlShaderAttributeDataType.RL_SHADER_ATTRIB_VEC2),
@@ -1070,8 +1068,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum rlFramebufferAttachType {
 
+    public enum rlFramebufferAttachType {
     
         RL_ATTACHMENT_COLOR_CHANNEL0(Raylib.rlFramebufferAttachType.RL_ATTACHMENT_COLOR_CHANNEL0),
         RL_ATTACHMENT_COLOR_CHANNEL1(Raylib.rlFramebufferAttachType.RL_ATTACHMENT_COLOR_CHANNEL1),
@@ -1103,8 +1101,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum rlFramebufferAttachTextureType {
 
+    public enum rlFramebufferAttachTextureType {
     
         RL_ATTACHMENT_CUBEMAP_POSITIVE_X(Raylib.rlFramebufferAttachTextureType.RL_ATTACHMENT_CUBEMAP_POSITIVE_X),
         RL_ATTACHMENT_CUBEMAP_NEGATIVE_X(Raylib.rlFramebufferAttachTextureType.RL_ATTACHMENT_CUBEMAP_NEGATIVE_X),
@@ -1134,8 +1132,8 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    public enum rlCullMode {
 
+    public enum rlCullMode {
     
         RL_CULL_FACE_FRONT(Raylib.rlCullMode.RL_CULL_FACE_FRONT),
         RL_CULL_FACE_BACK(Raylib.rlCullMode.RL_CULL_FACE_BACK)
@@ -1159,5 +1157,6 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
+
 
 }

@@ -5,10 +5,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RaylibWrapper {
-
 [# th:each="enumItem : ${enums}"]
     public enum [[${enumItem.name}]] {
-
     [# th:each="field, status : ${enumItem.fields}"]
         [[${field.name}]](Raylib.[[${enumItem.name}]].[[${field.name}]])[# th:if="${!status.last}"],[/]
     [/];
@@ -31,5 +29,6 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
+
 [/]
 }
