@@ -6,11 +6,12 @@ import java.util.Map;
 
 public class RaylibWrapper {
 
-    <th:block th:each="enumItem : ${enums}">
+[# th:each="enumItem : ${enums}"]
     public enum [[${enumItem.name}]] {
-        <th:block th:each="field : ${enumItem.fields}">
-        [[${field.name}]](Raylib.[[${enumItem.name}]].[[${field.name}]])<th:if="${!field.last}">,</th:if>
-        </th:block>;
+
+    [# th:each="field : ${enumItem.fields}"]
+        [[${field.name}]](Raylib.[[${enumItem.name}]].[[${field.name}]])[# th:if="${!field.last}"],[/]
+    [/];
 
         private final int value;
         
@@ -30,5 +31,5 @@ public class RaylibWrapper {
             return BY_VALUE.get(value);
         }
     }
-    </th:block>
+[/]
 }
