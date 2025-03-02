@@ -25,6 +25,7 @@ public class EnumGenerator {
 		context.setVariable("enums", enums);
 
 		String generatedCode = templateEngine.process("enum_template", context);
+		generatedCode = "// generated file\r\n" + generatedCode;
 		Files.write(Paths.get(OUTPUT_PATH), generatedCode.getBytes());
 		System.out.println("RaylibWrapper.java が生成されました！");
 	}

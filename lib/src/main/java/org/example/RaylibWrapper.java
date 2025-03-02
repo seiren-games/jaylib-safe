@@ -1,3 +1,4 @@
+// generated file
 package org.example;
 
 import com.raylib.Raylib;
