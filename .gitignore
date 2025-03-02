@@ -3,3 +3,11 @@
 
 # Ignore Gradle build output directory
 build
+
+/lib/bin/
+/tool/bin/
+
+/tmp/
+
+repomix-output.txt
+/.idea/
