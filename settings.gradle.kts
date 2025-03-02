@@ -12,3 +12,4 @@ plugins {
 
 rootProject.name = "jaylib-safe"
 include("lib")
+include("tool")
