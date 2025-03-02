@@ -32,7 +32,7 @@ public class EnumGenerator {
 	private static TemplateEngine createTemplateEngine() {
 		ClassLoaderTemplateResolver resolver = new ClassLoaderTemplateResolver();
 		resolver.setTemplateMode("TEXT");
-		resolver.setPrefix("/");
+		resolver.setPrefix("templates/");
 		resolver.setSuffix(".txt");
 
 		TemplateEngine templateEngine = new TemplateEngine();
@@ -44,7 +44,7 @@ public class EnumGenerator {
 		List<EnumData> enums = new ArrayList<>();
 		List<String> lines = Files.readAllLines(Paths.get(filePath));
 
-		Pattern classPattern = Pattern.compile("public static class (\\w+) \\{");
+		Pattern classPattern = Pattern.compile("public static class (\\w+)\\s*\\{");
 		Pattern fieldPattern = Pattern.compile("public static final int (\\w+) = (\\d+);");
 
 		EnumData currentEnum = null;
