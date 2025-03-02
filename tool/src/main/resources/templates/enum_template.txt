@@ -9,8 +9,8 @@ public class RaylibWrapper {
 [# th:each="enumItem : ${enums}"]
     public enum [[${enumItem.name}]] {
 
-    [# th:each="field : ${enumItem.fields}"]
-        [[${field.name}]](Raylib.[[${enumItem.name}]].[[${field.name}]])[# th:if="${!field.last}"],[/]
+    [# th:each="field, status : ${enumItem.fields}"]
+        [[${field.name}]](Raylib.[[${enumItem.name}]].[[${field.name}]])[# th:if="${!status.last}"],[/]
     [/];
 
         private final int value;
