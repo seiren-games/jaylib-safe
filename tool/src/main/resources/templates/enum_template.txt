@@ -6,27 +6,27 @@ import java.util.Map;
 
 public class RaylibWrapper {
 
-    <th:block th:each="enum : ${enums}">
-    public enum [[${enum.name}]] {
-        <th:block th:each="field : ${enum.fields}">
-        [[${field.name}]](Raylib.[[${enum.name}]].[[${field.name}]])<th:if="${!field.last}">,</th:if>
+    <th:block th:each="enumItem : ${enums}">
+    public enum [[${enumItem.name}]] {
+        <th:block th:each="field : ${enumItem.fields}">
+        [[${field.name}]](Raylib.[[${enumItem.name}]].[[${field.name}]])<th:if="${!field.last}">,</th:if>
         </th:block>;
 
         private final int value;
         
-        private [[${enum.name}]](int value) {
+        private [[${enumItem.name}]](int value) {
             this.value = value;
         }
 
-        private static final Map<Integer, [[${enum.name}]]> BY_VALUE = new HashMap<>();
+        private static final Map<Integer, [[${enumItem.name}]]> BY_VALUE = new HashMap<>();
         
         static {
-            for ([[${enum.name}]] e : values()) {
+            for ([[${enumItem.name}]] e : values()) {
                 BY_VALUE.put(e.value, e);
             }
         }
 
-        private static [[${enum.name}]] fromValue(int value) {
+        private static [[${enumItem.name}]] fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
