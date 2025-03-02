@@ -74,6 +74,14 @@ public class EnumGenerator {
 		String name;
 		List<EnumField> fields = new ArrayList<>();
 
+		public String getName() {
+			return name;
+		}
+
+		public List<EnumField> getFields() {
+			return fields;
+		}
+
 		EnumData(String name) {
 			this.name = name;
 		}
@@ -85,6 +93,9 @@ public class EnumGenerator {
 
 	static class EnumField {
 		String name;
+		public String getName() {
+			return name;
+		}
 
 		EnumField(String name) {
 			this.name = name;
