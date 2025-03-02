@@ -8,9 +8,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javax.naming.Context;
-
 import org.thymeleaf.TemplateEngine;
+import org.thymeleaf.context.Context;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
 public class EnumGenerator {
