@@ -8,6 +8,7 @@
 plugins {
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
+    alias(libs.plugins.spotless)
 }
 
 repositories {
@@ -26,6 +27,17 @@ dependencies {
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation(libs.guava)
+}
+
+// Spotlessの設定
+spotless {
+    java {
+        // 自動生成されたjavaファイルだけを整形対象にする
+        target(
+            "src/main/java/**/RaylibWrapper.java"
+        )
+        eclipse()
+    }
 }
 
 // Apply a specific Java toolchain to ease working on different environments.
