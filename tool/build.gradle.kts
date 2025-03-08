@@ -29,7 +29,7 @@ tasks.register("extractLibrarySources") {
     group = "custom"
     description = "Extracts sources from jaylib-ffm and saves them to the project"
 
-    val dependencyNotation = "io.github.electronstudio:jaylib-ffm:+" // 依存ライブラリ
+    val dependencyNotation = "io.github.electronstudio:jaylib-ffm:5.5.0-2:sources@jar"
     val libsDir = layout.projectDirectory.dir("libs")
     val sourcesDir = layout.projectDirectory.dir("src/extracted_sources")
 

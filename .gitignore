@@ -13,3 +13,4 @@ repomix-output.txt
 /.idea/
 
 /tool/libs/
+/tool/src/extracted_sources/
