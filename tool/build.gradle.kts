@@ -19,6 +19,7 @@ dependencies {
 }
 
 tasks.register<JavaExec>("runEnumGenerator") {
+    dependsOn("extractLibrarySources")
     group = "codegen"
     description = "Run the code generator"
     classpath = sourceSets["main"].runtimeClasspath
