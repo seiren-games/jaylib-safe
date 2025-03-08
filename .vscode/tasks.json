@@ -2,23 +2,6 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "gradle: test",
-			"type": "shell",
-			"command": "pwsh",
-			"args": [
-				"-NoProfile",
-				"-Command",
-				"$OutputEncoding = [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new(); ./gradlew test"
-			],
-			"group": {
-				"kind": "build",
-				"isDefault": true
-			},
-			"problemMatcher": [
-				"$gradle"
-			],
-		},
-		{
 			"label": "gradle: fullBuild",
 			"type": "shell",
 			"command": "pwsh",
@@ -27,6 +10,10 @@
 				"-Command",
 				"$OutputEncoding = [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new(); ./gradlew fullBuild"
 			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
 			"problemMatcher": [
 				"$gradle"
 			]
