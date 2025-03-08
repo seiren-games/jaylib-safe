@@ -34,6 +34,9 @@ tasks.register("extractLibrarySources") {
     val sourcesDir = layout.projectDirectory.dir("src/extracted_sources")
 
     doLast {
+        // コピー先のディレクトリを作成（存在しなければ）
+        libsDir.asFile.mkdirs()
+        
         // Gradleの `configurations` で依存関係を解決
         val config: Configuration = configurations.detachedConfiguration(
             dependencies.create(dependencyNotation)
