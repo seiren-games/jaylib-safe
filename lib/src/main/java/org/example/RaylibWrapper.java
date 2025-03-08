@@ -8,7 +8,7 @@ import java.util.Map;
 public class RaylibWrapper {
 
     public enum ConfigFlags {
-    
+
         FLAG_VSYNC_HINT(Raylib.ConfigFlags.FLAG_VSYNC_HINT),
         FLAG_FULLSCREEN_MODE(Raylib.ConfigFlags.FLAG_FULLSCREEN_MODE),
         FLAG_WINDOW_RESIZABLE(Raylib.ConfigFlags.FLAG_WINDOW_RESIZABLE),
@@ -28,13 +28,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private ConfigFlags(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, ConfigFlags> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (ConfigFlags e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -47,7 +47,7 @@ public class RaylibWrapper {
     }
 
     public enum TraceLogLevel {
-    
+
         LOG_ALL(Raylib.TraceLogLevel.LOG_ALL),
         LOG_TRACE(Raylib.TraceLogLevel.LOG_TRACE),
         LOG_DEBUG(Raylib.TraceLogLevel.LOG_DEBUG),
@@ -59,13 +59,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private TraceLogLevel(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, TraceLogLevel> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (TraceLogLevel e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -78,7 +78,7 @@ public class RaylibWrapper {
     }
 
     public enum KeyboardKey {
-    
+
         KEY_NULL(Raylib.KeyboardKey.KEY_NULL),
         KEY_APOSTROPHE(Raylib.KeyboardKey.KEY_APOSTROPHE),
         KEY_COMMA(Raylib.KeyboardKey.KEY_COMMA),
@@ -192,13 +192,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private KeyboardKey(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, KeyboardKey> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (KeyboardKey e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -211,7 +211,7 @@ public class RaylibWrapper {
     }
 
     public enum MouseButton {
-    
+
         MOUSE_BUTTON_LEFT(Raylib.MouseButton.MOUSE_BUTTON_LEFT),
         MOUSE_BUTTON_RIGHT(Raylib.MouseButton.MOUSE_BUTTON_RIGHT),
         MOUSE_BUTTON_MIDDLE(Raylib.MouseButton.MOUSE_BUTTON_MIDDLE),
@@ -222,13 +222,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private MouseButton(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, MouseButton> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (MouseButton e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -241,7 +241,7 @@ public class RaylibWrapper {
     }
 
     public enum MouseCursor {
-    
+
         MOUSE_CURSOR_DEFAULT(Raylib.MouseCursor.MOUSE_CURSOR_DEFAULT),
         MOUSE_CURSOR_ARROW(Raylib.MouseCursor.MOUSE_CURSOR_ARROW),
         MOUSE_CURSOR_IBEAM(Raylib.MouseCursor.MOUSE_CURSOR_IBEAM),
@@ -256,13 +256,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private MouseCursor(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, MouseCursor> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (MouseCursor e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -275,7 +275,7 @@ public class RaylibWrapper {
     }
 
     public enum GamepadButton {
-    
+
         GAMEPAD_BUTTON_UNKNOWN(Raylib.GamepadButton.GAMEPAD_BUTTON_UNKNOWN),
         GAMEPAD_BUTTON_LEFT_FACE_UP(Raylib.GamepadButton.GAMEPAD_BUTTON_LEFT_FACE_UP),
         GAMEPAD_BUTTON_LEFT_FACE_RIGHT(Raylib.GamepadButton.GAMEPAD_BUTTON_LEFT_FACE_RIGHT),
@@ -297,13 +297,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private GamepadButton(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, GamepadButton> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (GamepadButton e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -316,7 +316,7 @@ public class RaylibWrapper {
     }
 
     public enum GamepadAxis {
-    
+
         GAMEPAD_AXIS_LEFT_X(Raylib.GamepadAxis.GAMEPAD_AXIS_LEFT_X),
         GAMEPAD_AXIS_LEFT_Y(Raylib.GamepadAxis.GAMEPAD_AXIS_LEFT_Y),
         GAMEPAD_AXIS_RIGHT_X(Raylib.GamepadAxis.GAMEPAD_AXIS_RIGHT_X),
@@ -326,13 +326,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private GamepadAxis(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, GamepadAxis> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (GamepadAxis e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -345,7 +345,7 @@ public class RaylibWrapper {
     }
 
     public enum MaterialMapIndex {
-    
+
         MATERIAL_MAP_ALBEDO(Raylib.MaterialMapIndex.MATERIAL_MAP_ALBEDO),
         MATERIAL_MAP_METALNESS(Raylib.MaterialMapIndex.MATERIAL_MAP_METALNESS),
         MATERIAL_MAP_NORMAL(Raylib.MaterialMapIndex.MATERIAL_MAP_NORMAL),
@@ -360,13 +360,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private MaterialMapIndex(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, MaterialMapIndex> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (MaterialMapIndex e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -379,7 +379,7 @@ public class RaylibWrapper {
     }
 
     public enum ShaderLocationIndex {
-    
+
         SHADER_LOC_VERTEX_POSITION(Raylib.ShaderLocationIndex.SHADER_LOC_VERTEX_POSITION),
         SHADER_LOC_VERTEX_TEXCOORD01(Raylib.ShaderLocationIndex.SHADER_LOC_VERTEX_TEXCOORD01),
         SHADER_LOC_VERTEX_TEXCOORD02(Raylib.ShaderLocationIndex.SHADER_LOC_VERTEX_TEXCOORD02),
@@ -412,13 +412,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private ShaderLocationIndex(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, ShaderLocationIndex> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (ShaderLocationIndex e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -431,7 +431,7 @@ public class RaylibWrapper {
     }
 
     public enum ShaderUniformDataType {
-    
+
         SHADER_UNIFORM_FLOAT(Raylib.ShaderUniformDataType.SHADER_UNIFORM_FLOAT),
         SHADER_UNIFORM_VEC2(Raylib.ShaderUniformDataType.SHADER_UNIFORM_VEC2),
         SHADER_UNIFORM_VEC3(Raylib.ShaderUniformDataType.SHADER_UNIFORM_VEC3),
@@ -444,13 +444,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private ShaderUniformDataType(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, ShaderUniformDataType> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (ShaderUniformDataType e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -463,7 +463,7 @@ public class RaylibWrapper {
     }
 
     public enum ShaderAttributeDataType {
-    
+
         SHADER_ATTRIB_FLOAT(Raylib.ShaderAttributeDataType.SHADER_ATTRIB_FLOAT),
         SHADER_ATTRIB_VEC2(Raylib.ShaderAttributeDataType.SHADER_ATTRIB_VEC2),
         SHADER_ATTRIB_VEC3(Raylib.ShaderAttributeDataType.SHADER_ATTRIB_VEC3),
@@ -471,13 +471,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private ShaderAttributeDataType(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, ShaderAttributeDataType> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (ShaderAttributeDataType e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -490,7 +490,7 @@ public class RaylibWrapper {
     }
 
     public enum PixelFormat {
-    
+
         PIXELFORMAT_UNCOMPRESSED_GRAYSCALE(Raylib.PixelFormat.PIXELFORMAT_UNCOMPRESSED_GRAYSCALE),
         PIXELFORMAT_UNCOMPRESSED_GRAY_ALPHA(Raylib.PixelFormat.PIXELFORMAT_UNCOMPRESSED_GRAY_ALPHA),
         PIXELFORMAT_UNCOMPRESSED_R5G6B5(Raylib.PixelFormat.PIXELFORMAT_UNCOMPRESSED_R5G6B5),
@@ -518,13 +518,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private PixelFormat(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, PixelFormat> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (PixelFormat e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -537,7 +537,7 @@ public class RaylibWrapper {
     }
 
     public enum TextureFilter {
-    
+
         TEXTURE_FILTER_POINT(Raylib.TextureFilter.TEXTURE_FILTER_POINT),
         TEXTURE_FILTER_BILINEAR(Raylib.TextureFilter.TEXTURE_FILTER_BILINEAR),
         TEXTURE_FILTER_TRILINEAR(Raylib.TextureFilter.TEXTURE_FILTER_TRILINEAR),
@@ -547,13 +547,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private TextureFilter(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, TextureFilter> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (TextureFilter e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -566,7 +566,7 @@ public class RaylibWrapper {
     }
 
     public enum TextureWrap {
-    
+
         TEXTURE_WRAP_REPEAT(Raylib.TextureWrap.TEXTURE_WRAP_REPEAT),
         TEXTURE_WRAP_CLAMP(Raylib.TextureWrap.TEXTURE_WRAP_CLAMP),
         TEXTURE_WRAP_MIRROR_REPEAT(Raylib.TextureWrap.TEXTURE_WRAP_MIRROR_REPEAT),
@@ -574,13 +574,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private TextureWrap(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, TextureWrap> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (TextureWrap e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -593,7 +593,7 @@ public class RaylibWrapper {
     }
 
     public enum CubemapLayout {
-    
+
         CUBEMAP_LAYOUT_AUTO_DETECT(Raylib.CubemapLayout.CUBEMAP_LAYOUT_AUTO_DETECT),
         CUBEMAP_LAYOUT_LINE_VERTICAL(Raylib.CubemapLayout.CUBEMAP_LAYOUT_LINE_VERTICAL),
         CUBEMAP_LAYOUT_LINE_HORIZONTAL(Raylib.CubemapLayout.CUBEMAP_LAYOUT_LINE_HORIZONTAL),
@@ -602,13 +602,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private CubemapLayout(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, CubemapLayout> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (CubemapLayout e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -621,20 +621,20 @@ public class RaylibWrapper {
     }
 
     public enum FontType {
-    
+
         FONT_DEFAULT(Raylib.FontType.FONT_DEFAULT),
         FONT_BITMAP(Raylib.FontType.FONT_BITMAP),
         FONT_SDF(Raylib.FontType.FONT_SDF)
     ;
 
         private final int value;
-        
+
         private FontType(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, FontType> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (FontType e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -647,7 +647,7 @@ public class RaylibWrapper {
     }
 
     public enum BlendMode {
-    
+
         BLEND_ALPHA(Raylib.BlendMode.BLEND_ALPHA),
         BLEND_ADDITIVE(Raylib.BlendMode.BLEND_ADDITIVE),
         BLEND_MULTIPLIED(Raylib.BlendMode.BLEND_MULTIPLIED),
@@ -659,13 +659,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private BlendMode(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, BlendMode> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (BlendMode e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -678,7 +678,7 @@ public class RaylibWrapper {
     }
 
     public enum Gesture {
-    
+
         GESTURE_NONE(Raylib.Gesture.GESTURE_NONE),
         GESTURE_TAP(Raylib.Gesture.GESTURE_TAP),
         GESTURE_DOUBLETAP(Raylib.Gesture.GESTURE_DOUBLETAP),
@@ -693,13 +693,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private Gesture(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, Gesture> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (Gesture e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -712,7 +712,7 @@ public class RaylibWrapper {
     }
 
     public enum CameraMode {
-    
+
         CAMERA_CUSTOM(Raylib.CameraMode.CAMERA_CUSTOM),
         CAMERA_FREE(Raylib.CameraMode.CAMERA_FREE),
         CAMERA_ORBITAL(Raylib.CameraMode.CAMERA_ORBITAL),
@@ -721,13 +721,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private CameraMode(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, CameraMode> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (CameraMode e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -740,19 +740,19 @@ public class RaylibWrapper {
     }
 
     public enum CameraProjection {
-    
+
         CAMERA_PERSPECTIVE(Raylib.CameraProjection.CAMERA_PERSPECTIVE),
         CAMERA_ORTHOGRAPHIC(Raylib.CameraProjection.CAMERA_ORTHOGRAPHIC)
     ;
 
         private final int value;
-        
+
         private CameraProjection(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, CameraProjection> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (CameraProjection e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -765,20 +765,20 @@ public class RaylibWrapper {
     }
 
     public enum NPatchLayout {
-    
+
         NPATCH_NINE_PATCH(Raylib.NPatchLayout.NPATCH_NINE_PATCH),
         NPATCH_THREE_PATCH_VERTICAL(Raylib.NPatchLayout.NPATCH_THREE_PATCH_VERTICAL),
         NPATCH_THREE_PATCH_HORIZONTAL(Raylib.NPatchLayout.NPATCH_THREE_PATCH_HORIZONTAL)
     ;
 
         private final int value;
-        
+
         private NPatchLayout(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, NPatchLayout> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (NPatchLayout e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -791,7 +791,7 @@ public class RaylibWrapper {
     }
 
     public enum rlGlVersion {
-    
+
         RL_OPENGL_11(Raylib.rlGlVersion.RL_OPENGL_11),
         RL_OPENGL_21(Raylib.rlGlVersion.RL_OPENGL_21),
         RL_OPENGL_33(Raylib.rlGlVersion.RL_OPENGL_33),
@@ -801,13 +801,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private rlGlVersion(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, rlGlVersion> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (rlGlVersion e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -820,7 +820,7 @@ public class RaylibWrapper {
     }
 
     public enum rlTraceLogLevel {
-    
+
         RL_LOG_ALL(Raylib.rlTraceLogLevel.RL_LOG_ALL),
         RL_LOG_TRACE(Raylib.rlTraceLogLevel.RL_LOG_TRACE),
         RL_LOG_DEBUG(Raylib.rlTraceLogLevel.RL_LOG_DEBUG),
@@ -832,13 +832,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private rlTraceLogLevel(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, rlTraceLogLevel> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (rlTraceLogLevel e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -851,7 +851,7 @@ public class RaylibWrapper {
     }
 
     public enum rlPixelFormat {
-    
+
         RL_PIXELFORMAT_UNCOMPRESSED_GRAYSCALE(Raylib.rlPixelFormat.RL_PIXELFORMAT_UNCOMPRESSED_GRAYSCALE),
         RL_PIXELFORMAT_UNCOMPRESSED_GRAY_ALPHA(Raylib.rlPixelFormat.RL_PIXELFORMAT_UNCOMPRESSED_GRAY_ALPHA),
         RL_PIXELFORMAT_UNCOMPRESSED_R5G6B5(Raylib.rlPixelFormat.RL_PIXELFORMAT_UNCOMPRESSED_R5G6B5),
@@ -879,13 +879,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private rlPixelFormat(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, rlPixelFormat> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (rlPixelFormat e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -898,7 +898,7 @@ public class RaylibWrapper {
     }
 
     public enum rlTextureFilter {
-    
+
         RL_TEXTURE_FILTER_POINT(Raylib.rlTextureFilter.RL_TEXTURE_FILTER_POINT),
         RL_TEXTURE_FILTER_BILINEAR(Raylib.rlTextureFilter.RL_TEXTURE_FILTER_BILINEAR),
         RL_TEXTURE_FILTER_TRILINEAR(Raylib.rlTextureFilter.RL_TEXTURE_FILTER_TRILINEAR),
@@ -908,13 +908,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private rlTextureFilter(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, rlTextureFilter> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (rlTextureFilter e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -927,7 +927,7 @@ public class RaylibWrapper {
     }
 
     public enum rlBlendMode {
-    
+
         RL_BLEND_ALPHA(Raylib.rlBlendMode.RL_BLEND_ALPHA),
         RL_BLEND_ADDITIVE(Raylib.rlBlendMode.RL_BLEND_ADDITIVE),
         RL_BLEND_MULTIPLIED(Raylib.rlBlendMode.RL_BLEND_MULTIPLIED),
@@ -939,13 +939,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private rlBlendMode(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, rlBlendMode> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (rlBlendMode e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -958,7 +958,7 @@ public class RaylibWrapper {
     }
 
     public enum rlShaderLocationIndex {
-    
+
         RL_SHADER_LOC_VERTEX_POSITION(Raylib.rlShaderLocationIndex.RL_SHADER_LOC_VERTEX_POSITION),
         RL_SHADER_LOC_VERTEX_TEXCOORD01(Raylib.rlShaderLocationIndex.RL_SHADER_LOC_VERTEX_TEXCOORD01),
         RL_SHADER_LOC_VERTEX_TEXCOORD02(Raylib.rlShaderLocationIndex.RL_SHADER_LOC_VERTEX_TEXCOORD02),
@@ -988,13 +988,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private rlShaderLocationIndex(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, rlShaderLocationIndex> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (rlShaderLocationIndex e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -1007,7 +1007,7 @@ public class RaylibWrapper {
     }
 
     public enum rlShaderUniformDataType {
-    
+
         RL_SHADER_UNIFORM_FLOAT(Raylib.rlShaderUniformDataType.RL_SHADER_UNIFORM_FLOAT),
         RL_SHADER_UNIFORM_VEC2(Raylib.rlShaderUniformDataType.RL_SHADER_UNIFORM_VEC2),
         RL_SHADER_UNIFORM_VEC3(Raylib.rlShaderUniformDataType.RL_SHADER_UNIFORM_VEC3),
@@ -1024,13 +1024,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private rlShaderUniformDataType(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, rlShaderUniformDataType> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (rlShaderUniformDataType e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -1043,7 +1043,7 @@ public class RaylibWrapper {
     }
 
     public enum rlShaderAttributeDataType {
-    
+
         RL_SHADER_ATTRIB_FLOAT(Raylib.rlShaderAttributeDataType.RL_SHADER_ATTRIB_FLOAT),
         RL_SHADER_ATTRIB_VEC2(Raylib.rlShaderAttributeDataType.RL_SHADER_ATTRIB_VEC2),
         RL_SHADER_ATTRIB_VEC3(Raylib.rlShaderAttributeDataType.RL_SHADER_ATTRIB_VEC3),
@@ -1051,13 +1051,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private rlShaderAttributeDataType(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, rlShaderAttributeDataType> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (rlShaderAttributeDataType e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -1070,7 +1070,7 @@ public class RaylibWrapper {
     }
 
     public enum rlFramebufferAttachType {
-    
+
         RL_ATTACHMENT_COLOR_CHANNEL0(Raylib.rlFramebufferAttachType.RL_ATTACHMENT_COLOR_CHANNEL0),
         RL_ATTACHMENT_COLOR_CHANNEL1(Raylib.rlFramebufferAttachType.RL_ATTACHMENT_COLOR_CHANNEL1),
         RL_ATTACHMENT_COLOR_CHANNEL2(Raylib.rlFramebufferAttachType.RL_ATTACHMENT_COLOR_CHANNEL2),
@@ -1084,13 +1084,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private rlFramebufferAttachType(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, rlFramebufferAttachType> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (rlFramebufferAttachType e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -1103,7 +1103,7 @@ public class RaylibWrapper {
     }
 
     public enum rlFramebufferAttachTextureType {
-    
+
         RL_ATTACHMENT_CUBEMAP_POSITIVE_X(Raylib.rlFramebufferAttachTextureType.RL_ATTACHMENT_CUBEMAP_POSITIVE_X),
         RL_ATTACHMENT_CUBEMAP_NEGATIVE_X(Raylib.rlFramebufferAttachTextureType.RL_ATTACHMENT_CUBEMAP_NEGATIVE_X),
         RL_ATTACHMENT_CUBEMAP_POSITIVE_Y(Raylib.rlFramebufferAttachTextureType.RL_ATTACHMENT_CUBEMAP_POSITIVE_Y),
@@ -1115,13 +1115,13 @@ public class RaylibWrapper {
     ;
 
         private final int value;
-        
+
         private rlFramebufferAttachTextureType(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, rlFramebufferAttachTextureType> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (rlFramebufferAttachTextureType e : values()) {
                 BY_VALUE.put(e.value, e);
@@ -1134,19 +1134,19 @@ public class RaylibWrapper {
     }
 
     public enum rlCullMode {
-    
+
         RL_CULL_FACE_FRONT(Raylib.rlCullMode.RL_CULL_FACE_FRONT),
         RL_CULL_FACE_BACK(Raylib.rlCullMode.RL_CULL_FACE_BACK)
     ;
 
         private final int value;
-        
+
         private rlCullMode(int value) {
             this.value = value;
         }
 
         private static final Map<Integer, rlCullMode> BY_VALUE = new HashMap<>();
-        
+
         static {
             for (rlCullMode e : values()) {
                 BY_VALUE.put(e.value, e);
