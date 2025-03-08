@@ -37,7 +37,12 @@ spotless {
         target(
             "src/main/java/**/RaylibWrapper.java"
         )
-        eclipse()
+        // eclipse().configFile("../config/eclipse-java-google-style.xml")
+        // googleJavaFormat().aosp() // Google Java Styleを使用
+        importOrder() // インポート順の整理
+        removeUnusedImports() // 未使用インポートの削除
+        trimTrailingWhitespace() // 行末の空白削除
+        endWithNewline() // ファイル末尾に改行を追加
     }
 }
 
