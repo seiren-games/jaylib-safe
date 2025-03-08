@@ -11,3 +11,5 @@ build
 
 repomix-output.txt
 /.idea/
+
+/tool/libs/
