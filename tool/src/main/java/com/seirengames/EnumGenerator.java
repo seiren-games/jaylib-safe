@@ -26,7 +26,7 @@ public class EnumGenerator {
 		String generatedCode = templateEngine.process("enum_template", context);
 		generatedCode = "// generated file\r\n" + generatedCode;
 		Files.write(Paths.get(OUTPUT_PATH), generatedCode.getBytes());
-		System.out.println(OUTPUT_PATH + " が生成されました！");
+		System.out.println("`" + OUTPUT_PATH + "` has been generated.");
 	}
 
 	private static TemplateEngine createTemplateEngine() {
