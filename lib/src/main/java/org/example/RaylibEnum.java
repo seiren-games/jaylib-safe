@@ -5,7 +5,7 @@ import com.raylib.Raylib;
 import java.util.HashMap;
 import java.util.Map;
 
-public class RaylibWrapper {
+public class RaylibEnum {
 
     public enum ConfigFlags {
 

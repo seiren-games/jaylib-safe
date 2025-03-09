@@ -35,7 +35,7 @@ spotless {
     java {
         // 自動生成されたjavaファイルだけを整形対象にする
         target(
-            "src/main/java/**/RaylibWrapper.java"
+            "src/main/java/**/RaylibEnum.java"
         )
         // eclipse().configFile("../config/eclipse-java-google-style.xml")
         // googleJavaFormat().aosp() // Google Java Styleを使用

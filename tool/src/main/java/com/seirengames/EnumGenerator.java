@@ -14,7 +14,7 @@ import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 
 public class EnumGenerator {
 	private static final String RAYLIB_JAVA_PATH = "../tool/src/extracted_sources/com/raylib/Raylib.java"; // Raylib.java のパス
-	private static final String OUTPUT_PATH = "../lib/src/main/java/org/example/RaylibWrapper.java"; // 出力パス
+	private static final String OUTPUT_PATH = "../lib/src/main/java/org/example/RaylibEnum.java"; // 出力パス
 
 	public static void main(String[] args) throws IOException {
 		List<EnumData> enums = extractStaticClasses(RAYLIB_JAVA_PATH);
@@ -26,7 +26,7 @@ public class EnumGenerator {
 		String generatedCode = templateEngine.process("enum_template", context);
 		generatedCode = "// generated file\r\n" + generatedCode;
 		Files.write(Paths.get(OUTPUT_PATH), generatedCode.getBytes());
-		System.out.println("RaylibWrapper.java が生成されました！");
+		System.out.println(OUTPUT_PATH + " が生成されました！");
 	}
 
 	private static TemplateEngine createTemplateEngine() {
