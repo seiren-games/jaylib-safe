@@ -1,5 +1,5 @@
 // generated file
-package org.example;
+package com.seirengames;
 
 import com.raylib.Raylib;
 import java.util.HashMap;
