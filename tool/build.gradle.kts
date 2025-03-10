@@ -65,7 +65,7 @@ tasks.register("extractLibrarySources") {
 
 tasks.register("extractFunctions") {
     doLast {
-        val javaFile = file("Raylib.java")
+        val javaFile = file("src/extracted_sources/com/raylib/Raylib.java")
         if (!javaFile.exists()) {
             println("Raylib.java が見つかりません")
             return@doLast
