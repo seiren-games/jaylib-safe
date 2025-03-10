@@ -62,3 +62,21 @@ tasks.register("extractLibrarySources") {
         }
     }
 }
+
+tasks.register("extractFunctions") {
+    doLast {
+        val javaFile = file("Raylib.java")
+        if (!javaFile.exists()) {
+            println("Raylib.java が見つかりません")
+            return@doLast
+        }
+        val content = javaFile.readText(Charsets.UTF_8)
+        // 正規表現パターン:
+        //   public static の後に戻り値や型、関数名、引数リストをキャプチャし、その後に { が続くもの
+        val regex = Regex("""(public\s+static\s+[\w<>\[\]]+\s+\w+\s*\([^)]*\))\s*\{""", RegexOption.DOT_MATCHES_ALL)
+        val matches = regex.findAll(content).map { it.groupValues[1] }.toList()
+        // 不要な改行や余計な空白を除去し、末尾にセミコロンを追加
+        val definitions = matches.map { it.split("\\s+".toRegex()).joinToString(" ") + ";" }
+        definitions.forEach { println(it) }
+    }
+}
