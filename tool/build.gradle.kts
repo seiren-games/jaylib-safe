@@ -29,7 +29,6 @@ tasks.register<JavaExec>("runEnumGenerator") {
 tasks.register("extractLibrarySources") {
     group = "custom"
     description = "Extracts sources from jaylib-ffm and saves them to the project"
-    notCompatibleWithConfigurationCache("This task uses non-serializable Gradle script object references.")
 
     val dependencyNotation = "io.github.electronstudio:jaylib-ffm:+:sources@jar"
     val libsDir = layout.projectDirectory.dir("libs")
