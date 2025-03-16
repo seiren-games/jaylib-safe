@@ -2,6 +2,22 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
+			"label": "git clean .gitignore files",
+			"type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"command": "git clean -ffd -X",
+		},
+		{
+			"label": "update gradlew",
+			"type": "shell",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"command": "./gradlew wrapper --gradle-version latest && ./gradlew wrapper && ./gradlew --version",
+		},
+		{
 			"label": "gradle: fullBuild",
 			"type": "shell",
 			"command": "pwsh",
@@ -17,6 +33,23 @@
 			"problemMatcher": [
 				"$gradle"
 			]
-		}
+		},
+		{
+			"label": "repomix",
+			"type": "shell",
+			"command": "repomix",
+		},
+		{
+			"label": "Clean FullBuild",
+			"type": "shell",
+			"command": "echo Successfull.",
+			"dependsOrder": "sequence",
+			"dependsOn": [
+				"git clean .gitignore files",
+				"update gradlew",
+				"gradle: fullBuild",
+				"repomix"
+			],
+		},
 	]
 }
