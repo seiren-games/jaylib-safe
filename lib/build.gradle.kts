@@ -45,6 +45,9 @@ spotless {
         endWithNewline() // ファイル末尾に改行を追加
     }
 }
+tasks.withType<com.diffplug.gradle.spotless.SpotlessTask>().configureEach {
+    dependsOn(":tool:runEnumGenerator", ":tool:extractFunctions")
+}
 
 // Apply a specific Java toolchain to ease working on different environments.
 java {
