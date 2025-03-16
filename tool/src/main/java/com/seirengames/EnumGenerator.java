@@ -48,8 +48,17 @@ public class EnumGenerator {
 		Pattern fieldPattern = Pattern.compile("public static final int (\\w+) = (\\d+);");
 
 		EnumData currentEnum = null;
+		String lastComment = null;
 
 		for (String line : lines) {
+			String trimmed = line.trim();
+
+			// 単一行コメントを取得（例: /** コメント */）
+			if (trimmed.startsWith("/**") && trimmed.endsWith("*/")) {
+				lastComment = trimmed;
+				continue;
+			}
+
 			Matcher classMatcher = classPattern.matcher(line);
 			Matcher fieldMatcher = fieldPattern.matcher(line);
 
@@ -58,8 +67,22 @@ public class EnumGenerator {
 					enums.add(currentEnum);
 				}
 				currentEnum = new EnumData(classMatcher.group(1));
+				if (lastComment != null) {
+					currentEnum.comment = lastComment;
+					lastComment = null;
+				}
 			} else if (fieldMatcher.find() && currentEnum != null) {
-				currentEnum.addField(new EnumField(fieldMatcher.group(1)));
+				EnumField field = new EnumField(fieldMatcher.group(1));
+				if (lastComment != null) {
+					field.comment = lastComment;
+					lastComment = null;
+				}
+				currentEnum.addField(field);
+			} else {
+				// 空行やコメント行以外なら、コメント情報はリセット
+				if (!trimmed.isEmpty() && !trimmed.startsWith("*")) {
+					lastComment = null;
+				}
 			}
 		}
 
@@ -72,10 +95,15 @@ public class EnumGenerator {
 
 	static class EnumData {
 		String name;
+		String comment; // クラスコメント
 		List<EnumField> fields = new ArrayList<>();
 
 		public String getName() {
 			return name;
+		}
+
+		public String getComment() {
+			return comment;
 		}
 
 		public List<EnumField> getFields() {
@@ -93,8 +121,14 @@ public class EnumGenerator {
 
 	static class EnumField {
 		String name;
+		String comment; // フィールドコメント
+
 		public String getName() {
 			return name;
+		}
+
+		public String getComment() {
+			return comment;
 		}
 
 		EnumField(String name) {
