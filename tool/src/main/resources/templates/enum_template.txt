@@ -6,14 +6,10 @@ import java.util.Map;
 
 public class RaylibEnum {
 [# th:each="enumItem : ${enums}"]
-    [# th:if="${enumItem.comment != null}"]
-    [[${enumItem.comment}]]
-    [/]
+    [# th:if="${enumItem.comment != null}"][[${enumItem.comment}]][/]
     public enum [[${enumItem.name}]] {
     [# th:each="field, status : ${enumItem.fields}"]
-        [# th:if="${field.comment != null}"]
-        [[${field.comment}]]
-        [/]
+        [# th:if="${field.comment != null}"][[${field.comment}]][/]
         [[${field.name}]](Raylib.[[${enumItem.name}]].[[${field.name}]])[# th:if="${!status.last}"],[/]
     [/];
 
