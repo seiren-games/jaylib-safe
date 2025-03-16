@@ -63,6 +63,7 @@ tasks.register("extractLibrarySources") {
 }
 
 tasks.register("extractFunctions") {
+    dependsOn("extractLibrarySources")
     doLast {
         val javaFile = file("src/extracted_sources/com/raylib/Raylib.java")
         if (!javaFile.exists()) {
@@ -76,6 +77,11 @@ tasks.register("extractFunctions") {
         val matches = regex.findAll(content).map { it.groupValues[1] }.toList()
         // 不要な改行や余計な空白を除去し、末尾にセミコロンを追加
         val definitions = matches.map { it.split("\\s+".toRegex()).joinToString(" ") + ";" }
-        definitions.forEach { println(it) }
+        
+        // 出力ファイルに書き込む
+        val outputFile = file("extracted_functions.txt")
+        outputFile.writeText(definitions.joinToString("\n"))
+        
+        println("抽出された関数が ${outputFile.path} に保存されました")
     }
 }
