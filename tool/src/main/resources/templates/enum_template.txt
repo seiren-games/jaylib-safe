@@ -13,7 +13,7 @@ public class RaylibEnum {
         [[${field.name}]](Raylib.[[${enumItem.name}]].[[${field.name}]])[# th:if="${!status.last}"],[/]
     [/];
 
-        private final int value;
+        final int value;
         
         private [[${enumItem.name}]](int value) {
             this.value = value;
@@ -27,7 +27,7 @@ public class RaylibEnum {
             }
         }
 
-        private static [[${enumItem.name}]] fromValue(int value) {
+        static [[${enumItem.name}]] fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }

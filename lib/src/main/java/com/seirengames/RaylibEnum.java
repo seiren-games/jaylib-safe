@@ -44,7 +44,7 @@ public class RaylibEnum {
         FLAG_INTERLACED_HINT(Raylib.ConfigFlags.FLAG_INTERLACED_HINT)
     ;
 
-        private final int value;
+        final int value;
 
         private ConfigFlags(int value) {
             this.value = value;
@@ -58,7 +58,7 @@ public class RaylibEnum {
             }
         }
 
-        private static ConfigFlags fromValue(int value) {
+        static ConfigFlags fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -84,7 +84,7 @@ public class RaylibEnum {
         LOG_NONE(Raylib.TraceLogLevel.LOG_NONE)
     ;
 
-        private final int value;
+        final int value;
 
         private TraceLogLevel(int value) {
             this.value = value;
@@ -98,7 +98,7 @@ public class RaylibEnum {
             }
         }
 
-        private static TraceLogLevel fromValue(int value) {
+        static TraceLogLevel fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -328,7 +328,7 @@ public class RaylibEnum {
         KEY_VOLUME_DOWN(Raylib.KeyboardKey.KEY_VOLUME_DOWN)
     ;
 
-        private final int value;
+        final int value;
 
         private KeyboardKey(int value) {
             this.value = value;
@@ -342,7 +342,7 @@ public class RaylibEnum {
             }
         }
 
-        private static KeyboardKey fromValue(int value) {
+        static KeyboardKey fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -366,7 +366,7 @@ public class RaylibEnum {
         MOUSE_BUTTON_BACK(Raylib.MouseButton.MOUSE_BUTTON_BACK)
     ;
 
-        private final int value;
+        final int value;
 
         private MouseButton(int value) {
             this.value = value;
@@ -380,7 +380,7 @@ public class RaylibEnum {
             }
         }
 
-        private static MouseButton fromValue(int value) {
+        static MouseButton fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -412,7 +412,7 @@ public class RaylibEnum {
         MOUSE_CURSOR_NOT_ALLOWED(Raylib.MouseCursor.MOUSE_CURSOR_NOT_ALLOWED)
     ;
 
-        private final int value;
+        final int value;
 
         private MouseCursor(int value) {
             this.value = value;
@@ -426,7 +426,7 @@ public class RaylibEnum {
             }
         }
 
-        private static MouseCursor fromValue(int value) {
+        static MouseCursor fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -472,7 +472,7 @@ public class RaylibEnum {
         GAMEPAD_BUTTON_RIGHT_THUMB(Raylib.GamepadButton.GAMEPAD_BUTTON_RIGHT_THUMB)
     ;
 
-        private final int value;
+        final int value;
 
         private GamepadButton(int value) {
             this.value = value;
@@ -486,7 +486,7 @@ public class RaylibEnum {
             }
         }
 
-        private static GamepadButton fromValue(int value) {
+        static GamepadButton fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -508,7 +508,7 @@ public class RaylibEnum {
         GAMEPAD_AXIS_RIGHT_TRIGGER(Raylib.GamepadAxis.GAMEPAD_AXIS_RIGHT_TRIGGER)
     ;
 
-        private final int value;
+        final int value;
 
         private GamepadAxis(int value) {
             this.value = value;
@@ -522,7 +522,7 @@ public class RaylibEnum {
             }
         }
 
-        private static GamepadAxis fromValue(int value) {
+        static GamepadAxis fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -554,7 +554,7 @@ public class RaylibEnum {
         MATERIAL_MAP_BRDF(Raylib.MaterialMapIndex.MATERIAL_MAP_BRDF)
     ;
 
-        private final int value;
+        final int value;
 
         private MaterialMapIndex(int value) {
             this.value = value;
@@ -568,7 +568,7 @@ public class RaylibEnum {
             }
         }
 
-        private static MaterialMapIndex fromValue(int value) {
+        static MaterialMapIndex fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -636,7 +636,7 @@ public class RaylibEnum {
         SHADER_LOC_BONE_MATRICES(Raylib.ShaderLocationIndex.SHADER_LOC_BONE_MATRICES)
     ;
 
-        private final int value;
+        final int value;
 
         private ShaderLocationIndex(int value) {
             this.value = value;
@@ -650,7 +650,7 @@ public class RaylibEnum {
             }
         }
 
-        private static ShaderLocationIndex fromValue(int value) {
+        static ShaderLocationIndex fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -678,7 +678,7 @@ public class RaylibEnum {
         SHADER_UNIFORM_SAMPLER2D(Raylib.ShaderUniformDataType.SHADER_UNIFORM_SAMPLER2D)
     ;
 
-        private final int value;
+        final int value;
 
         private ShaderUniformDataType(int value) {
             this.value = value;
@@ -692,7 +692,7 @@ public class RaylibEnum {
             }
         }
 
-        private static ShaderUniformDataType fromValue(int value) {
+        static ShaderUniformDataType fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -710,7 +710,7 @@ public class RaylibEnum {
         SHADER_ATTRIB_VEC4(Raylib.ShaderAttributeDataType.SHADER_ATTRIB_VEC4)
     ;
 
-        private final int value;
+        final int value;
 
         private ShaderAttributeDataType(int value) {
             this.value = value;
@@ -724,7 +724,7 @@ public class RaylibEnum {
             }
         }
 
-        private static ShaderAttributeDataType fromValue(int value) {
+        static ShaderAttributeDataType fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -782,7 +782,7 @@ public class RaylibEnum {
         PIXELFORMAT_COMPRESSED_ASTC_8x8_RGBA(Raylib.PixelFormat.PIXELFORMAT_COMPRESSED_ASTC_8x8_RGBA)
     ;
 
-        private final int value;
+        final int value;
 
         private PixelFormat(int value) {
             this.value = value;
@@ -796,7 +796,7 @@ public class RaylibEnum {
             }
         }
 
-        private static PixelFormat fromValue(int value) {
+        static PixelFormat fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -818,7 +818,7 @@ public class RaylibEnum {
         TEXTURE_FILTER_ANISOTROPIC_16X(Raylib.TextureFilter.TEXTURE_FILTER_ANISOTROPIC_16X)
     ;
 
-        private final int value;
+        final int value;
 
         private TextureFilter(int value) {
             this.value = value;
@@ -832,7 +832,7 @@ public class RaylibEnum {
             }
         }
 
-        private static TextureFilter fromValue(int value) {
+        static TextureFilter fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -850,7 +850,7 @@ public class RaylibEnum {
         TEXTURE_WRAP_MIRROR_CLAMP(Raylib.TextureWrap.TEXTURE_WRAP_MIRROR_CLAMP)
     ;
 
-        private final int value;
+        final int value;
 
         private TextureWrap(int value) {
             this.value = value;
@@ -864,7 +864,7 @@ public class RaylibEnum {
             }
         }
 
-        private static TextureWrap fromValue(int value) {
+        static TextureWrap fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -884,7 +884,7 @@ public class RaylibEnum {
         CUBEMAP_LAYOUT_CROSS_FOUR_BY_THREE(Raylib.CubemapLayout.CUBEMAP_LAYOUT_CROSS_FOUR_BY_THREE)
     ;
 
-        private final int value;
+        final int value;
 
         private CubemapLayout(int value) {
             this.value = value;
@@ -898,7 +898,7 @@ public class RaylibEnum {
             }
         }
 
-        private static CubemapLayout fromValue(int value) {
+        static CubemapLayout fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -914,7 +914,7 @@ public class RaylibEnum {
         FONT_SDF(Raylib.FontType.FONT_SDF)
     ;
 
-        private final int value;
+        final int value;
 
         private FontType(int value) {
             this.value = value;
@@ -928,7 +928,7 @@ public class RaylibEnum {
             }
         }
 
-        private static FontType fromValue(int value) {
+        static FontType fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -954,7 +954,7 @@ public class RaylibEnum {
         BLEND_CUSTOM_SEPARATE(Raylib.BlendMode.BLEND_CUSTOM_SEPARATE)
     ;
 
-        private final int value;
+        final int value;
 
         private BlendMode(int value) {
             this.value = value;
@@ -968,7 +968,7 @@ public class RaylibEnum {
             }
         }
 
-        private static BlendMode fromValue(int value) {
+        static BlendMode fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -1000,7 +1000,7 @@ public class RaylibEnum {
         GESTURE_PINCH_OUT(Raylib.Gesture.GESTURE_PINCH_OUT)
     ;
 
-        private final int value;
+        final int value;
 
         private Gesture(int value) {
             this.value = value;
@@ -1014,7 +1014,7 @@ public class RaylibEnum {
             }
         }
 
-        private static Gesture fromValue(int value) {
+        static Gesture fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -1034,7 +1034,7 @@ public class RaylibEnum {
         CAMERA_THIRD_PERSON(Raylib.CameraMode.CAMERA_THIRD_PERSON)
     ;
 
-        private final int value;
+        final int value;
 
         private CameraMode(int value) {
             this.value = value;
@@ -1048,7 +1048,7 @@ public class RaylibEnum {
             }
         }
 
-        private static CameraMode fromValue(int value) {
+        static CameraMode fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -1062,7 +1062,7 @@ public class RaylibEnum {
         CAMERA_ORTHOGRAPHIC(Raylib.CameraProjection.CAMERA_ORTHOGRAPHIC)
     ;
 
-        private final int value;
+        final int value;
 
         private CameraProjection(int value) {
             this.value = value;
@@ -1076,7 +1076,7 @@ public class RaylibEnum {
             }
         }
 
-        private static CameraProjection fromValue(int value) {
+        static CameraProjection fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -1092,7 +1092,7 @@ public class RaylibEnum {
         NPATCH_THREE_PATCH_HORIZONTAL(Raylib.NPatchLayout.NPATCH_THREE_PATCH_HORIZONTAL)
     ;
 
-        private final int value;
+        final int value;
 
         private NPatchLayout(int value) {
             this.value = value;
@@ -1106,7 +1106,7 @@ public class RaylibEnum {
             }
         }
 
-        private static NPatchLayout fromValue(int value) {
+        static NPatchLayout fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -1128,7 +1128,7 @@ public class RaylibEnum {
         RL_OPENGL_ES_30(Raylib.rlGlVersion.RL_OPENGL_ES_30)
     ;
 
-        private final int value;
+        final int value;
 
         private rlGlVersion(int value) {
             this.value = value;
@@ -1142,7 +1142,7 @@ public class RaylibEnum {
             }
         }
 
-        private static rlGlVersion fromValue(int value) {
+        static rlGlVersion fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -1168,7 +1168,7 @@ public class RaylibEnum {
         RL_LOG_NONE(Raylib.rlTraceLogLevel.RL_LOG_NONE)
     ;
 
-        private final int value;
+        final int value;
 
         private rlTraceLogLevel(int value) {
             this.value = value;
@@ -1182,7 +1182,7 @@ public class RaylibEnum {
             }
         }
 
-        private static rlTraceLogLevel fromValue(int value) {
+        static rlTraceLogLevel fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -1240,7 +1240,7 @@ public class RaylibEnum {
         RL_PIXELFORMAT_COMPRESSED_ASTC_8x8_RGBA(Raylib.rlPixelFormat.RL_PIXELFORMAT_COMPRESSED_ASTC_8x8_RGBA)
     ;
 
-        private final int value;
+        final int value;
 
         private rlPixelFormat(int value) {
             this.value = value;
@@ -1254,7 +1254,7 @@ public class RaylibEnum {
             }
         }
 
-        private static rlPixelFormat fromValue(int value) {
+        static rlPixelFormat fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -1276,7 +1276,7 @@ public class RaylibEnum {
         RL_TEXTURE_FILTER_ANISOTROPIC_16X(Raylib.rlTextureFilter.RL_TEXTURE_FILTER_ANISOTROPIC_16X)
     ;
 
-        private final int value;
+        final int value;
 
         private rlTextureFilter(int value) {
             this.value = value;
@@ -1290,7 +1290,7 @@ public class RaylibEnum {
             }
         }
 
-        private static rlTextureFilter fromValue(int value) {
+        static rlTextureFilter fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -1316,7 +1316,7 @@ public class RaylibEnum {
         RL_BLEND_CUSTOM_SEPARATE(Raylib.rlBlendMode.RL_BLEND_CUSTOM_SEPARATE)
     ;
 
-        private final int value;
+        final int value;
 
         private rlBlendMode(int value) {
             this.value = value;
@@ -1330,7 +1330,7 @@ public class RaylibEnum {
             }
         }
 
-        private static rlBlendMode fromValue(int value) {
+        static rlBlendMode fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -1392,7 +1392,7 @@ public class RaylibEnum {
         RL_SHADER_LOC_MAP_BRDF(Raylib.rlShaderLocationIndex.RL_SHADER_LOC_MAP_BRDF)
     ;
 
-        private final int value;
+        final int value;
 
         private rlShaderLocationIndex(int value) {
             this.value = value;
@@ -1406,7 +1406,7 @@ public class RaylibEnum {
             }
         }
 
-        private static rlShaderLocationIndex fromValue(int value) {
+        static rlShaderLocationIndex fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -1442,7 +1442,7 @@ public class RaylibEnum {
         RL_SHADER_UNIFORM_SAMPLER2D(Raylib.rlShaderUniformDataType.RL_SHADER_UNIFORM_SAMPLER2D)
     ;
 
-        private final int value;
+        final int value;
 
         private rlShaderUniformDataType(int value) {
             this.value = value;
@@ -1456,7 +1456,7 @@ public class RaylibEnum {
             }
         }
 
-        private static rlShaderUniformDataType fromValue(int value) {
+        static rlShaderUniformDataType fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -1474,7 +1474,7 @@ public class RaylibEnum {
         RL_SHADER_ATTRIB_VEC4(Raylib.rlShaderAttributeDataType.RL_SHADER_ATTRIB_VEC4)
     ;
 
-        private final int value;
+        final int value;
 
         private rlShaderAttributeDataType(int value) {
             this.value = value;
@@ -1488,7 +1488,7 @@ public class RaylibEnum {
             }
         }
 
-        private static rlShaderAttributeDataType fromValue(int value) {
+        static rlShaderAttributeDataType fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -1518,7 +1518,7 @@ public class RaylibEnum {
         RL_ATTACHMENT_STENCIL(Raylib.rlFramebufferAttachType.RL_ATTACHMENT_STENCIL)
     ;
 
-        private final int value;
+        final int value;
 
         private rlFramebufferAttachType(int value) {
             this.value = value;
@@ -1532,7 +1532,7 @@ public class RaylibEnum {
             }
         }
 
-        private static rlFramebufferAttachType fromValue(int value) {
+        static rlFramebufferAttachType fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -1558,7 +1558,7 @@ public class RaylibEnum {
         RL_ATTACHMENT_RENDERBUFFER(Raylib.rlFramebufferAttachTextureType.RL_ATTACHMENT_RENDERBUFFER)
     ;
 
-        private final int value;
+        final int value;
 
         private rlFramebufferAttachTextureType(int value) {
             this.value = value;
@@ -1572,7 +1572,7 @@ public class RaylibEnum {
             }
         }
 
-        private static rlFramebufferAttachTextureType fromValue(int value) {
+        static rlFramebufferAttachTextureType fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
@@ -1586,7 +1586,7 @@ public class RaylibEnum {
         RL_CULL_FACE_BACK(Raylib.rlCullMode.RL_CULL_FACE_BACK)
     ;
 
-        private final int value;
+        final int value;
 
         private rlCullMode(int value) {
             this.value = value;
@@ -1600,7 +1600,7 @@ public class RaylibEnum {
             }
         }
 
-        private static rlCullMode fromValue(int value) {
+        static rlCullMode fromValue(int value) {
             return BY_VALUE.get(value);
         }
     }
