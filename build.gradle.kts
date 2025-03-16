@@ -2,7 +2,7 @@ tasks.register<DefaultTask>("generateAndFormat") {
     group = "custom"
     description = "Generate code and run Spotless on lib project"
 
-    dependsOn(":tool:runEnumGenerator")
+    dependsOn(":tool:runEnumGenerator", ":tool:extractFunctions")
     finalizedBy(":lib:spotlessApply")
 }
 
