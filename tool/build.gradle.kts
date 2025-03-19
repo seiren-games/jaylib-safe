@@ -72,15 +72,27 @@ tasks.register("extractFunctions") {
         }
         val content = javaFile.readText(Charsets.UTF_8)
         // 正規表現パターン:
-        //   public static の後に戻り値や型、関数名、引数リストをキャプチャし、その後に { が続くもの
-        val regex = Regex("""(public\s+static\s+[\w<>\[\]]+\s+\w+\s*\([^)]*\))\s*\{""", RegexOption.DOT_MATCHES_ALL)
-        val matches = regex.findAll(content).map { it.groupValues[1] }.toList()
-        // 不要な改行や余計な空白を除去し、末尾にセミコロンを追加
-        val definitions = matches.map { it.split("\\s+".toRegex()).joinToString(" ") + ";" }
+        //   1. オプションのJavaDocコメント部分 (/** ... */) をキャプチャ
+        //   2. public static の後に戻り値や型、関数名、引数リストをキャプチャし、その後に { が続くもの
+        val regex = Regex(
+            """((?:\s*/\*\*(?:[^*]|\*(?!/))*\*/\s*)?)(public\s+static\s+[\w<>\[\]]+\s+\w+\s*\([^)]*\))\s*\{""",
+            RegexOption.DOT_MATCHES_ALL
+        )
+        val matches = regex.findAll(content).map { match ->
+            val comment = match.groupValues[1]
+            val signature = match.groupValues[2]
+            if (comment.isNotBlank()) {
+                // コメントがある場合は、コメント部分（前後の余分な空白を除去）と関数シグネチャを改行区切りで結合し、末尾にセミコロンを追加
+                comment.trimEnd() + "\n" + signature.trim() + ";"
+            } else {
+                // コメントがない場合は、もともとの処理（余分な空白を除去）
+                signature.split("\\s+".toRegex()).joinToString(" ") + ";"
+            }
+        }.toList()
         
         // 出力ファイルに書き込む
         val outputFile = file("extracted_functions.txt")
-        outputFile.writeText(definitions.joinToString("\n"))
+        outputFile.writeText(matches.joinToString("\n"))
         
         println("抽出された関数が ${outputFile.path} に保存されました")
     }
