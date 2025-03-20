@@ -3,5 +3,6 @@
 	"java.configuration.updateBuildConfiguration": "automatic",
 	"files.associations": {
 		"*Template.txt": "java",
+		"extracted_functions.txt": "java",
 	},
 }
