@@ -72,8 +72,8 @@ tasks.register("extractFunctions") {
         }
         val content = javaFile.readText(Charsets.UTF_8)
         // 正規表現パターン:
-        //   1. オプションのJavaDocコメント部分 (/** ... */) をキャプチャ
-        //   2. public static の後に戻り値や型、関数名、引数リストをキャプチャし、その後に { が続くもの
+        // 1. オプションのJavaDocコメント部分 (/** ... */) をキャプチャ
+        // 2. public static の後に戻り値や型、関数名、引数リストをキャプチャし、その後に { が続くもの
         val regex = Regex(
             """((?:\s*/\*\*(?:[^*]|\*(?!/))*\*/\s*)?)(public\s+static\s+[\w<>\[\]]+\s+\w+\s*\([^)]*\))\s*\{""",
             RegexOption.DOT_MATCHES_ALL
@@ -81,12 +81,19 @@ tasks.register("extractFunctions") {
         val matches = regex.findAll(content).map { match ->
             val comment = match.groupValues[1]
             val signature = match.groupValues[2]
-            if (comment.isNotBlank()) {
-                // コメントがある場合は、コメント部分（前後の余分な空白を除去）と関数シグネチャを改行区切りで結合し、末尾にセミコロンを追加
-                comment.trimEnd() + "\n" + signature.trim() + ";"
+            
+            // 関数シグネチャの余分な空白や改行を除去して1行にまとめる
+            val cleanedSignature = signature.split("\\s+".toRegex()).joinToString(" ")
+            
+            // コメントブロックは各行をトリムして改行で再結合する
+            val cleanedComment = if (comment.isNotBlank()) {
+                comment.lines().map { it.trim() }.joinToString("\n")
+            } else ""
+            
+            if (cleanedComment.isNotEmpty()) {
+                "$cleanedComment\n$cleanedSignature;"
             } else {
-                // コメントがない場合は、もともとの処理（余分な空白を除去）
-                signature.split("\\s+".toRegex()).joinToString(" ") + ";"
+                "$cleanedSignature;"
             }
         }.toList()
         
