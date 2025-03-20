@@ -82,12 +82,12 @@ tasks.register("extractFunctions") {
             val comment = match.groupValues[1]
             val signature = match.groupValues[2]
             
-            // 関数シグネチャの余分な空白や改行を除去して1行にまとめる
+            // 関数シグネチャは余分な空白や改行を除去して1行にまとめる
             val cleanedSignature = signature.split("\\s+".toRegex()).joinToString(" ")
             
-            // コメントブロックは各行をトリムして改行で再結合する
+            // コメントブロックは各行をトリムし、空行を除去して再結合する
             val cleanedComment = if (comment.isNotBlank()) {
-                comment.lines().map { it.trim() }.joinToString("\n")
+                comment.lines().map { it.trim() }.filter { it.isNotEmpty() }.joinToString("\n")
             } else ""
             
             if (cleanedComment.isNotEmpty()) {
@@ -97,9 +97,12 @@ tasks.register("extractFunctions") {
             }
         }.toList()
         
+        // 各関数ブロック間は1つの空行で区切る
+        val outputContent = matches.joinToString("\n\n")
+        
         // 出力ファイルに書き込む
         val outputFile = file("extracted_functions.txt")
-        outputFile.writeText(matches.joinToString("\n"))
+        outputFile.writeText(outputContent)
         
         println("抽出された関数が ${outputFile.path} に保存されました")
     }

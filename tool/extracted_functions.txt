@@ -1,8505 +1,5460 @@
-
-
 /**
 * Any IntBuffers you create *MUST* be direct allocation and native order.  Use this method to ensure that.
 * @param size
 * @return
 */
-
 public static IntBuffer createIntBuffer(int size);
-
 
 /**
 * Any FloatBuffers you create *MUST* be direct allocation and native order.  Use this method to ensure that.
 * @param size
 * @return
 */
-
 public static FloatBuffer createFloatBuffer(int size);
-
 
 /**
 * Any ByteBuffers you create *MUST* be direct allocation and native order.  Use this method to ensure that.
 * @param size
 * @return
 */
-
 public static ByteBuffer createByteBuffer(int size);
-
-
-
 
 /**
 * Initialize window and OpenGL context
 */
-
 public static void initWindow( int width, int height, String title );
-
-
 
 /**
 * Close window and unload OpenGL context
 */
-
 public static void closeWindow( );
-
-
 
 /**
 * Check if application should close (KEY_ESCAPE pressed or windows close icon clicked)
 */
-
 public static boolean windowShouldClose( );
-
-
 
 /**
 * Check if window has been initialized successfully
 */
-
 public static boolean isWindowReady( );
-
-
 
 /**
 * Check if window is currently fullscreen
 */
-
 public static boolean isWindowFullscreen( );
-
-
 
 /**
 * Check if window is currently hidden
 */
-
 public static boolean isWindowHidden( );
-
-
 
 /**
 * Check if window is currently minimized
 */
-
 public static boolean isWindowMinimized( );
-
-
 
 /**
 * Check if window is currently maximized
 */
-
 public static boolean isWindowMaximized( );
-
-
 
 /**
 * Check if window is currently focused
 */
-
 public static boolean isWindowFocused( );
-
-
 
 /**
 * Check if window has been resized last frame
 */
-
 public static boolean isWindowResized( );
-
-
 
 /**
 * Check if one specific window flag is enabled
 */
-
 public static boolean isWindowState( int flag );
-
-
 
 /**
 * Set window configuration state using flags
 */
-
 public static void setWindowState( int flags );
-
-
 
 /**
 * Clear window configuration state flags
 */
-
 public static void clearWindowState( int flags );
-
-
 
 /**
 * Toggle window state: fullscreen/windowed, resizes monitor to match window resolution
 */
-
 public static void toggleFullscreen( );
-
-
 
 /**
 * Toggle window state: borderless windowed, resizes window to match monitor resolution
 */
-
 public static void toggleBorderlessWindowed( );
-
-
 
 /**
 * Set window state: maximized, if resizable
 */
-
 public static void maximizeWindow( );
-
-
 
 /**
 * Set window state: minimized, if resizable
 */
-
 public static void minimizeWindow( );
-
-
 
 /**
 * Set window state: not minimized/maximized
 */
-
 public static void restoreWindow( );
-
-
 
 /**
 * Set icon for window (single image, RGBA 32bit)
 */
-
 public static void setWindowIcon( Image image );
-
-
 
 /**
 * Set icon for window (multiple images, RGBA 32bit)
 */
-
 public static void setWindowIcons( Image images, int count );
-
-
 
 /**
 * Set title for window
 */
-
 public static void setWindowTitle( String title );
-
-
 
 /**
 * Set window position on screen
 */
-
 public static void setWindowPosition( int x, int y );
-
-
 
 /**
 * Set monitor for the current window
 */
-
 public static void setWindowMonitor( int monitor );
-
-
 
 /**
 * Set window minimum dimensions (for FLAG_WINDOW_RESIZABLE)
 */
-
 public static void setWindowMinSize( int width, int height );
-
-
 
 /**
 * Set window maximum dimensions (for FLAG_WINDOW_RESIZABLE)
 */
-
 public static void setWindowMaxSize( int width, int height );
-
-
 
 /**
 * Set window dimensions
 */
-
 public static void setWindowSize( int width, int height );
-
-
 
 /**
 * Set window opacity [0.0f..1.0f]
 */
-
 public static void setWindowOpacity( float opacity );
-
-
 
 /**
 * Set window focused
 */
-
 public static void setWindowFocused( );
-
-
 
 /**
 * Get native window handle
 */
-
 public static MemorySegment getWindowHandle( );
-
-
 
 /**
 * Get current screen width
 */
-
 public static int getScreenWidth( );
-
-
 
 /**
 * Get current screen height
 */
-
 public static int getScreenHeight( );
-
-
 
 /**
 * Get current render width (it considers HiDPI)
 */
-
 public static int getRenderWidth( );
-
-
 
 /**
 * Get current render height (it considers HiDPI)
 */
-
 public static int getRenderHeight( );
-
-
 
 /**
 * Get number of connected monitors
 */
-
 public static int getMonitorCount( );
-
-
 
 /**
 * Get current monitor where window is placed
 */
-
 public static int getCurrentMonitor( );
 
-
-
 /**
 * Get specified monitor position
 */
-
 public static Vector2 getMonitorPosition( int monitor );
 
-
 /**
 * Get specified monitor position
 */
-
 public static Vector2 getMonitorPosition(Arena arena, int monitor );
-
-
 
 /**
 * Get specified monitor width (current video mode used by monitor)
 */
-
 public static int getMonitorWidth( int monitor );
-
-
 
 /**
 * Get specified monitor height (current video mode used by monitor)
 */
-
 public static int getMonitorHeight( int monitor );
-
-
 
 /**
 * Get specified monitor physical width in millimetres
 */
-
 public static int getMonitorPhysicalWidth( int monitor );
-
-
 
 /**
 * Get specified monitor physical height in millimetres
 */
-
 public static int getMonitorPhysicalHeight( int monitor );
-
-
 
 /**
 * Get specified monitor refresh rate
 */
-
 public static int getMonitorRefreshRate( int monitor );
 
-
-
 /**
 * Get window position XY on monitor
 */
-
 public static Vector2 getWindowPosition( );
 
-
 /**
 * Get window position XY on monitor
 */
-
 public static Vector2 getWindowPosition(Arena arena );
 
-
-
 /**
 * Get window scale DPI factor
 */
-
 public static Vector2 getWindowScaleDPI( );
 
-
 /**
 * Get window scale DPI factor
 */
-
 public static Vector2 getWindowScaleDPI(Arena arena );
-
-
 
 /**
 * Get the human-readable, UTF-8 encoded name of the specified monitor
 */
-
 public static String getMonitorName( int monitor );
-
-
 
 /**
 * Set clipboard text content
 */
-
 public static void setClipboardText( String text );
-
-
 
 /**
 * Get clipboard text content
 */
-
 public static String getClipboardText( );
 
-
-
 /**
 * Get clipboard image content
 */
-
 public static Image getClipboardImage( );
 
-
 /**
 * Get clipboard image content
 */
-
 public static Image getClipboardImage(Arena arena );
-
-
 
 /**
 * Enable waiting for events on EndDrawing(), no automatic event polling
 */
-
 public static void enableEventWaiting( );
-
-
 
 /**
 * Disable waiting for events on EndDrawing(), automatic events polling
 */
-
 public static void disableEventWaiting( );
-
-
 
 /**
 * Shows cursor
 */
-
 public static void showCursor( );
-
-
 
 /**
 * Hides cursor
 */
-
 public static void hideCursor( );
-
-
 
 /**
 * Check if cursor is not visible
 */
-
 public static boolean isCursorHidden( );
-
-
 
 /**
 * Enables cursor (unlock cursor)
 */
-
 public static void enableCursor( );
-
-
 
 /**
 * Disables cursor (lock cursor)
 */
-
 public static void disableCursor( );
-
-
 
 /**
 * Check if cursor is on the screen
 */
-
 public static boolean isCursorOnScreen( );
-
-
 
 /**
 * Set background color (framebuffer clear color)
 */
-
 public static void clearBackground( Color color );
-
-
 
 /**
 * Setup canvas (framebuffer) to start drawing
 */
-
 public static void beginDrawing( );
-
-
 
 /**
 * End canvas drawing and swap buffers (double buffering)
 */
-
 public static void endDrawing( );
-
-
 
 /**
 * Begin 2D mode with custom camera (2D)
 */
-
 public static void beginMode2D( Camera2D camera );
-
-
 
 /**
 * Ends 2D mode with custom camera
 */
-
 public static void endMode2D( );
-
-
 
 /**
 * Begin 3D mode with custom camera (3D)
 */
-
 public static void beginMode3D( Camera3D camera );
-
-
 
 /**
 * Ends 3D mode and returns to default 2D orthographic mode
 */
-
 public static void endMode3D( );
-
-
 
 /**
 * Begin drawing to render texture
 */
-
 public static void beginTextureMode( RenderTexture target );
-
-
 
 /**
 * Ends drawing to render texture
 */
-
 public static void endTextureMode( );
-
-
 
 /**
 * Begin custom shader drawing
 */
-
 public static void beginShaderMode( Shader shader );
-
-
 
 /**
 * End custom shader drawing (use default shader)
 */
-
 public static void endShaderMode( );
-
-
 
 /**
 * Begin blending mode (alpha, additive, multiplied, subtract, custom)
 */
-
 public static void beginBlendMode( int mode );
-
-
 
 /**
 * End blending mode (reset to default: alpha blending)
 */
-
 public static void endBlendMode( );
-
-
 
 /**
 * Begin scissor mode (define screen area for following drawing)
 */
-
 public static void beginScissorMode( int x, int y, int width, int height );
-
-
 
 /**
 * End scissor mode
 */
-
 public static void endScissorMode( );
-
-
 
 /**
 * Begin stereo rendering (requires VR simulator)
 */
-
 public static void beginVrStereoMode( VrStereoConfig config );
-
-
 
 /**
 * End stereo rendering (requires VR simulator)
 */
-
 public static void endVrStereoMode( );
 
-
-
 /**
 * Load VR stereo config for VR simulator device parameters
 */
-
 public static VrStereoConfig loadVrStereoConfig( VrDeviceInfo device );
 
-
 /**
 * Load VR stereo config for VR simulator device parameters
 */
-
 public static VrStereoConfig loadVrStereoConfig(Arena arena, VrDeviceInfo device );
-
-
 
 /**
 * Unload VR stereo config
 */
-
 public static void unloadVrStereoConfig( VrStereoConfig config );
 
-
-
 /**
 * Load shader from files and bind default locations
 */
-
 public static Shader loadShader( String vsFileName, String fsFileName );
 
-
 /**
 * Load shader from files and bind default locations
 */
-
 public static Shader loadShader(Arena arena, String vsFileName, String fsFileName );
 
-
-
 /**
 * Load shader from code strings and bind default locations
 */
-
 public static Shader loadShaderFromMemory( String vsCode, String fsCode );
 
-
 /**
 * Load shader from code strings and bind default locations
 */
-
 public static Shader loadShaderFromMemory(Arena arena, String vsCode, String fsCode );
-
-
 
 /**
 * Check if a shader is valid (loaded on GPU)
 */
-
 public static boolean isShaderValid( Shader shader );
-
-
 
 /**
 * Get shader uniform location
 */
-
 public static int getShaderLocation( Shader shader, String uniformName );
-
-
 
 /**
 * Get shader attribute location
 */
-
 public static int getShaderLocationAttrib( Shader shader, String attribName );
-
-
 
 /**
 * Set shader uniform value
 */
-
 public static void setShaderValue( Shader shader, int locIndex, MemorySegment value, int uniformType );
-
-
 
 /**
 * Set shader uniform value vector
 */
-
 public static void setShaderValueV( Shader shader, int locIndex, MemorySegment value, int uniformType, int count );
-
-
 
 /**
 * Set shader uniform value (matrix 4x4)
 */
-
 public static void setShaderValueMatrix( Shader shader, int locIndex, Matrix mat );
-
-
 
 /**
 * Set shader uniform value for texture (sampler2d)
 */
-
 public static void setShaderValueTexture( Shader shader, int locIndex, Texture texture );
-
-
 
 /**
 * Unload shader from GPU memory (VRAM)
 */
-
 public static void unloadShader( Shader shader );
 
-
-
 /**
 * Get a ray trace from screen position (i.e mouse)
 */
-
 public static Ray getScreenToWorldRay( Vector2 position, Camera3D camera );
 
-
 /**
 * Get a ray trace from screen position (i.e mouse)
 */
-
 public static Ray getScreenToWorldRay(Arena arena, Vector2 position, Camera3D camera );
 
-
-
 /**
 * Get a ray trace from screen position (i.e mouse) in a viewport
 */
-
 public static Ray getScreenToWorldRayEx( Vector2 position, Camera3D camera, int width, int height );
 
-
 /**
 * Get a ray trace from screen position (i.e mouse) in a viewport
 */
-
 public static Ray getScreenToWorldRayEx(Arena arena, Vector2 position, Camera3D camera, int width, int height );
 
-
-
 /**
 * Get the screen space position for a 3d world space position
 */
-
 public static Vector2 getWorldToScreen( Vector3 position, Camera3D camera );
 
-
 /**
 * Get the screen space position for a 3d world space position
 */
-
 public static Vector2 getWorldToScreen(Arena arena, Vector3 position, Camera3D camera );
 
-
-
 /**
 * Get size position for a 3d world space position
 */
-
 public static Vector2 getWorldToScreenEx( Vector3 position, Camera3D camera, int width, int height );
 
-
 /**
 * Get size position for a 3d world space position
 */
-
 public static Vector2 getWorldToScreenEx(Arena arena, Vector3 position, Camera3D camera, int width, int height );
 
-
-
 /**
 * Get the screen space position for a 2d camera world space position
 */
-
 public static Vector2 getWorldToScreen2D( Vector2 position, Camera2D camera );
 
-
 /**
 * Get the screen space position for a 2d camera world space position
 */
-
 public static Vector2 getWorldToScreen2D(Arena arena, Vector2 position, Camera2D camera );
 
-
-
 /**
 * Get the world space position for a 2d camera screen space position
 */
-
 public static Vector2 getScreenToWorld2D( Vector2 position, Camera2D camera );
 
-
 /**
 * Get the world space position for a 2d camera screen space position
 */
-
 public static Vector2 getScreenToWorld2D(Arena arena, Vector2 position, Camera2D camera );
 
-
-
 /**
 * Get camera transform matrix (view matrix)
 */
-
 public static Matrix getCameraMatrix( Camera3D camera );
 
-
 /**
 * Get camera transform matrix (view matrix)
 */
-
 public static Matrix getCameraMatrix(Arena arena, Camera3D camera );
 
-
-
 /**
 * Get camera 2d transform matrix
 */
-
 public static Matrix getCameraMatrix2D( Camera2D camera );
 
-
 /**
 * Get camera 2d transform matrix
 */
-
 public static Matrix getCameraMatrix2D(Arena arena, Camera2D camera );
-
-
 
 /**
 * Set target FPS (maximum)
 */
-
 public static void setTargetFPS( int fps );
-
-
 
 /**
 * Get time in seconds for last frame drawn (delta time)
 */
-
 public static float getFrameTime( );
-
-
 
 /**
 * Get elapsed time in seconds since InitWindow()
 */
-
 public static double getTime( );
-
-
 
 /**
 * Get current FPS
 */
-
 public static int getFPS( );
-
-
 
 /**
 * Swap back buffer with front buffer (screen drawing)
 */
-
 public static void swapScreenBuffer( );
-
-
 
 /**
 * Register all input events
 */
-
 public static void pollInputEvents( );
-
-
 
 /**
 * Wait for some time (halt program execution)
 */
-
 public static void waitTime( double seconds );
-
-
 
 /**
 * Set the seed for the random number generator
 */
-
 public static void setRandomSeed( int seed );
-
-
 
 /**
 * Get a random value between min and max (both included)
 */
-
 public static int getRandomValue( int min, int max );
-
-
 
 /**
 * Unload random values sequence
 */
-
 public static void unloadRandomSequence( java.nio.IntBuffer sequence );
-
-
 
 /**
 * Takes a screenshot of current screen (filename extension defines format)
 */
-
 public static void takeScreenshot( String fileName );
-
-
 
 /**
 * Setup init configuration flags (view FLAGS)
 */
-
 public static void setConfigFlags( int flags );
-
-
 
 /**
 * Open URL with default system browser (if available)
 */
-
 public static void openURL( String url );
-
-
 
 /**
 * Set the current threshold (minimum) log level
 */
-
 public static void setTraceLogLevel( int logLevel );
-
-
 
 /**
 * Internal memory allocator
 */
-
 public static MemorySegment memAlloc( int size );
-
-
 
 /**
 * Internal memory reallocator
 */
-
 public static MemorySegment memRealloc( MemorySegment ptr, int size );
-
-
 
 /**
 * Internal memory free
 */
-
 public static void memFree( MemorySegment ptr );
-
-
 
 /**
 * Set custom trace log
 */
-
 public static void setTraceLogCallback( MemorySegment callback );
-
-
 
 /**
 * Set custom file binary data loader
 */
-
 public static void setLoadFileDataCallback( MemorySegment callback );
-
-
 
 /**
 * Set custom file binary data saver
 */
-
 public static void setSaveFileDataCallback( MemorySegment callback );
-
-
 
 /**
 * Set custom file text data loader
 */
-
 public static void setLoadFileTextCallback( MemorySegment callback );
-
-
 
 /**
 * Set custom file text data saver
 */
-
 public static void setSaveFileTextCallback( MemorySegment callback );
-
-
 
 /**
 * Unload file data allocated by LoadFileData()
 */
-
 public static void unloadFileData( java.nio.ByteBuffer data );
-
-
 
 /**
 * Save data to file from byte array (write), returns true on success
 */
-
 public static boolean saveFileData( String fileName, MemorySegment data, int dataSize );
-
-
 
 /**
 * Export data to code (.h), returns true on success
 */
-
 public static boolean exportDataAsCode( java.nio.ByteBuffer data, int dataSize, String fileName );
-
-
 
 /**
 * Unload file text data allocated by LoadFileText()
 */
-
 public static void unloadFileText( java.nio.ByteBuffer text );
-
-
 
 /**
 * Save text data to file (write), string must be '\0' terminated, returns true on success
 */
-
 public static boolean saveFileText( String fileName, java.nio.ByteBuffer text );
-
-
 
 /**
 * Check if file exists
 */
-
 public static boolean fileExists( String fileName );
-
-
 
 /**
 * Check if a directory path exists
 */
-
 public static boolean directoryExists( String dirPath );
-
-
 
 /**
 * Check file extension (including point: .png, .wav)
 */
-
 public static boolean isFileExtension( String fileName, String ext );
-
-
 
 /**
 * Get file length in bytes (NOTE: GetFileSize() conflicts with windows.h)
 */
-
 public static int getFileLength( String fileName );
-
-
 
 /**
 * Get pointer to extension for a filename string (includes dot: '.png')
 */
-
 public static String getFileExtension( String fileName );
-
-
 
 /**
 * Get pointer to filename for a path string
 */
-
 public static String getFileName( String filePath );
-
-
 
 /**
 * Get filename string without extension (uses static string)
 */
-
 public static String getFileNameWithoutExt( String filePath );
-
-
 
 /**
 * Get full path for a given fileName with path (uses static string)
 */
-
 public static String getDirectoryPath( String filePath );
-
-
 
 /**
 * Get previous directory path for a given path (uses static string)
 */
-
 public static String getPrevDirectoryPath( String dirPath );
-
-
 
 /**
 * Get current working directory (uses static string)
 */
-
 public static String getWorkingDirectory( );
-
-
 
 /**
 * Get the directory of the running application (uses static string)
 */
-
 public static String getApplicationDirectory( );
-
-
 
 /**
 * Create directories (including full path requested), returns 0 on success
 */
-
 public static int makeDirectory( String dirPath );
-
-
 
 /**
 * Change working directory, return true on success
 */
-
 public static boolean changeDirectory( String dir );
-
-
 
 /**
 * Check if a given path is a file or a directory
 */
-
 public static boolean isPathFile( String path );
-
-
 
 /**
 * Check if fileName is valid for the platform/OS
 */
-
 public static boolean isFileNameValid( String fileName );
 
-
-
 /**
 * Load directory filepaths
 */
-
 public static FilePathList loadDirectoryFiles( String dirPath );
 
-
 /**
 * Load directory filepaths
 */
-
 public static FilePathList loadDirectoryFiles(Arena arena, String dirPath );
 
-
-
 /**
 * Load directory filepaths with extension filtering and recursive directory scan. Use 'DIR' in the filter string to include directories in the result
 */
-
 public static FilePathList loadDirectoryFilesEx( String basePath, String filter, boolean scanSubdirs );
 
-
 /**
 * Load directory filepaths with extension filtering and recursive directory scan. Use 'DIR' in the filter string to include directories in the result
 */
-
 public static FilePathList loadDirectoryFilesEx(Arena arena, String basePath, String filter, boolean scanSubdirs );
-
-
 
 /**
 * Unload filepaths
 */
-
 public static void unloadDirectoryFiles( FilePathList files );
-
-
 
 /**
 * Check if a file has been dropped into window
 */
-
 public static boolean isFileDropped( );
 
-
-
 /**
 * Load dropped filepaths
 */
-
 public static FilePathList loadDroppedFiles( );
 
-
 /**
 * Load dropped filepaths
 */
-
 public static FilePathList loadDroppedFiles(Arena arena );
-
-
 
 /**
 * Unload dropped filepaths
 */
-
 public static void unloadDroppedFiles( FilePathList files );
-
-
 
 /**
 * Get file modification time (last write time)
 */
-
 public static long getFileModTime( String fileName );
-
-
 
 /**
 * Compute CRC32 hash code
 */
-
 public static int computeCRC32( java.nio.ByteBuffer data, int dataSize );
-
-
 
 /**
 * Compute MD5 hash code, returns static int[4] (16 bytes)
 */
-
 public static MemorySegment computeMD5( java.nio.ByteBuffer data, int dataSize );
-
-
 
 /**
 * Compute SHA1 hash code, returns static int[5] (20 bytes)
 */
-
 public static MemorySegment computeSHA1( java.nio.ByteBuffer data, int dataSize );
 
-
-
 /**
 * Load automation events list from file, NULL for empty list, capacity = MAX_AUTOMATION_EVENTS
 */
-
 public static AutomationEventList loadAutomationEventList( String fileName );
 
-
 /**
 * Load automation events list from file, NULL for empty list, capacity = MAX_AUTOMATION_EVENTS
 */
-
 public static AutomationEventList loadAutomationEventList(Arena arena, String fileName );
-
-
 
 /**
 * Unload automation events list from file
 */
-
 public static void unloadAutomationEventList( AutomationEventList list );
-
-
 
 /**
 * Export automation events list as text file
 */
-
 public static boolean exportAutomationEventList( AutomationEventList list, String fileName );
-
-
 
 /**
 * Set automation event list to record to
 */
-
 public static void setAutomationEventList( AutomationEventList list );
-
-
 
 /**
 * Set automation event internal base frame to start recording
 */
-
 public static void setAutomationEventBaseFrame( int frame );
-
-
 
 /**
 * Start recording automation events (AutomationEventList must be set)
 */
-
 public static void startAutomationEventRecording( );
-
-
 
 /**
 * Stop recording automation events
 */
-
 public static void stopAutomationEventRecording( );
-
-
 
 /**
 * Play a recorded automation event
 */
-
 public static void playAutomationEvent( AutomationEvent event );
-
-
 
 /**
 * Check if a key has been pressed once
 */
-
 public static boolean isKeyPressed( int key );
-
-
 
 /**
 * Check if a key has been pressed again
 */
-
 public static boolean isKeyPressedRepeat( int key );
-
-
 
 /**
 * Check if a key is being pressed
 */
-
 public static boolean isKeyDown( int key );
-
-
 
 /**
 * Check if a key has been released once
 */
-
 public static boolean isKeyReleased( int key );
-
-
 
 /**
 * Check if a key is NOT being pressed
 */
-
 public static boolean isKeyUp( int key );
-
-
 
 /**
 * Get key pressed (keycode), call it multiple times for keys queued, returns 0 when the queue is empty
 */
-
 public static int getKeyPressed( );
-
-
 
 /**
 * Get char pressed (unicode), call it multiple times for chars queued, returns 0 when the queue is empty
 */
-
 public static int getCharPressed( );
-
-
 
 /**
 * Set a custom key to exit program (default is ESC)
 */
-
 public static void setExitKey( int key );
-
-
 
 /**
 * Check if a gamepad is available
 */
-
 public static boolean isGamepadAvailable( int gamepad );
-
-
 
 /**
 * Get gamepad internal name id
 */
-
 public static String getGamepadName( int gamepad );
-
-
 
 /**
 * Check if a gamepad button has been pressed once
 */
-
 public static boolean isGamepadButtonPressed( int gamepad, int button );
-
-
 
 /**
 * Check if a gamepad button is being pressed
 */
-
 public static boolean isGamepadButtonDown( int gamepad, int button );
-
-
 
 /**
 * Check if a gamepad button has been released once
 */
-
 public static boolean isGamepadButtonReleased( int gamepad, int button );
-
-
 
 /**
 * Check if a gamepad button is NOT being pressed
 */
-
 public static boolean isGamepadButtonUp( int gamepad, int button );
-
-
 
 /**
 * Get the last gamepad button pressed
 */
-
 public static int getGamepadButtonPressed( );
-
-
 
 /**
 * Get gamepad axis count for a gamepad
 */
-
 public static int getGamepadAxisCount( int gamepad );
-
-
 
 /**
 * Get axis movement value for a gamepad axis
 */
-
 public static float getGamepadAxisMovement( int gamepad, int axis );
-
-
 
 /**
 * Set internal gamepad mappings (SDL_GameControllerDB)
 */
-
 public static int setGamepadMappings( String mappings );
-
-
 
 /**
 * Set gamepad vibration for both motors (duration in seconds)
 */
-
 public static void setGamepadVibration( int gamepad, float leftMotor, float rightMotor, float duration );
-
-
 
 /**
 * Check if a mouse button has been pressed once
 */
-
 public static boolean isMouseButtonPressed( int button );
-
-
 
 /**
 * Check if a mouse button is being pressed
 */
-
 public static boolean isMouseButtonDown( int button );
-
-
 
 /**
 * Check if a mouse button has been released once
 */
-
 public static boolean isMouseButtonReleased( int button );
-
-
 
 /**
 * Check if a mouse button is NOT being pressed
 */
-
 public static boolean isMouseButtonUp( int button );
-
-
 
 /**
 * Get mouse position X
 */
-
 public static int getMouseX( );
-
-
 
 /**
 * Get mouse position Y
 */
-
 public static int getMouseY( );
 
-
-
 /**
 * Get mouse position XY
 */
-
 public static Vector2 getMousePosition( );
 
-
 /**
 * Get mouse position XY
 */
-
 public static Vector2 getMousePosition(Arena arena );
 
-
-
 /**
 * Get mouse delta between frames
 */
-
 public static Vector2 getMouseDelta( );
 
-
 /**
 * Get mouse delta between frames
 */
-
 public static Vector2 getMouseDelta(Arena arena );
-
-
 
 /**
 * Set mouse position XY
 */
-
 public static void setMousePosition( int x, int y );
-
-
 
 /**
 * Set mouse offset
 */
-
 public static void setMouseOffset( int offsetX, int offsetY );
-
-
 
 /**
 * Set mouse scaling
 */
-
 public static void setMouseScale( float scaleX, float scaleY );
-
-
 
 /**
 * Get mouse wheel movement for X or Y, whichever is larger
 */
-
 public static float getMouseWheelMove( );
 
-
-
 /**
 * Get mouse wheel movement for both X and Y
 */
-
 public static Vector2 getMouseWheelMoveV( );
 
-
 /**
 * Get mouse wheel movement for both X and Y
 */
-
 public static Vector2 getMouseWheelMoveV(Arena arena );
-
-
 
 /**
 * Set mouse cursor
 */
-
 public static void setMouseCursor( int cursor );
-
-
 
 /**
 * Get touch position X for touch point 0 (relative to screen size)
 */
-
 public static int getTouchX( );
-
-
 
 /**
 * Get touch position Y for touch point 0 (relative to screen size)
 */
-
 public static int getTouchY( );
 
-
-
 /**
 * Get touch position XY for a touch point index (relative to screen size)
 */
-
 public static Vector2 getTouchPosition( int index );
 
-
 /**
 * Get touch position XY for a touch point index (relative to screen size)
 */
-
 public static Vector2 getTouchPosition(Arena arena, int index );
-
-
 
 /**
 * Get touch point identifier for given index
 */
-
 public static int getTouchPointId( int index );
-
-
 
 /**
 * Get number of touch points
 */
-
 public static int getTouchPointCount( );
-
-
 
 /**
 * Enable a set of gestures using flags
 */
-
 public static void setGesturesEnabled( int flags );
-
-
 
 /**
 * Check if a gesture have been detected
 */
-
 public static boolean isGestureDetected( int gesture );
-
-
 
 /**
 * Get latest detected gesture
 */
-
 public static int getGestureDetected( );
-
-
 
 /**
 * Get gesture hold time in seconds
 */
-
 public static float getGestureHoldDuration( );
 
-
-
 /**
 * Get gesture drag vector
 */
-
 public static Vector2 getGestureDragVector( );
 
-
 /**
 * Get gesture drag vector
 */
-
 public static Vector2 getGestureDragVector(Arena arena );
-
-
 
 /**
 * Get gesture drag angle
 */
-
 public static float getGestureDragAngle( );
 
-
-
 /**
 * Get gesture pinch delta
 */
-
 public static Vector2 getGesturePinchVector( );
 
-
 /**
 * Get gesture pinch delta
 */
-
 public static Vector2 getGesturePinchVector(Arena arena );
-
-
 
 /**
 * Get gesture pinch angle
 */
-
 public static float getGesturePinchAngle( );
-
-
 
 /**
 * Update camera position for selected mode
 */
-
 public static void updateCamera( Camera3D camera, int mode );
-
-
 
 /**
 * Update camera movement/rotation
 */
-
 public static void updateCameraPro( Camera3D camera, Vector3 movement, Vector3 rotation, float zoom );
-
-
 
 /**
 * Set texture and rectangle to be used on shapes drawing
 */
-
 public static void setShapesTexture( Texture texture, Rectangle source );
 
-
-
 /**
 * Get texture that is used for shapes drawing
 */
-
 public static Texture getShapesTexture( );
 
-
 /**
 * Get texture that is used for shapes drawing
 */
-
 public static Texture getShapesTexture(Arena arena );
 
-
-
 /**
 * Get texture source rectangle that is used for shapes drawing
 */
-
 public static Rectangle getShapesTextureRectangle( );
 
-
 /**
 * Get texture source rectangle that is used for shapes drawing
 */
-
 public static Rectangle getShapesTextureRectangle(Arena arena );
-
-
 
 /**
 * Draw a pixel using geometry [Can be slow, use with care]
 */
-
 public static void drawPixel( int posX, int posY, Color color );
-
-
 
 /**
 * Draw a pixel using geometry (Vector version) [Can be slow, use with care]
 */
-
 public static void drawPixelV( Vector2 position, Color color );
-
-
 
 /**
 * Draw a line
 */
-
 public static void drawLine( int startPosX, int startPosY, int endPosX, int endPosY, Color color );
-
-
 
 /**
 * Draw a line (using gl lines)
 */
-
 public static void drawLineV( Vector2 startPos, Vector2 endPos, Color color );
-
-
 
 /**
 * Draw a line (using triangles/quads)
 */
-
 public static void drawLineEx( Vector2 startPos, Vector2 endPos, float thick, Color color );
-
-
 
 /**
 * Draw lines sequence (using gl lines)
 */
-
 public static void drawLineStrip( MemorySegment points, int pointCount, Color color );
-
-
 
 /**
 * Draw line segment cubic-bezier in-out interpolation
 */
-
 public static void drawLineBezier( Vector2 startPos, Vector2 endPos, float thick, Color color );
-
-
 
 /**
 * Draw a color-filled circle
 */
-
 public static void drawCircle( int centerX, int centerY, float radius, Color color );
-
-
 
 /**
 * Draw a piece of a circle
 */
-
 public static void drawCircleSector( Vector2 center, float radius, float startAngle, float endAngle, int segments, Color color );
-
-
 
 /**
 * Draw circle sector outline
 */
-
 public static void drawCircleSectorLines( Vector2 center, float radius, float startAngle, float endAngle, int segments, Color color );
-
-
 
 /**
 * Draw a gradient-filled circle
 */
-
 public static void drawCircleGradient( int centerX, int centerY, float radius, Color inner, Color outer );
-
-
 
 /**
 * Draw a color-filled circle (Vector version)
 */
-
 public static void drawCircleV( Vector2 center, float radius, Color color );
-
-
 
 /**
 * Draw circle outline
 */
-
 public static void drawCircleLines( int centerX, int centerY, float radius, Color color );
-
-
 
 /**
 * Draw circle outline (Vector version)
 */
-
 public static void drawCircleLinesV( Vector2 center, float radius, Color color );
-
-
 
 /**
 * Draw ellipse
 */
-
 public static void drawEllipse( int centerX, int centerY, float radiusH, float radiusV, Color color );
-
-
 
 /**
 * Draw ellipse outline
 */
-
 public static void drawEllipseLines( int centerX, int centerY, float radiusH, float radiusV, Color color );
-
-
 
 /**
 * Draw ring
 */
-
 public static void drawRing( Vector2 center, float innerRadius, float outerRadius, float startAngle, float endAngle, int segments, Color color );
-
-
 
 /**
 * Draw ring outline
 */
-
 public static void drawRingLines( Vector2 center, float innerRadius, float outerRadius, float startAngle, float endAngle, int segments, Color color );
-
-
 
 /**
 * Draw a color-filled rectangle
 */
-
 public static void drawRectangle( int posX, int posY, int width, int height, Color color );
-
-
 
 /**
 * Draw a color-filled rectangle (Vector version)
 */
-
 public static void drawRectangleV( Vector2 position, Vector2 size, Color color );
-
-
 
 /**
 * Draw a color-filled rectangle
 */
-
 public static void drawRectangleRec( Rectangle rec, Color color );
-
-
 
 /**
 * Draw a color-filled rectangle with pro parameters
 */
-
 public static void drawRectanglePro( Rectangle rec, Vector2 origin, float rotation, Color color );
-
-
 
 /**
 * Draw a vertical-gradient-filled rectangle
 */
-
 public static void drawRectangleGradientV( int posX, int posY, int width, int height, Color top, Color bottom );
-
-
 
 /**
 * Draw a horizontal-gradient-filled rectangle
 */
-
 public static void drawRectangleGradientH( int posX, int posY, int width, int height, Color left, Color right );
-
-
 
 /**
 * Draw a gradient-filled rectangle with custom vertex colors
 */
-
 public static void drawRectangleGradientEx( Rectangle rec, Color topLeft, Color bottomLeft, Color topRight, Color bottomRight );
-
-
 
 /**
 * Draw rectangle outline
 */
-
 public static void drawRectangleLines( int posX, int posY, int width, int height, Color color );
-
-
 
 /**
 * Draw rectangle outline with extended parameters
 */
-
 public static void drawRectangleLinesEx( Rectangle rec, float lineThick, Color color );
-
-
 
 /**
 * Draw rectangle with rounded edges
 */
-
 public static void drawRectangleRounded( Rectangle rec, float roundness, int segments, Color color );
-
-
 
 /**
 * Draw rectangle lines with rounded edges
 */
-
 public static void drawRectangleRoundedLines( Rectangle rec, float roundness, int segments, Color color );
-
-
 
 /**
 * Draw rectangle with rounded edges outline
 */
-
 public static void drawRectangleRoundedLinesEx( Rectangle rec, float roundness, int segments, float lineThick, Color color );
-
-
 
 /**
 * Draw a color-filled triangle (vertex in counter-clockwise order!)
 */
-
 public static void drawTriangle( Vector2 v1, Vector2 v2, Vector2 v3, Color color );
-
-
 
 /**
 * Draw triangle outline (vertex in counter-clockwise order!)
 */
-
 public static void drawTriangleLines( Vector2 v1, Vector2 v2, Vector2 v3, Color color );
-
-
 
 /**
 * Draw a triangle fan defined by points (first vertex is the center)
 */
-
 public static void drawTriangleFan( MemorySegment points, int pointCount, Color color );
-
-
 
 /**
 * Draw a triangle strip defined by points
 */
-
 public static void drawTriangleStrip( MemorySegment points, int pointCount, Color color );
-
-
 
 /**
 * Draw a regular polygon (Vector version)
 */
-
 public static void drawPoly( Vector2 center, int sides, float radius, float rotation, Color color );
-
-
 
 /**
 * Draw a polygon outline of n sides
 */
-
 public static void drawPolyLines( Vector2 center, int sides, float radius, float rotation, Color color );
-
-
 
 /**
 * Draw a polygon outline of n sides with extended parameters
 */
-
 public static void drawPolyLinesEx( Vector2 center, int sides, float radius, float rotation, float lineThick, Color color );
-
-
 
 /**
 * Draw spline: Linear, minimum 2 points
 */
-
 public static void drawSplineLinear( MemorySegment points, int pointCount, float thick, Color color );
-
-
 
 /**
 * Draw spline: B-Spline, minimum 4 points
 */
-
 public static void drawSplineBasis( MemorySegment points, int pointCount, float thick, Color color );
-
-
 
 /**
 * Draw spline: Catmull-Rom, minimum 4 points
 */
-
 public static void drawSplineCatmullRom( MemorySegment points, int pointCount, float thick, Color color );
-
-
 
 /**
 * Draw spline: Quadratic Bezier, minimum 3 points (1 control point): [p1, c2, p3, c4...]
 */
-
 public static void drawSplineBezierQuadratic( MemorySegment points, int pointCount, float thick, Color color );
-
-
 
 /**
 * Draw spline: Cubic Bezier, minimum 4 points (2 control points): [p1, c2, c3, p4, c5, c6...]
 */
-
 public static void drawSplineBezierCubic( MemorySegment points, int pointCount, float thick, Color color );
-
-
 
 /**
 * Draw spline segment: Linear, 2 points
 */
-
 public static void drawSplineSegmentLinear( Vector2 p1, Vector2 p2, float thick, Color color );
-
-
 
 /**
 * Draw spline segment: B-Spline, 4 points
 */
-
 public static void drawSplineSegmentBasis( Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float thick, Color color );
-
-
 
 /**
 * Draw spline segment: Catmull-Rom, 4 points
 */
-
 public static void drawSplineSegmentCatmullRom( Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float thick, Color color );
-
-
 
 /**
 * Draw spline segment: Quadratic Bezier, 2 points, 1 control point
 */
-
 public static void drawSplineSegmentBezierQuadratic( Vector2 p1, Vector2 c2, Vector2 p3, float thick, Color color );
-
-
 
 /**
 * Draw spline segment: Cubic Bezier, 2 points, 2 control points
 */
-
 public static void drawSplineSegmentBezierCubic( Vector2 p1, Vector2 c2, Vector2 c3, Vector2 p4, float thick, Color color );
 
-
-
 /**
 * Get (evaluate) spline point: Linear
 */
-
 public static Vector2 getSplinePointLinear( Vector2 startPos, Vector2 endPos, float t );
 
-
 /**
 * Get (evaluate) spline point: Linear
 */
-
 public static Vector2 getSplinePointLinear(Arena arena, Vector2 startPos, Vector2 endPos, float t );
 
-
-
 /**
 * Get (evaluate) spline point: B-Spline
 */
-
 public static Vector2 getSplinePointBasis( Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float t );
 
-
 /**
 * Get (evaluate) spline point: B-Spline
 */
-
 public static Vector2 getSplinePointBasis(Arena arena, Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float t );
 
-
-
 /**
 * Get (evaluate) spline point: Catmull-Rom
 */
-
 public static Vector2 getSplinePointCatmullRom( Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float t );
 
-
 /**
 * Get (evaluate) spline point: Catmull-Rom
 */
-
 public static Vector2 getSplinePointCatmullRom(Arena arena, Vector2 p1, Vector2 p2, Vector2 p3, Vector2 p4, float t );
 
-
-
 /**
 * Get (evaluate) spline point: Quadratic Bezier
 */
-
 public static Vector2 getSplinePointBezierQuad( Vector2 p1, Vector2 c2, Vector2 p3, float t );
 
-
 /**
 * Get (evaluate) spline point: Quadratic Bezier
 */
-
 public static Vector2 getSplinePointBezierQuad(Arena arena, Vector2 p1, Vector2 c2, Vector2 p3, float t );
 
-
-
 /**
 * Get (evaluate) spline point: Cubic Bezier
 */
-
 public static Vector2 getSplinePointBezierCubic( Vector2 p1, Vector2 c2, Vector2 c3, Vector2 p4, float t );
 
-
 /**
 * Get (evaluate) spline point: Cubic Bezier
 */
-
 public static Vector2 getSplinePointBezierCubic(Arena arena, Vector2 p1, Vector2 c2, Vector2 c3, Vector2 p4, float t );
-
-
 
 /**
 * Check collision between two rectangles
 */
-
 public static boolean checkCollisionRecs( Rectangle rec1, Rectangle rec2 );
-
-
 
 /**
 * Check collision between two circles
 */
-
 public static boolean checkCollisionCircles( Vector2 center1, float radius1, Vector2 center2, float radius2 );
-
-
 
 /**
 * Check collision between circle and rectangle
 */
-
 public static boolean checkCollisionCircleRec( Vector2 center, float radius, Rectangle rec );
-
-
 
 /**
 * Check if circle collides with a line created betweeen two points [p1] and [p2]
 */
-
 public static boolean checkCollisionCircleLine( Vector2 center, float radius, Vector2 p1, Vector2 p2 );
-
-
 
 /**
 * Check if point is inside rectangle
 */
-
 public static boolean checkCollisionPointRec( Vector2 point, Rectangle rec );
-
-
 
 /**
 * Check if point is inside circle
 */
-
 public static boolean checkCollisionPointCircle( Vector2 point, Vector2 center, float radius );
-
-
 
 /**
 * Check if point is inside a triangle
 */
-
 public static boolean checkCollisionPointTriangle( Vector2 point, Vector2 p1, Vector2 p2, Vector2 p3 );
-
-
 
 /**
 * Check if point belongs to line created between two points [p1] and [p2] with defined margin in pixels [threshold]
 */
-
 public static boolean checkCollisionPointLine( Vector2 point, Vector2 p1, Vector2 p2, int threshold );
-
-
 
 /**
 * Check if point is within a polygon described by array of vertices
 */
-
 public static boolean checkCollisionPointPoly( Vector2 point, MemorySegment points, int pointCount );
-
-
 
 /**
 * Check the collision between two lines defined by two points each, returns collision point by reference
 */
-
 public static boolean checkCollisionLines( Vector2 startPos1, Vector2 endPos1, Vector2 startPos2, Vector2 endPos2, Vector2 collisionPoint );
 
-
-
 /**
 * Get collision rectangle for two rectangles collision
 */
-
 public static Rectangle getCollisionRec( Rectangle rec1, Rectangle rec2 );
 
-
 /**
 * Get collision rectangle for two rectangles collision
 */
-
 public static Rectangle getCollisionRec(Arena arena, Rectangle rec1, Rectangle rec2 );
 
-
-
 /**
 * Load image from file into CPU memory (RAM)
 */
-
 public static Image loadImage( String fileName );
 
-
 /**
 * Load image from file into CPU memory (RAM)
 */
-
 public static Image loadImage(Arena arena, String fileName );
 
-
-
 /**
 * Load image from RAW file data
 */
-
 public static Image loadImageRaw( String fileName, int width, int height, int format, int headerSize );
 
-
 /**
 * Load image from RAW file data
 */
-
 public static Image loadImageRaw(Arena arena, String fileName, int width, int height, int format, int headerSize );
 
-
-
 /**
 * Load image sequence from file (frames appended to image.data)
 */
-
 public static Image loadImageAnim( String fileName, java.nio.IntBuffer frames );
 
-
 /**
 * Load image sequence from file (frames appended to image.data)
 */
-
 public static Image loadImageAnim(Arena arena, String fileName, java.nio.IntBuffer frames );
 
-
-
 /**
 * Load image sequence from memory buffer
 */
-
 public static Image loadImageAnimFromMemory( String fileType, java.nio.ByteBuffer fileData, int dataSize, java.nio.IntBuffer frames );
 
-
 /**
 * Load image sequence from memory buffer
 */
-
 public static Image loadImageAnimFromMemory(Arena arena, String fileType, java.nio.ByteBuffer fileData, int dataSize, java.nio.IntBuffer frames );
 
-
-
 /**
 * Load image from memory buffer, fileType refers to extension: i.e. '.png'
 */
-
 public static Image loadImageFromMemory( String fileType, java.nio.ByteBuffer fileData, int dataSize );
 
-
 /**
 * Load image from memory buffer, fileType refers to extension: i.e. '.png'
 */
-
 public static Image loadImageFromMemory(Arena arena, String fileType, java.nio.ByteBuffer fileData, int dataSize );
 
-
-
 /**
 * Load image from GPU texture data
 */
-
 public static Image loadImageFromTexture( Texture texture );
 
-
 /**
 * Load image from GPU texture data
 */
-
 public static Image loadImageFromTexture(Arena arena, Texture texture );
 
-
-
 /**
 * Load image from screen buffer and (screenshot)
 */
-
 public static Image loadImageFromScreen( );
 
-
 /**
 * Load image from screen buffer and (screenshot)
 */
-
 public static Image loadImageFromScreen(Arena arena );
-
-
 
 /**
 * Check if an image is valid (data and parameters)
 */
-
 public static boolean isImageValid( Image image );
-
-
 
 /**
 * Unload image from CPU memory (RAM)
 */
-
 public static void unloadImage( Image image );
-
-
 
 /**
 * Export image data to file, returns true on success
 */
-
 public static boolean exportImage( Image image, String fileName );
-
-
 
 /**
 * Export image as code file defining an array of bytes, returns true on success
 */
-
 public static boolean exportImageAsCode( Image image, String fileName );
 
-
-
 /**
 * Generate image: plain color
 */
-
 public static Image genImageColor( int width, int height, Color color );
 
-
 /**
 * Generate image: plain color
 */
-
 public static Image genImageColor(Arena arena, int width, int height, Color color );
 
-
-
 /**
 * Generate image: linear gradient, direction in degrees [0..360], 0=Vertical gradient
 */
-
 public static Image genImageGradientLinear( int width, int height, int direction, Color start, Color end );
 
-
 /**
 * Generate image: linear gradient, direction in degrees [0..360], 0=Vertical gradient
 */
-
 public static Image genImageGradientLinear(Arena arena, int width, int height, int direction, Color start, Color end );
 
-
-
 /**
 * Generate image: radial gradient
 */
-
 public static Image genImageGradientRadial( int width, int height, float density, Color inner, Color outer );
 
-
 /**
 * Generate image: radial gradient
 */
-
 public static Image genImageGradientRadial(Arena arena, int width, int height, float density, Color inner, Color outer );
 
-
-
 /**
 * Generate image: square gradient
 */
-
 public static Image genImageGradientSquare( int width, int height, float density, Color inner, Color outer );
 
-
 /**
 * Generate image: square gradient
 */
-
 public static Image genImageGradientSquare(Arena arena, int width, int height, float density, Color inner, Color outer );
 
-
-
 /**
 * Generate image: checked
 */
-
 public static Image genImageChecked( int width, int height, int checksX, int checksY, Color col1, Color col2 );
 
-
 /**
 * Generate image: checked
 */
-
 public static Image genImageChecked(Arena arena, int width, int height, int checksX, int checksY, Color col1, Color col2 );
 
-
-
 /**
 * Generate image: white noise
 */
-
 public static Image genImageWhiteNoise( int width, int height, float factor );
 
-
 /**
 * Generate image: white noise
 */
-
 public static Image genImageWhiteNoise(Arena arena, int width, int height, float factor );
 
-
-
 /**
 * Generate image: perlin noise
 */
-
 public static Image genImagePerlinNoise( int width, int height, int offsetX, int offsetY, float scale );
 
-
 /**
 * Generate image: perlin noise
 */
-
 public static Image genImagePerlinNoise(Arena arena, int width, int height, int offsetX, int offsetY, float scale );
 
-
-
 /**
 * Generate image: cellular algorithm, bigger tileSize means bigger cells
 */
-
 public static Image genImageCellular( int width, int height, int tileSize );
 
-
 /**
 * Generate image: cellular algorithm, bigger tileSize means bigger cells
 */
-
 public static Image genImageCellular(Arena arena, int width, int height, int tileSize );
 
-
-
 /**
 * Generate image: grayscale image from text data
 */
-
 public static Image genImageText( int width, int height, String text );
 
-
 /**
 * Generate image: grayscale image from text data
 */
-
 public static Image genImageText(Arena arena, int width, int height, String text );
 
-
-
 /**
 * Create an image duplicate (useful for transformations)
 */
-
 public static Image imageCopy( Image image );
 
-
 /**
 * Create an image duplicate (useful for transformations)
 */
-
 public static Image imageCopy(Arena arena, Image image );
 
-
-
 /**
 * Create an image from another image piece
 */
-
 public static Image imageFromImage( Image image, Rectangle rec );
 
-
 /**
 * Create an image from another image piece
 */
-
 public static Image imageFromImage(Arena arena, Image image, Rectangle rec );
 
-
-
 /**
 * Create an image from a selected channel of another image (GRAYSCALE)
 */
-
 public static Image imageFromChannel( Image image, int selectedChannel );
 
-
 /**
 * Create an image from a selected channel of another image (GRAYSCALE)
 */
-
 public static Image imageFromChannel(Arena arena, Image image, int selectedChannel );
 
-
-
 /**
 * Create an image from text (default font)
 */
-
 public static Image imageText( String text, int fontSize, Color color );
 
-
 /**
 * Create an image from text (default font)
 */
-
 public static Image imageText(Arena arena, String text, int fontSize, Color color );
 
-
-
 /**
 * Create an image from text (custom sprite font)
 */
-
 public static Image imageTextEx( Font font, String text, float fontSize, float spacing, Color tint );
 
-
 /**
 * Create an image from text (custom sprite font)
 */
-
 public static Image imageTextEx(Arena arena, Font font, String text, float fontSize, float spacing, Color tint );
-
-
 
 /**
 * Convert image data to desired format
 */
-
 public static void imageFormat( Image image, int newFormat );
-
-
 
 /**
 * Convert image to POT (power-of-two)
 */
-
 public static void imageToPOT( Image image, Color fill );
-
-
 
 /**
 * Crop an image to a defined rectangle
 */
-
 public static void imageCrop( Image image, Rectangle crop );
-
-
 
 /**
 * Crop image depending on alpha value
 */
-
 public static void imageAlphaCrop( Image image, float threshold );
-
-
 
 /**
 * Clear alpha channel to desired color
 */
-
 public static void imageAlphaClear( Image image, Color color, float threshold );
-
-
 
 /**
 * Apply alpha mask to image
 */
-
 public static void imageAlphaMask( Image image, Image alphaMask );
-
-
 
 /**
 * Premultiply alpha channel
 */
-
 public static void imageAlphaPremultiply( Image image );
-
-
 
 /**
 * Apply Gaussian blur using a box blur approximation
 */
-
 public static void imageBlurGaussian( Image image, int blurSize );
-
-
 
 /**
 * Apply custom square convolution kernel to image
 */
-
 public static void imageKernelConvolution( Image image, MemorySegment kernel, int kernelSize );
-
-
 
 /**
 * Resize image (Bicubic scaling algorithm)
 */
-
 public static void imageResize( Image image, int newWidth, int newHeight );
-
-
 
 /**
 * Resize image (Nearest-Neighbor scaling algorithm)
 */
-
 public static void imageResizeNN( Image image, int newWidth, int newHeight );
-
-
 
 /**
 * Resize canvas and fill with color
 */
-
 public static void imageResizeCanvas( Image image, int newWidth, int newHeight, int offsetX, int offsetY, Color fill );
-
-
 
 /**
 * Compute all mipmap levels for a provided image
 */
-
 public static void imageMipmaps( Image image );
-
-
 
 /**
 * Dither image data to 16bpp or lower (Floyd-Steinberg dithering)
 */
-
 public static void imageDither( Image image, int rBpp, int gBpp, int bBpp, int aBpp );
-
-
 
 /**
 * Flip image vertically
 */
-
 public static void imageFlipVertical( Image image );
-
-
 
 /**
 * Flip image horizontally
 */
-
 public static void imageFlipHorizontal( Image image );
-
-
 
 /**
 * Rotate image by input angle in degrees (-359 to 359)
 */
-
 public static void imageRotate( Image image, int degrees );
-
-
 
 /**
 * Rotate image clockwise 90deg
 */
-
 public static void imageRotateCW( Image image );
-
-
 
 /**
 * Rotate image counter-clockwise 90deg
 */
-
 public static void imageRotateCCW( Image image );
-
-
 
 /**
 * Modify image color: tint
 */
-
 public static void imageColorTint( Image image, Color color );
-
-
 
 /**
 * Modify image color: invert
 */
-
 public static void imageColorInvert( Image image );
-
-
 
 /**
 * Modify image color: grayscale
 */
-
 public static void imageColorGrayscale( Image image );
-
-
 
 /**
 * Modify image color: contrast (-100 to 100)
 */
-
 public static void imageColorContrast( Image image, float contrast );
-
-
 
 /**
 * Modify image color: brightness (-255 to 255)
 */
-
 public static void imageColorBrightness( Image image, int brightness );
-
-
 
 /**
 * Modify image color: replace color
 */
-
 public static void imageColorReplace( Image image, Color color, Color replace );
-
-
 
 /**
 * Load color data from image as a Color array (RGBA - 32bit)
 */
-
 public static Color loadImageColors( Image image );
-
-
 
 /**
 * Load colors palette from image as a Color array (RGBA - 32bit)
 */
-
 public static Color loadImagePalette( Image image, int maxPaletteSize, java.nio.IntBuffer colorCount );
-
-
 
 /**
 * Unload color data loaded with LoadImageColors()
 */
-
 public static void unloadImageColors( Color colors );
-
-
 
 /**
 * Unload colors palette loaded with LoadImagePalette()
 */
-
 public static void unloadImagePalette( Color colors );
 
-
-
 /**
 * Get image alpha border rectangle
 */
-
 public static Rectangle getImageAlphaBorder( Image image, float threshold );
 
-
 /**
 * Get image alpha border rectangle
 */
-
 public static Rectangle getImageAlphaBorder(Arena arena, Image image, float threshold );
 
-
-
 /**
 * Get image pixel color at (x, y) position
 */
-
 public static Color getImageColor( Image image, int x, int y );
 
-
 /**
 * Get image pixel color at (x, y) position
 */
-
 public static Color getImageColor(Arena arena, Image image, int x, int y );
-
-
 
 /**
 * Clear image background with given color
 */
-
 public static void imageClearBackground( Image dst, Color color );
-
-
 
 /**
 * Draw pixel within an image
 */
-
 public static void imageDrawPixel( Image dst, int posX, int posY, Color color );
-
-
 
 /**
 * Draw pixel within an image (Vector version)
 */
-
 public static void imageDrawPixelV( Image dst, Vector2 position, Color color );
-
-
 
 /**
 * Draw line within an image
 */
-
 public static void imageDrawLine( Image dst, int startPosX, int startPosY, int endPosX, int endPosY, Color color );
-
-
 
 /**
 * Draw line within an image (Vector version)
 */
-
 public static void imageDrawLineV( Image dst, Vector2 start, Vector2 end, Color color );
-
-
 
 /**
 * Draw a line defining thickness within an image
 */
-
 public static void imageDrawLineEx( Image dst, Vector2 start, Vector2 end, int thick, Color color );
-
-
 
 /**
 * Draw a filled circle within an image
 */
-
 public static void imageDrawCircle( Image dst, int centerX, int centerY, int radius, Color color );
-
-
 
 /**
 * Draw a filled circle within an image (Vector version)
 */
-
 public static void imageDrawCircleV( Image dst, Vector2 center, int radius, Color color );
-
-
 
 /**
 * Draw circle outline within an image
 */
-
 public static void imageDrawCircleLines( Image dst, int centerX, int centerY, int radius, Color color );
-
-
 
 /**
 * Draw circle outline within an image (Vector version)
 */
-
 public static void imageDrawCircleLinesV( Image dst, Vector2 center, int radius, Color color );
-
-
 
 /**
 * Draw rectangle within an image
 */
-
 public static void imageDrawRectangle( Image dst, int posX, int posY, int width, int height, Color color );
-
-
 
 /**
 * Draw rectangle within an image (Vector version)
 */
-
 public static void imageDrawRectangleV( Image dst, Vector2 position, Vector2 size, Color color );
-
-
 
 /**
 * Draw rectangle within an image
 */
-
 public static void imageDrawRectangleRec( Image dst, Rectangle rec, Color color );
-
-
 
 /**
 * Draw rectangle lines within an image
 */
-
 public static void imageDrawRectangleLines( Image dst, Rectangle rec, int thick, Color color );
-
-
 
 /**
 * Draw triangle within an image
 */
-
 public static void imageDrawTriangle( Image dst, Vector2 v1, Vector2 v2, Vector2 v3, Color color );
-
-
 
 /**
 * Draw triangle with interpolated colors within an image
 */
-
 public static void imageDrawTriangleEx( Image dst, Vector2 v1, Vector2 v2, Vector2 v3, Color c1, Color c2, Color c3 );
-
-
 
 /**
 * Draw triangle outline within an image
 */
-
 public static void imageDrawTriangleLines( Image dst, Vector2 v1, Vector2 v2, Vector2 v3, Color color );
-
-
 
 /**
 * Draw a triangle fan defined by points within an image (first vertex is the center)
 */
-
 public static void imageDrawTriangleFan( Image dst, Vector2 points, int pointCount, Color color );
-
-
 
 /**
 * Draw a triangle strip defined by points within an image
 */
-
 public static void imageDrawTriangleStrip( Image dst, Vector2 points, int pointCount, Color color );
-
-
 
 /**
 * Draw a source image within a destination image (tint applied to source)
 */
-
 public static void imageDraw( Image dst, Image src, Rectangle srcRec, Rectangle dstRec, Color tint );
-
-
 
 /**
 * Draw text (using default font) within an image (destination)
 */
-
 public static void imageDrawText( Image dst, String text, int posX, int posY, int fontSize, Color color );
-
-
 
 /**
 * Draw text (custom sprite font) within an image (destination)
 */
-
 public static void imageDrawTextEx( Image dst, Font font, String text, Vector2 position, float fontSize, float spacing, Color tint );
 
-
-
 /**
 * Load texture from file into GPU memory (VRAM)
 */
-
 public static Texture loadTexture( String fileName );
 
-
 /**
 * Load texture from file into GPU memory (VRAM)
 */
-
 public static Texture loadTexture(Arena arena, String fileName );
 
-
-
 /**
 * Load texture from image data
 */
-
 public static Texture loadTextureFromImage( Image image );
 
-
 /**
 * Load texture from image data
 */
-
 public static Texture loadTextureFromImage(Arena arena, Image image );
 
-
-
 /**
 * Load cubemap from image, multiple image cubemap layouts supported
 */
-
 public static Texture loadTextureCubemap( Image image, int layout );
 
-
 /**
 * Load cubemap from image, multiple image cubemap layouts supported
 */
-
 public static Texture loadTextureCubemap(Arena arena, Image image, int layout );
 
-
-
 /**
 * Load texture for rendering (framebuffer)
 */
-
 public static RenderTexture loadRenderTexture( int width, int height );
 
-
 /**
 * Load texture for rendering (framebuffer)
 */
-
 public static RenderTexture loadRenderTexture(Arena arena, int width, int height );
-
-
 
 /**
 * Check if a texture is valid (loaded in GPU)
 */
-
 public static boolean isTextureValid( Texture texture );
-
-
 
 /**
 * Unload texture from GPU memory (VRAM)
 */
-
 public static void unloadTexture( Texture texture );
-
-
 
 /**
 * Check if a render texture is valid (loaded in GPU)
 */
-
 public static boolean isRenderTextureValid( RenderTexture target );
-
-
 
 /**
 * Unload render texture from GPU memory (VRAM)
 */
-
 public static void unloadRenderTexture( RenderTexture target );
-
-
 
 /**
 * Update GPU texture with new data
 */
-
 public static void updateTexture( Texture texture, MemorySegment pixels );
-
-
 
 /**
 * Update GPU texture rectangle with new data
 */
-
 public static void updateTextureRec( Texture texture, Rectangle rec, MemorySegment pixels );
-
-
 
 /**
 * Generate GPU mipmaps for a texture
 */
-
 public static void genTextureMipmaps( Texture texture );
-
-
 
 /**
 * Set texture scaling filter mode
 */
-
 public static void setTextureFilter( Texture texture, int filter );
-
-
 
 /**
 * Set texture wrapping mode
 */
-
 public static void setTextureWrap( Texture texture, int wrap );
-
-
 
 /**
 * Draw a Texture2D
 */
-
 public static void drawTexture( Texture texture, int posX, int posY, Color tint );
-
-
 
 /**
 * Draw a Texture2D with position defined as Vector2
 */
-
 public static void drawTextureV( Texture texture, Vector2 position, Color tint );
-
-
 
 /**
 * Draw a Texture2D with extended parameters
 */
-
 public static void drawTextureEx( Texture texture, Vector2 position, float rotation, float scale, Color tint );
-
-
 
 /**
 * Draw a part of a texture defined by a rectangle
 */
-
 public static void drawTextureRec( Texture texture, Rectangle source, Vector2 position, Color tint );
-
-
 
 /**
 * Draw a part of a texture defined by a rectangle with 'pro' parameters
 */
-
 public static void drawTexturePro( Texture texture, Rectangle source, Rectangle dest, Vector2 origin, float rotation, Color tint );
-
-
 
 /**
 * Draws a texture (or part of it) that stretches or shrinks nicely
 */
-
 public static void drawTextureNPatch( Texture texture, NPatchInfo nPatchInfo, Rectangle dest, Vector2 origin, float rotation, Color tint );
-
-
 
 /**
 * Check if two colors are equal
 */
-
 public static boolean colorIsEqual( Color col1, Color col2 );
 
-
-
 /**
 * Get color with alpha applied, alpha goes from 0.0f to 1.0f
 */
-
 public static Color fade( Color color, float alpha );
 
-
 /**
 * Get color with alpha applied, alpha goes from 0.0f to 1.0f
 */
-
 public static Color fade(Arena arena, Color color, float alpha );
-
-
 
 /**
 * Get hexadecimal value for a Color (0xRRGGBBAA)
 */
-
 public static int colorToInt( Color color );
 
-
-
 /**
 * Get Color normalized as float [0..1]
 */
-
 public static Vector4 colorNormalize( Color color );
 
-
 /**
 * Get Color normalized as float [0..1]
 */
-
 public static Vector4 colorNormalize(Arena arena, Color color );
 
-
-
 /**
 * Get Color from normalized values [0..1]
 */
-
 public static Color colorFromNormalized( Vector4 normalized );
 
-
 /**
 * Get Color from normalized values [0..1]
 */
-
 public static Color colorFromNormalized(Arena arena, Vector4 normalized );
 
-
-
 /**
 * Get HSV values for a Color, hue [0..360], saturation/value [0..1]
 */
-
 public static Vector3 colorToHSV( Color color );
 
-
 /**
 * Get HSV values for a Color, hue [0..360], saturation/value [0..1]
 */
-
 public static Vector3 colorToHSV(Arena arena, Color color );
 
-
-
 /**
 * Get a Color from HSV values, hue [0..360], saturation/value [0..1]
 */
-
 public static Color colorFromHSV( float hue, float saturation, float value );
 
-
 /**
 * Get a Color from HSV values, hue [0..360], saturation/value [0..1]
 */
-
 public static Color colorFromHSV(Arena arena, float hue, float saturation, float value );
 
-
-
 /**
 * Get color multiplied with another color
 */
-
 public static Color colorTint( Color color, Color tint );
 
-
 /**
 * Get color multiplied with another color
 */
-
 public static Color colorTint(Arena arena, Color color, Color tint );
 
-
-
 /**
 * Get color with brightness correction, brightness factor goes from -1.0f to 1.0f
 */
-
 public static Color colorBrightness( Color color, float factor );
 
-
 /**
 * Get color with brightness correction, brightness factor goes from -1.0f to 1.0f
 */
-
 public static Color colorBrightness(Arena arena, Color color, float factor );
 
-
-
 /**
 * Get color with contrast correction, contrast values between -1.0f and 1.0f
 */
-
 public static Color colorContrast( Color color, float contrast );
 
-
 /**
 * Get color with contrast correction, contrast values between -1.0f and 1.0f
 */
-
 public static Color colorContrast(Arena arena, Color color, float contrast );
 
-
-
 /**
 * Get color with alpha applied, alpha goes from 0.0f to 1.0f
 */
-
 public static Color colorAlpha( Color color, float alpha );
 
-
 /**
 * Get color with alpha applied, alpha goes from 0.0f to 1.0f
 */
-
 public static Color colorAlpha(Arena arena, Color color, float alpha );
 
-
-
 /**
 * Get src alpha-blended into dst color with tint
 */
-
 public static Color colorAlphaBlend( Color dst, Color src, Color tint );
 
-
 /**
 * Get src alpha-blended into dst color with tint
 */
-
 public static Color colorAlphaBlend(Arena arena, Color dst, Color src, Color tint );
 
-
-
 /**
 * Get color lerp interpolation between two colors, factor [0.0f..1.0f]
 */
-
 public static Color colorLerp( Color color1, Color color2, float factor );
 
-
 /**
 * Get color lerp interpolation between two colors, factor [0.0f..1.0f]
 */
-
 public static Color colorLerp(Arena arena, Color color1, Color color2, float factor );
 
-
-
 /**
 * Get Color structure from hexadecimal value
 */
-
 public static Color getColor( int hexValue );
 
-
 /**
 * Get Color structure from hexadecimal value
 */
-
 public static Color getColor(Arena arena, int hexValue );
 
-
-
 /**
 * Get Color from a source pixel pointer of certain format
 */
-
 public static Color getPixelColor( MemorySegment srcPtr, int format );
 
-
 /**
 * Get Color from a source pixel pointer of certain format
 */
-
 public static Color getPixelColor(Arena arena, MemorySegment srcPtr, int format );
-
-
 
 /**
 * Set color formatted into destination pixel pointer
 */
-
 public static void setPixelColor( MemorySegment dstPtr, Color color, int format );
-
-
 
 /**
 * Get pixel data size in bytes for certain format
 */
-
 public static int getPixelDataSize( int width, int height, int format );
 
-
-
 /**
 * Get the default Font
 */
-
 public static Font getFontDefault( );
 
-
 /**
 * Get the default Font
 */
-
 public static Font getFontDefault(Arena arena );
 
-
-
 /**
 * Load font from file into GPU memory (VRAM)
 */
-
 public static Font loadFont( String fileName );
 
-
 /**
 * Load font from file into GPU memory (VRAM)
 */
-
 public static Font loadFont(Arena arena, String fileName );
 
-
-
 /**
 * Load font from file with extended parameters, use NULL for codepoints and 0 for codepointCount to load the default character set, font size is provided in pixels height
 */
-
 public static Font loadFontEx( String fileName, int fontSize, java.nio.IntBuffer codepoints, int codepointCount );
 
-
 /**
 * Load font from file with extended parameters, use NULL for codepoints and 0 for codepointCount to load the default character set, font size is provided in pixels height
 */
-
 public static Font loadFontEx(Arena arena, String fileName, int fontSize, java.nio.IntBuffer codepoints, int codepointCount );
 
-
-
 /**
 * Load font from Image (XNA style)
 */
-
 public static Font loadFontFromImage( Image image, Color key, int firstChar );
 
-
 /**
 * Load font from Image (XNA style)
 */
-
 public static Font loadFontFromImage(Arena arena, Image image, Color key, int firstChar );
 
-
-
 /**
 * Load font from memory buffer, fileType refers to extension: i.e. '.ttf'
 */
-
 public static Font loadFontFromMemory( String fileType, java.nio.ByteBuffer fileData, int dataSize, int fontSize, java.nio.IntBuffer codepoints, int codepointCount );
 
-
 /**
 * Load font from memory buffer, fileType refers to extension: i.e. '.ttf'
 */
-
 public static Font loadFontFromMemory(Arena arena, String fileType, java.nio.ByteBuffer fileData, int dataSize, int fontSize, java.nio.IntBuffer codepoints, int codepointCount );
-
-
 
 /**
 * Check if a font is valid (font data loaded, WARNING: GPU texture not checked)
 */
-
 public static boolean isFontValid( Font font );
-
-
 
 /**
 * Load font data for further use
 */
-
 public static GlyphInfo loadFontData( java.nio.ByteBuffer fileData, int dataSize, int fontSize, java.nio.IntBuffer codepoints, int codepointCount, int type );
 
-
-
 /**
 * Generate image font atlas using chars info
 */
-
 public static Image genImageFontAtlas( MemorySegment glyphs, MemorySegment glyphRecs, int glyphCount, int fontSize, int padding, int packMethod );
 
-
 /**
 * Generate image font atlas using chars info
 */
-
 public static Image genImageFontAtlas(Arena arena, MemorySegment glyphs, MemorySegment glyphRecs, int glyphCount, int fontSize, int padding, int packMethod );
-
-
 
 /**
 * Unload font chars info data (RAM)
 */
-
 public static void unloadFontData( GlyphInfo glyphs, int glyphCount );
-
-
 
 /**
 * Unload font from GPU memory (VRAM)
 */
-
 public static void unloadFont( Font font );
-
-
 
 /**
 * Export font as code file, returns true on success
 */
-
 public static boolean exportFontAsCode( Font font, String fileName );
-
-
 
 /**
 * Draw current FPS
 */
-
 public static void drawFPS( int posX, int posY );
-
-
 
 /**
 * Draw text (using default font)
 */
-
 public static void drawText( String text, int posX, int posY, int fontSize, Color color );
-
-
 
 /**
 * Draw text using font and additional parameters
 */
-
 public static void drawTextEx( Font font, String text, Vector2 position, float fontSize, float spacing, Color tint );
-
-
 
 /**
 * Draw text using Font and pro parameters (rotation)
 */
-
 public static void drawTextPro( Font font, String text, Vector2 position, Vector2 origin, float rotation, float fontSize, float spacing, Color tint );
-
-
 
 /**
 * Draw one character (codepoint)
 */
-
 public static void drawTextCodepoint( Font font, int codepoint, Vector2 position, float fontSize, Color tint );
-
-
 
 /**
 * Draw multiple character (codepoint)
 */
-
 public static void drawTextCodepoints( Font font, MemorySegment codepoints, int codepointCount, Vector2 position, float fontSize, float spacing, Color tint );
-
-
 
 /**
 * Set vertical line spacing when drawing with line-breaks
 */
-
 public static void setTextLineSpacing( int spacing );
-
-
 
 /**
 * Measure string width for default font
 */
-
 public static int measureText( String text, int fontSize );
 
-
-
 /**
 * Measure string size for Font
 */
-
 public static Vector2 measureTextEx( Font font, String text, float fontSize, float spacing );
 
-
 /**
 * Measure string size for Font
 */
-
 public static Vector2 measureTextEx(Arena arena, Font font, String text, float fontSize, float spacing );
-
-
 
 /**
 * Get glyph index position in font for a codepoint (unicode character), fallback to '?' if not found
 */
-
 public static int getGlyphIndex( Font font, int codepoint );
 
-
-
 /**
 * Get glyph font info data for a codepoint (unicode character), fallback to '?' if not found
 */
-
 public static GlyphInfo getGlyphInfo( Font font, int codepoint );
 
-
 /**
 * Get glyph font info data for a codepoint (unicode character), fallback to '?' if not found
 */
-
 public static GlyphInfo getGlyphInfo(Arena arena, Font font, int codepoint );
 
-
-
 /**
 * Get glyph rectangle in font atlas for a codepoint (unicode character), fallback to '?' if not found
 */
-
 public static Rectangle getGlyphAtlasRec( Font font, int codepoint );
 
-
 /**
 * Get glyph rectangle in font atlas for a codepoint (unicode character), fallback to '?' if not found
 */
-
 public static Rectangle getGlyphAtlasRec(Arena arena, Font font, int codepoint );
-
-
 
 /**
 * Unload UTF-8 text encoded from codepoints array
 */
-
 public static void unloadUTF8( java.nio.ByteBuffer text );
-
-
 
 /**
 * Unload codepoints data from memory
 */
-
 public static void unloadCodepoints( java.nio.IntBuffer codepoints );
-
-
 
 /**
 * Get total number of codepoints in a UTF-8 encoded string
 */
-
 public static int getCodepointCount( String text );
 
-
-
 /**
 * Get next codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
 */
-
 public static int getCodepoint( String text, java.nio.IntBuffer codepointSize );
 
-
-
 /**
 * Get next codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
 */
-
 public static int getCodepointNext( String text, java.nio.IntBuffer codepointSize );
-
-
 
 /**
 * Get previous codepoint in a UTF-8 encoded string, 0x3f('?') is returned on failure
 */
-
 public static int getCodepointPrevious( String text, java.nio.IntBuffer codepointSize );
-
-
 
 /**
 * Encode one codepoint into UTF-8 byte array (array length returned as parameter)
 */
-
 public static String codepointToUTF8( int codepoint, java.nio.IntBuffer utf8Size );
-
-
 
 /**
 * Copy one string to another, returns bytes copied
 */
-
 public static int textCopy( java.nio.ByteBuffer dst, String src );
-
-
 
 /**
 * Check if two text string are equal
 */
-
 public static boolean textIsEqual( String text1, String text2 );
-
-
 
 /**
 * Get text length, checks for '\0' ending
 */
-
 public static int textLength( String text );
-
-
 
 /**
 * Get a piece of a text string
 */
-
 public static String textSubtext( String text, int position, int length );
-
-
 
 /**
 * Join text strings with delimiter
 */
-
 public static String textJoin( MemorySegment textList, int count, String delimiter );
-
-
 
 /**
 * Split text into multiple strings
 */
-
 public static MemorySegment textSplit( String text, byte delimiter, java.nio.IntBuffer count );
-
-
 
 /**
 * Append text at specific position and move cursor!
 */
-
 public static void textAppend( java.nio.ByteBuffer text, String append, java.nio.IntBuffer position );
-
-
 
 /**
 * Find first text occurrence within a string
 */
-
 public static int textFindIndex( String text, String find );
-
-
 
 /**
 * Get upper case version of provided string
 */
-
 public static String textToUpper( String text );
-
-
 
 /**
 * Get lower case version of provided string
 */
-
 public static String textToLower( String text );
-
-
 
 /**
 * Get Pascal case notation version of provided string
 */
-
 public static String textToPascal( String text );
-
-
 
 /**
 * Get Snake case notation version of provided string
 */
-
 public static String textToSnake( String text );
-
-
 
 /**
 * Get Camel case notation version of provided string
 */
-
 public static String textToCamel( String text );
-
-
 
 /**
 * Get integer value from text (negative values not supported)
 */
-
 public static int textToInteger( String text );
-
-
 
 /**
 * Get float value from text (negative values not supported)
 */
-
 public static float textToFloat( String text );
-
-
 
 /**
 * Draw a line in 3D world space
 */
-
 public static void drawLine3D( Vector3 startPos, Vector3 endPos, Color color );
-
-
 
 /**
 * Draw a point in 3D space, actually a small line
 */
-
 public static void drawPoint3D( Vector3 position, Color color );
-
-
 
 /**
 * Draw a circle in 3D world space
 */
-
 public static void drawCircle3D( Vector3 center, float radius, Vector3 rotationAxis, float rotationAngle, Color color );
-
-
 
 /**
 * Draw a color-filled triangle (vertex in counter-clockwise order!)
 */
-
 public static void drawTriangle3D( Vector3 v1, Vector3 v2, Vector3 v3, Color color );
-
-
 
 /**
 * Draw a triangle strip defined by points
 */
-
 public static void drawTriangleStrip3D( MemorySegment points, int pointCount, Color color );
-
-
 
 /**
 * Draw cube
 */
-
 public static void drawCube( Vector3 position, float width, float height, float length, Color color );
-
-
 
 /**
 * Draw cube (Vector version)
 */
-
 public static void drawCubeV( Vector3 position, Vector3 size, Color color );
-
-
 
 /**
 * Draw cube wires
 */
-
 public static void drawCubeWires( Vector3 position, float width, float height, float length, Color color );
-
-
 
 /**
 * Draw cube wires (Vector version)
 */
-
 public static void drawCubeWiresV( Vector3 position, Vector3 size, Color color );
-
-
 
 /**
 * Draw sphere
 */
-
 public static void drawSphere( Vector3 centerPos, float radius, Color color );
-
-
 
 /**
 * Draw sphere with extended parameters
 */
-
 public static void drawSphereEx( Vector3 centerPos, float radius, int rings, int slices, Color color );
-
-
 
 /**
 * Draw sphere wires
 */
-
 public static void drawSphereWires( Vector3 centerPos, float radius, int rings, int slices, Color color );
-
-
 
 /**
 * Draw a cylinder/cone
 */
-
 public static void drawCylinder( Vector3 position, float radiusTop, float radiusBottom, float height, int slices, Color color );
-
-
 
 /**
 * Draw a cylinder with base at startPos and top at endPos
 */
-
 public static void drawCylinderEx( Vector3 startPos, Vector3 endPos, float startRadius, float endRadius, int sides, Color color );
-
-
 
 /**
 * Draw a cylinder/cone wires
 */
-
 public static void drawCylinderWires( Vector3 position, float radiusTop, float radiusBottom, float height, int slices, Color color );
-
-
 
 /**
 * Draw a cylinder wires with base at startPos and top at endPos
 */
-
 public static void drawCylinderWiresEx( Vector3 startPos, Vector3 endPos, float startRadius, float endRadius, int sides, Color color );
-
-
 
 /**
 * Draw a capsule with the center of its sphere caps at startPos and endPos
 */
-
 public static void drawCapsule( Vector3 startPos, Vector3 endPos, float radius, int slices, int rings, Color color );
-
-
 
 /**
 * Draw capsule wireframe with the center of its sphere caps at startPos and endPos
 */
-
 public static void drawCapsuleWires( Vector3 startPos, Vector3 endPos, float radius, int slices, int rings, Color color );
-
-
 
 /**
 * Draw a plane XZ
 */
-
 public static void drawPlane( Vector3 centerPos, Vector2 size, Color color );
-
-
 
 /**
 * Draw a ray line
 */
-
 public static void drawRay( Ray ray, Color color );
-
-
 
 /**
 * Draw a grid (centered at (0, 0, 0))
 */
-
 public static void drawGrid( int slices, float spacing );
 
-
-
 /**
 * Load model from files (meshes and materials)
 */
-
 public static Model loadModel( String fileName );
 
-
 /**
 * Load model from files (meshes and materials)
 */
-
 public static Model loadModel(Arena arena, String fileName );
 
-
-
 /**
 * Load model from generated mesh (default material)
 */
-
 public static Model loadModelFromMesh( Mesh mesh );
 
-
 /**
 * Load model from generated mesh (default material)
 */
-
 public static Model loadModelFromMesh(Arena arena, Mesh mesh );
-
-
 
 /**
 * Check if a model is valid (loaded in GPU, VAO/VBOs)
 */
-
 public static boolean isModelValid( Model model );
-
-
 
 /**
 * Unload model (including meshes) from memory (RAM and/or VRAM)
 */
-
 public static void unloadModel( Model model );
 
-
-
 /**
 * Compute model bounding box limits (considers all meshes)
 */
-
 public static BoundingBox getModelBoundingBox( Model model );
 
-
 /**
 * Compute model bounding box limits (considers all meshes)
 */
-
 public static BoundingBox getModelBoundingBox(Arena arena, Model model );
-
-
 
 /**
 * Draw a model (with texture if set)
 */
-
 public static void drawModel( Model model, Vector3 position, float scale, Color tint );
-
-
 
 /**
 * Draw a model with extended parameters
 */
-
 public static void drawModelEx( Model model, Vector3 position, Vector3 rotationAxis, float rotationAngle, Vector3 scale, Color tint );
-
-
 
 /**
 * Draw a model wires (with texture if set)
 */
-
 public static void drawModelWires( Model model, Vector3 position, float scale, Color tint );
-
-
 
 /**
 * Draw a model wires (with texture if set) with extended parameters
 */
-
 public static void drawModelWiresEx( Model model, Vector3 position, Vector3 rotationAxis, float rotationAngle, Vector3 scale, Color tint );
-
-
 
 /**
 * Draw a model as points
 */
-
 public static void drawModelPoints( Model model, Vector3 position, float scale, Color tint );
-
-
 
 /**
 * Draw a model as points with extended parameters
 */
-
 public static void drawModelPointsEx( Model model, Vector3 position, Vector3 rotationAxis, float rotationAngle, Vector3 scale, Color tint );
-
-
 
 /**
 * Draw bounding box (wires)
 */
-
 public static void drawBoundingBox( BoundingBox box, Color color );
-
-
 
 /**
 * Draw a billboard texture
 */
-
 public static void drawBillboard( Camera3D camera, Texture texture, Vector3 position, float scale, Color tint );
-
-
 
 /**
 * Draw a billboard texture defined by source
 */
-
 public static void drawBillboardRec( Camera3D camera, Texture texture, Rectangle source, Vector3 position, Vector2 size, Color tint );
-
-
 
 /**
 * Draw a billboard texture defined by source and rotation
 */
-
 public static void drawBillboardPro( Camera3D camera, Texture texture, Rectangle source, Vector3 position, Vector3 up, Vector2 size, Vector2 origin, float rotation, Color tint );
-
-
 
 /**
 * Upload mesh vertex data in GPU and provide VAO/VBO ids
 */
-
 public static void uploadMesh( Mesh mesh, boolean dynamic );
-
-
 
 /**
 * Update mesh vertex data in GPU for a specific buffer index
 */
-
 public static void updateMeshBuffer( Mesh mesh, int index, MemorySegment data, int dataSize, int offset );
-
-
 
 /**
 * Unload mesh data from CPU and GPU
 */
-
 public static void unloadMesh( Mesh mesh );
-
-
 
 /**
 * Draw a 3d mesh with material and transform
 */
-
 public static void drawMesh( Mesh mesh, Material material, Matrix transform );
-
-
 
 /**
 * Draw multiple mesh instances with material and different transforms
 */
-
 public static void drawMeshInstanced( Mesh mesh, Material material, MemorySegment transforms, int instances );
 
-
-
 /**
 * Compute mesh bounding box limits
 */
-
 public static BoundingBox getMeshBoundingBox( Mesh mesh );
 
-
 /**
 * Compute mesh bounding box limits
 */
-
 public static BoundingBox getMeshBoundingBox(Arena arena, Mesh mesh );
-
-
 
 /**
 * Compute mesh tangents
 */
-
 public static void genMeshTangents( Mesh mesh );
-
-
 
 /**
 * Export mesh data to file, returns true on success
 */
-
 public static boolean exportMesh( Mesh mesh, String fileName );
-
-
 
 /**
 * Export mesh as code file (.h) defining multiple arrays of vertex attributes
 */
-
 public static boolean exportMeshAsCode( Mesh mesh, String fileName );
 
-
-
 /**
 * Generate polygonal mesh
 */
-
 public static Mesh genMeshPoly( int sides, float radius );
 
-
 /**
 * Generate polygonal mesh
 */
-
 public static Mesh genMeshPoly(Arena arena, int sides, float radius );
 
-
-
 /**
 * Generate plane mesh (with subdivisions)
 */
-
 public static Mesh genMeshPlane( float width, float length, int resX, int resZ );
 
-
 /**
 * Generate plane mesh (with subdivisions)
 */
-
 public static Mesh genMeshPlane(Arena arena, float width, float length, int resX, int resZ );
 
-
-
 /**
 * Generate cuboid mesh
 */
-
 public static Mesh genMeshCube( float width, float height, float length );
 
-
 /**
 * Generate cuboid mesh
 */
-
 public static Mesh genMeshCube(Arena arena, float width, float height, float length );
 
-
-
 /**
 * Generate sphere mesh (standard sphere)
 */
-
 public static Mesh genMeshSphere( float radius, int rings, int slices );
 
-
 /**
 * Generate sphere mesh (standard sphere)
 */
-
 public static Mesh genMeshSphere(Arena arena, float radius, int rings, int slices );
 
-
-
 /**
 * Generate half-sphere mesh (no bottom cap)
 */
-
 public static Mesh genMeshHemiSphere( float radius, int rings, int slices );
 
-
 /**
 * Generate half-sphere mesh (no bottom cap)
 */
-
 public static Mesh genMeshHemiSphere(Arena arena, float radius, int rings, int slices );
 
-
-
 /**
 * Generate cylinder mesh
 */
-
 public static Mesh genMeshCylinder( float radius, float height, int slices );
 
-
 /**
 * Generate cylinder mesh
 */
-
 public static Mesh genMeshCylinder(Arena arena, float radius, float height, int slices );
 
-
-
 /**
 * Generate cone/pyramid mesh
 */
-
 public static Mesh genMeshCone( float radius, float height, int slices );
 
-
 /**
 * Generate cone/pyramid mesh
 */
-
 public static Mesh genMeshCone(Arena arena, float radius, float height, int slices );
 
-
-
 /**
 * Generate torus mesh
 */
-
 public static Mesh genMeshTorus( float radius, float size, int radSeg, int sides );
 
-
 /**
 * Generate torus mesh
 */
-
 public static Mesh genMeshTorus(Arena arena, float radius, float size, int radSeg, int sides );
 
-
-
 /**
 * Generate trefoil knot mesh
 */
-
 public static Mesh genMeshKnot( float radius, float size, int radSeg, int sides );
 
-
 /**
 * Generate trefoil knot mesh
 */
-
 public static Mesh genMeshKnot(Arena arena, float radius, float size, int radSeg, int sides );
 
-
-
 /**
 * Generate heightmap mesh from image data
 */
-
 public static Mesh genMeshHeightmap( Image heightmap, Vector3 size );
 
-
 /**
 * Generate heightmap mesh from image data
 */
-
 public static Mesh genMeshHeightmap(Arena arena, Image heightmap, Vector3 size );
 
-
-
 /**
 * Generate cubes-based map mesh from image data
 */
-
 public static Mesh genMeshCubicmap( Image cubicmap, Vector3 cubeSize );
 
-
 /**
 * Generate cubes-based map mesh from image data
 */
-
 public static Mesh genMeshCubicmap(Arena arena, Image cubicmap, Vector3 cubeSize );
-
-
 
 /**
 * Load materials from model file
 */
-
 public static Material loadMaterials( String fileName, java.nio.IntBuffer materialCount );
 
-
-
 /**
 * Load default material (Supports: DIFFUSE, SPECULAR, NORMAL maps)
 */
-
 public static Material loadMaterialDefault( );
 
-
 /**
 * Load default material (Supports: DIFFUSE, SPECULAR, NORMAL maps)
 */
-
 public static Material loadMaterialDefault(Arena arena );
-
-
 
 /**
 * Check if a material is valid (shader assigned, map textures loaded in GPU)
 */
-
 public static boolean isMaterialValid( Material material );
-
-
 
 /**
 * Unload material from GPU memory (VRAM)
 */
-
 public static void unloadMaterial( Material material );
-
-
 
 /**
 * Set texture for a material map type (MATERIAL_MAP_DIFFUSE, MATERIAL_MAP_SPECULAR...)
 */
-
 public static void setMaterialTexture( Material material, int mapType, Texture texture );
-
-
 
 /**
 * Set material for a mesh
 */
-
 public static void setModelMeshMaterial( Model model, int meshId, int materialId );
-
-
 
 /**
 * Load model animations from file
 */
-
 public static ModelAnimation loadModelAnimations( String fileName, java.nio.IntBuffer animCount );
-
-
 
 /**
 * Update model animation pose (CPU)
 */
-
 public static void updateModelAnimation( Model model, ModelAnimation anim, int frame );
-
-
 
 /**
 * Update model animation mesh bone matrices (GPU skinning)
 */
-
 public static void updateModelAnimationBones( Model model, ModelAnimation anim, int frame );
-
-
 
 /**
 * Unload animation data
 */
-
 public static void unloadModelAnimation( ModelAnimation anim );
-
-
 
 /**
 * Unload animation array data
 */
-
 public static void unloadModelAnimations( ModelAnimation animations, int animCount );
-
-
 
 /**
 * Check model animation skeleton match
 */
-
 public static boolean isModelAnimationValid( Model model, ModelAnimation anim );
-
-
 
 /**
 * Check collision between two spheres
 */
-
 public static boolean checkCollisionSpheres( Vector3 center1, float radius1, Vector3 center2, float radius2 );
-
-
 
 /**
 * Check collision between two bounding boxes
 */
-
 public static boolean checkCollisionBoxes( BoundingBox box1, BoundingBox box2 );
-
-
 
 /**
 * Check collision between box and sphere
 */
-
 public static boolean checkCollisionBoxSphere( BoundingBox box, Vector3 center, float radius );
 
-
-
 /**
 * Get collision info between ray and sphere
 */
-
 public static RayCollision getRayCollisionSphere( Ray ray, Vector3 center, float radius );
 
-
 /**
 * Get collision info between ray and sphere
 */
-
 public static RayCollision getRayCollisionSphere(Arena arena, Ray ray, Vector3 center, float radius );
 
-
-
 /**
 * Get collision info between ray and box
 */
-
 public static RayCollision getRayCollisionBox( Ray ray, BoundingBox box );
 
-
 /**
 * Get collision info between ray and box
 */
-
 public static RayCollision getRayCollisionBox(Arena arena, Ray ray, BoundingBox box );
 
-
-
 /**
 * Get collision info between ray and mesh
 */
-
 public static RayCollision getRayCollisionMesh( Ray ray, Mesh mesh, Matrix transform );
 
-
 /**
 * Get collision info between ray and mesh
 */
-
 public static RayCollision getRayCollisionMesh(Arena arena, Ray ray, Mesh mesh, Matrix transform );
 
-
-
 /**
 * Get collision info between ray and triangle
 */
-
 public static RayCollision getRayCollisionTriangle( Ray ray, Vector3 p1, Vector3 p2, Vector3 p3 );
 
-
 /**
 * Get collision info between ray and triangle
 */
-
 public static RayCollision getRayCollisionTriangle(Arena arena, Ray ray, Vector3 p1, Vector3 p2, Vector3 p3 );
 
-
-
 /**
 * Get collision info between ray and quad
 */
-
 public static RayCollision getRayCollisionQuad( Ray ray, Vector3 p1, Vector3 p2, Vector3 p3, Vector3 p4 );
 
-
 /**
 * Get collision info between ray and quad
 */
-
 public static RayCollision getRayCollisionQuad(Arena arena, Ray ray, Vector3 p1, Vector3 p2, Vector3 p3, Vector3 p4 );
-
-
 
 /**
 * Initialize audio device and context
 */
-
 public static void initAudioDevice( );
-
-
 
 /**
 * Close the audio device and context
 */
-
 public static void closeAudioDevice( );
-
-
 
 /**
 * Check if audio device has been initialized successfully
 */
-
 public static boolean isAudioDeviceReady( );
-
-
 
 /**
 * Set master volume (listener)
 */
-
 public static void setMasterVolume( float volume );
-
-
 
 /**
 * Get master volume (listener)
 */
-
 public static float getMasterVolume( );
 
-
-
 /**
 * Load wave data from file
 */
-
 public static Wave loadWave( String fileName );
 
-
 /**
 * Load wave data from file
 */
-
 public static Wave loadWave(Arena arena, String fileName );
 
-
-
 /**
 * Load wave from memory buffer, fileType refers to extension: i.e. '.wav'
 */
-
 public static Wave loadWaveFromMemory( String fileType, java.nio.ByteBuffer fileData, int dataSize );
 
-
 /**
 * Load wave from memory buffer, fileType refers to extension: i.e. '.wav'
 */
-
 public static Wave loadWaveFromMemory(Arena arena, String fileType, java.nio.ByteBuffer fileData, int dataSize );
-
-
 
 /**
 * Checks if wave data is valid (data loaded and parameters)
 */
-
 public static boolean isWaveValid( Wave wave );
 
-
-
 /**
 * Load sound from file
 */
-
 public static Sound loadSound( String fileName );
 
-
 /**
 * Load sound from file
 */
-
 public static Sound loadSound(Arena arena, String fileName );
 
-
-
 /**
 * Load sound from wave data
 */
-
 public static Sound loadSoundFromWave( Wave wave );
 
-
 /**
 * Load sound from wave data
 */
-
 public static Sound loadSoundFromWave(Arena arena, Wave wave );
 
-
-
 /**
 * Create a new sound that shares the same sample data as the source sound, does not own the sound data
 */
-
 public static Sound loadSoundAlias( Sound source );
 
-
 /**
 * Create a new sound that shares the same sample data as the source sound, does not own the sound data
 */
-
 public static Sound loadSoundAlias(Arena arena, Sound source );
-
-
 
 /**
 * Checks if a sound is valid (data loaded and buffers initialized)
 */
-
 public static boolean isSoundValid( Sound sound );
-
-
 
 /**
 * Update sound buffer with new data
 */
-
 public static void updateSound( Sound sound, MemorySegment data, int sampleCount );
-
-
 
 /**
 * Unload wave data
 */
-
 public static void unloadWave( Wave wave );
-
-
 
 /**
 * Unload sound
 */
-
 public static void unloadSound( Sound sound );
-
-
 
 /**
 * Unload a sound alias (does not deallocate sample data)
 */
-
 public static void unloadSoundAlias( Sound alias );
-
-
 
 /**
 * Export wave data to file, returns true on success
 */
-
 public static boolean exportWave( Wave wave, String fileName );
-
-
 
 /**
 * Export wave sample data to code (.h), returns true on success
 */
-
 public static boolean exportWaveAsCode( Wave wave, String fileName );
-
-
 
 /**
 * Play a sound
 */
-
 public static void playSound( Sound sound );
-
-
 
 /**
 * Stop playing a sound
 */
-
 public static void stopSound( Sound sound );
-
-
 
 /**
 * Pause a sound
 */
-
 public static void pauseSound( Sound sound );
-
-
 
 /**
 * Resume a paused sound
 */
-
 public static void resumeSound( Sound sound );
-
-
 
 /**
 * Check if a sound is currently playing
 */
-
 public static boolean isSoundPlaying( Sound sound );
-
-
 
 /**
 * Set volume for a sound (1.0 is max level)
 */
-
 public static void setSoundVolume( Sound sound, float volume );
-
-
 
 /**
 * Set pitch for a sound (1.0 is base level)
 */
-
 public static void setSoundPitch( Sound sound, float pitch );
-
-
 
 /**
 * Set pan for a sound (0.5 is center)
 */
-
 public static void setSoundPan( Sound sound, float pan );
 
-
-
 /**
 * Copy a wave to a new wave
 */
-
 public static Wave waveCopy( Wave wave );
 
-
 /**
 * Copy a wave to a new wave
 */
-
 public static Wave waveCopy(Arena arena, Wave wave );
-
-
 
 /**
 * Crop a wave to defined frames range
 */
-
 public static void waveCrop( Wave wave, int initFrame, int finalFrame );
-
-
 
 /**
 * Convert wave data to desired format
 */
-
 public static void waveFormat( Wave wave, int sampleRate, int sampleSize, int channels );
-
-
 
 /**
 * Unload samples data loaded with LoadWaveSamples()
 */
-
 public static void unloadWaveSamples( java.nio.FloatBuffer samples );
 
-
-
 /**
 * Load music stream from file
 */
-
 public static Music loadMusicStream( String fileName );
 
-
 /**
 * Load music stream from file
 */
-
 public static Music loadMusicStream(Arena arena, String fileName );
 
-
-
 /**
 * Load music stream from data
 */
-
 public static Music loadMusicStreamFromMemory( String fileType, java.nio.ByteBuffer data, int dataSize );
 
-
 /**
 * Load music stream from data
 */
-
 public static Music loadMusicStreamFromMemory(Arena arena, String fileType, java.nio.ByteBuffer data, int dataSize );
-
-
 
 /**
 * Checks if a music stream is valid (context and buffers initialized)
 */
-
 public static boolean isMusicValid( Music music );
-
-
 
 /**
 * Unload music stream
 */
-
 public static void unloadMusicStream( Music music );
-
-
 
 /**
 * Start music playing
 */
-
 public static void playMusicStream( Music music );
-
-
 
 /**
 * Check if music is playing
 */
-
 public static boolean isMusicStreamPlaying( Music music );
-
-
 
 /**
 * Updates buffers for music streaming
 */
-
 public static void updateMusicStream( Music music );
-
-
 
 /**
 * Stop music playing
 */
-
 public static void stopMusicStream( Music music );
-
-
 
 /**
 * Pause music playing
 */
-
 public static void pauseMusicStream( Music music );
-
-
 
 /**
 * Resume playing paused music
 */
-
 public static void resumeMusicStream( Music music );
-
-
 
 /**
 * Seek music to a position (in seconds)
 */
-
 public static void seekMusicStream( Music music, float position );
-
-
 
 /**
 * Set volume for music (1.0 is max level)
 */
-
 public static void setMusicVolume( Music music, float volume );
-
-
 
 /**
 * Set pitch for a music (1.0 is base level)
 */
-
 public static void setMusicPitch( Music music, float pitch );
-
-
 
 /**
 * Set pan for a music (0.5 is center)
 */
-
 public static void setMusicPan( Music music, float pan );
-
-
 
 /**
 * Get music time length (in seconds)
 */
-
 public static float getMusicTimeLength( Music music );
-
-
 
 /**
 * Get current music time played (in seconds)
 */
-
 public static float getMusicTimePlayed( Music music );
 
-
-
 /**
 * Load audio stream (to stream raw audio pcm data)
 */
-
 public static AudioStream loadAudioStream( int sampleRate, int sampleSize, int channels );
 
-
 /**
 * Load audio stream (to stream raw audio pcm data)
 */
-
 public static AudioStream loadAudioStream(Arena arena, int sampleRate, int sampleSize, int channels );
-
-
 
 /**
 * Checks if an audio stream is valid (buffers initialized)
 */
-
 public static boolean isAudioStreamValid( AudioStream stream );
-
-
 
 /**
 * Unload audio stream and free memory
 */
-
 public static void unloadAudioStream( AudioStream stream );
-
-
 
 /**
 * Update audio stream buffers with data
 */
-
 public static void updateAudioStream( AudioStream stream, MemorySegment data, int frameCount );
-
-
 
 /**
 * Check if any audio stream buffers requires refill
 */
-
 public static boolean isAudioStreamProcessed( AudioStream stream );
-
-
 
 /**
 * Play audio stream
 */
-
 public static void playAudioStream( AudioStream stream );
-
-
 
 /**
 * Pause audio stream
 */
-
 public static void pauseAudioStream( AudioStream stream );
-
-
 
 /**
 * Resume audio stream
 */
-
 public static void resumeAudioStream( AudioStream stream );
-
-
 
 /**
 * Check if audio stream is playing
 */
-
 public static boolean isAudioStreamPlaying( AudioStream stream );
-
-
 
 /**
 * Stop audio stream
 */
-
 public static void stopAudioStream( AudioStream stream );
-
-
 
 /**
 * Set volume for audio stream (1.0 is max level)
 */
-
 public static void setAudioStreamVolume( AudioStream stream, float volume );
-
-
 
 /**
 * Set pitch for audio stream (1.0 is base level)
 */
-
 public static void setAudioStreamPitch( AudioStream stream, float pitch );
-
-
 
 /**
 * Set pan for audio stream (0.5 is centered)
 */
-
 public static void setAudioStreamPan( AudioStream stream, float pan );
-
-
 
 /**
 * Default size for new audio streams
 */
-
 public static void setAudioStreamBufferSizeDefault( int size );
-
-
 
 /**
 * Audio thread callback to request new data
 */
-
 public static void setAudioStreamCallback( AudioStream stream, MemorySegment callback );
-
-
 
 /**
 * Attach audio stream processor to stream, receives the samples as 'float'
 */
-
 public static void attachAudioStreamProcessor( AudioStream stream, MemorySegment processor );
-
-
 
 /**
 * Detach audio stream processor from stream
 */
-
 public static void detachAudioStreamProcessor( AudioStream stream, MemorySegment processor );
-
-
 
 /**
 * Attach audio stream processor to the entire audio pipeline, receives the samples as 'float'
 */
-
 public static void attachAudioMixedProcessor( MemorySegment processor );
-
-
 
 /**
 * Detach audio stream processor from the entire audio pipeline
 */
-
 public static void detachAudioMixedProcessor( MemorySegment processor );
 
-
-
 /**
 *
 */
-
 public static float clamp( float value, float min, float max );
 
-
-
 /**
 *
 */
-
 public static float lerp( float start, float end, float amount );
 
-
-
 /**
 *
 */
-
 public static float normalize( float value, float start, float end );
 
-
-
 /**
 *
 */
-
 public static float remap( float value, float inputStart, float inputEnd, float outputStart, float outputEnd );
 
-
-
 /**
 *
 */
-
 public static float wrap( float value, float min, float max );
 
-
-
 /**
 *
 */
-
 public static int floatEquals( float x, float y );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2Zero( );
 
-
 /**
 *
 */
-
 public static Vector2 vector2Zero(Arena arena );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2One( );
 
-
 /**
 *
 */
-
 public static Vector2 vector2One(Arena arena );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2Add( Vector2 v1, Vector2 v2 );
 
-
 /**
 *
 */
-
 public static Vector2 vector2Add(Arena arena, Vector2 v1, Vector2 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2AddValue( Vector2 v, float add );
 
-
 /**
 *
 */
-
 public static Vector2 vector2AddValue(Arena arena, Vector2 v, float add );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2Subtract( Vector2 v1, Vector2 v2 );
 
-
 /**
 *
 */
-
 public static Vector2 vector2Subtract(Arena arena, Vector2 v1, Vector2 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2SubtractValue( Vector2 v, float sub );
 
-
 /**
 *
 */
-
 public static Vector2 vector2SubtractValue(Arena arena, Vector2 v, float sub );
 
-
-
 /**
 *
 */
-
 public static float vector2Length( Vector2 v );
 
-
-
 /**
 *
 */
-
 public static float vector2LengthSqr( Vector2 v );
 
-
-
 /**
 *
 */
-
 public static float vector2DotProduct( Vector2 v1, Vector2 v2 );
 
-
-
 /**
 *
 */
-
 public static float vector2Distance( Vector2 v1, Vector2 v2 );
 
-
-
 /**
 *
 */
-
 public static float vector2DistanceSqr( Vector2 v1, Vector2 v2 );
 
-
-
 /**
 *
 */
-
 public static float vector2Angle( Vector2 v1, Vector2 v2 );
 
-
-
 /**
 *
 */
-
 public static float vector2LineAngle( Vector2 start, Vector2 end );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2Scale( Vector2 v, float scale );
 
-
 /**
 *
 */
-
 public static Vector2 vector2Scale(Arena arena, Vector2 v, float scale );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2Multiply( Vector2 v1, Vector2 v2 );
 
-
 /**
 *
 */
-
 public static Vector2 vector2Multiply(Arena arena, Vector2 v1, Vector2 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2Negate( Vector2 v );
 
-
 /**
 *
 */
-
 public static Vector2 vector2Negate(Arena arena, Vector2 v );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2Divide( Vector2 v1, Vector2 v2 );
 
-
 /**
 *
 */
-
 public static Vector2 vector2Divide(Arena arena, Vector2 v1, Vector2 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2Normalize( Vector2 v );
 
-
 /**
 *
 */
-
 public static Vector2 vector2Normalize(Arena arena, Vector2 v );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2Transform( Vector2 v, Matrix mat );
 
-
 /**
 *
 */
-
 public static Vector2 vector2Transform(Arena arena, Vector2 v, Matrix mat );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2Lerp( Vector2 v1, Vector2 v2, float amount );
 
-
 /**
 *
 */
-
 public static Vector2 vector2Lerp(Arena arena, Vector2 v1, Vector2 v2, float amount );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2Reflect( Vector2 v, Vector2 normal );
 
-
 /**
 *
 */
-
 public static Vector2 vector2Reflect(Arena arena, Vector2 v, Vector2 normal );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2Min( Vector2 v1, Vector2 v2 );
 
-
 /**
 *
 */
-
 public static Vector2 vector2Min(Arena arena, Vector2 v1, Vector2 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2Max( Vector2 v1, Vector2 v2 );
 
-
 /**
 *
 */
-
 public static Vector2 vector2Max(Arena arena, Vector2 v1, Vector2 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2Rotate( Vector2 v, float angle );
 
-
 /**
 *
 */
-
 public static Vector2 vector2Rotate(Arena arena, Vector2 v, float angle );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2MoveTowards( Vector2 v, Vector2 target, float maxDistance );
 
-
 /**
 *
 */
-
 public static Vector2 vector2MoveTowards(Arena arena, Vector2 v, Vector2 target, float maxDistance );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2Invert( Vector2 v );
 
-
 /**
 *
 */
-
 public static Vector2 vector2Invert(Arena arena, Vector2 v );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2Clamp( Vector2 v, Vector2 min, Vector2 max );
 
-
 /**
 *
 */
-
 public static Vector2 vector2Clamp(Arena arena, Vector2 v, Vector2 min, Vector2 max );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2ClampValue( Vector2 v, float min, float max );
 
-
 /**
 *
 */
-
 public static Vector2 vector2ClampValue(Arena arena, Vector2 v, float min, float max );
 
-
-
 /**
 *
 */
-
 public static int vector2Equals( Vector2 p, Vector2 q );
 
-
-
 /**
 *
 */
-
 public static Vector2 vector2Refract( Vector2 v, Vector2 n, float r );
 
-
 /**
 *
 */
-
 public static Vector2 vector2Refract(Arena arena, Vector2 v, Vector2 n, float r );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Zero( );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Zero(Arena arena );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3One( );
 
-
 /**
 *
 */
-
 public static Vector3 vector3One(Arena arena );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Add( Vector3 v1, Vector3 v2 );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Add(Arena arena, Vector3 v1, Vector3 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3AddValue( Vector3 v, float add );
 
-
 /**
 *
 */
-
 public static Vector3 vector3AddValue(Arena arena, Vector3 v, float add );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Subtract( Vector3 v1, Vector3 v2 );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Subtract(Arena arena, Vector3 v1, Vector3 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3SubtractValue( Vector3 v, float sub );
 
-
 /**
 *
 */
-
 public static Vector3 vector3SubtractValue(Arena arena, Vector3 v, float sub );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Scale( Vector3 v, float scalar );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Scale(Arena arena, Vector3 v, float scalar );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Multiply( Vector3 v1, Vector3 v2 );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Multiply(Arena arena, Vector3 v1, Vector3 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3CrossProduct( Vector3 v1, Vector3 v2 );
 
-
 /**
 *
 */
-
 public static Vector3 vector3CrossProduct(Arena arena, Vector3 v1, Vector3 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Perpendicular( Vector3 v );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Perpendicular(Arena arena, Vector3 v );
 
-
-
 /**
 *
 */
-
 public static float vector3Length( MemorySegment v );
 
-
-
 /**
 *
 */
-
 public static float vector3LengthSqr( MemorySegment v );
 
-
-
 /**
 *
 */
-
 public static float vector3DotProduct( Vector3 v1, Vector3 v2 );
 
-
-
 /**
 *
 */
-
 public static float vector3Distance( Vector3 v1, Vector3 v2 );
 
-
-
 /**
 *
 */
-
 public static float vector3DistanceSqr( Vector3 v1, Vector3 v2 );
 
-
-
 /**
 *
 */
-
 public static float vector3Angle( Vector3 v1, Vector3 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Negate( Vector3 v );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Negate(Arena arena, Vector3 v );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Divide( Vector3 v1, Vector3 v2 );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Divide(Arena arena, Vector3 v1, Vector3 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Normalize( Vector3 v );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Normalize(Arena arena, Vector3 v );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Project( Vector3 v1, Vector3 v2 );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Project(Arena arena, Vector3 v1, Vector3 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Reject( Vector3 v1, Vector3 v2 );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Reject(Arena arena, Vector3 v1, Vector3 v2 );
 
-
-
 /**
 *
 */
-
 public static void vector3OrthoNormalize( Vector3 v1, Vector3 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Transform( Vector3 v, Matrix mat );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Transform(Arena arena, Vector3 v, Matrix mat );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3RotateByQuaternion( Vector3 v, Vector4 q );
 
-
 /**
 *
 */
-
 public static Vector3 vector3RotateByQuaternion(Arena arena, Vector3 v, Vector4 q );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3RotateByAxisAngle( Vector3 v, Vector3 axis, float angle );
 
-
 /**
 *
 */
-
 public static Vector3 vector3RotateByAxisAngle(Arena arena, Vector3 v, Vector3 axis, float angle );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3MoveTowards( Vector3 v, Vector3 target, float maxDistance );
 
-
 /**
 *
 */
-
 public static Vector3 vector3MoveTowards(Arena arena, Vector3 v, Vector3 target, float maxDistance );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Lerp( Vector3 v1, Vector3 v2, float amount );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Lerp(Arena arena, Vector3 v1, Vector3 v2, float amount );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3CubicHermite( Vector3 v1, Vector3 tangent1, Vector3 v2, Vector3 tangent2, float amount );
 
-
 /**
 *
 */
-
 public static Vector3 vector3CubicHermite(Arena arena, Vector3 v1, Vector3 tangent1, Vector3 v2, Vector3 tangent2, float amount );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Reflect( Vector3 v, Vector3 normal );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Reflect(Arena arena, Vector3 v, Vector3 normal );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Min( Vector3 v1, Vector3 v2 );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Min(Arena arena, Vector3 v1, Vector3 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Max( Vector3 v1, Vector3 v2 );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Max(Arena arena, Vector3 v1, Vector3 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Barycenter( Vector3 p, Vector3 a, Vector3 b, Vector3 c );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Barycenter(Arena arena, Vector3 p, Vector3 a, Vector3 b, Vector3 c );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Unproject( Vector3 source, Matrix projection, Matrix view );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Unproject(Arena arena, Vector3 source, Matrix projection, Matrix view );
 
-
-
 /**
 *
 */
-
 public static MemorySegment vector3ToFloatV( Vector3 v );
 
-
 /**
 *
 */
-
 public static MemorySegment vector3ToFloatV(Arena arena, Vector3 v );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Invert( Vector3 v );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Invert(Arena arena, Vector3 v );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Clamp( Vector3 v, Vector3 min, Vector3 max );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Clamp(Arena arena, Vector3 v, Vector3 min, Vector3 max );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3ClampValue( Vector3 v, float min, float max );
 
-
 /**
 *
 */
-
 public static Vector3 vector3ClampValue(Arena arena, Vector3 v, float min, float max );
 
-
-
 /**
 *
 */
-
 public static int vector3Equals( Vector3 p, Vector3 q );
 
-
-
 /**
 *
 */
-
 public static Vector3 vector3Refract( Vector3 v, Vector3 n, float r );
 
-
 /**
 *
 */
-
 public static Vector3 vector3Refract(Arena arena, Vector3 v, Vector3 n, float r );
 
-
-
 /**
 *
 */
-
 public static Vector4 vector4Zero( );
 
-
 /**
 *
 */
-
 public static Vector4 vector4Zero(Arena arena );
 
-
-
 /**
 *
 */
-
 public static Vector4 vector4One( );
 
-
 /**
 *
 */
-
 public static Vector4 vector4One(Arena arena );
 
-
-
 /**
 *
 */
-
 public static Vector4 vector4Add( Vector4 v1, Vector4 v2 );
 
-
 /**
 *
 */
-
 public static Vector4 vector4Add(Arena arena, Vector4 v1, Vector4 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector4 vector4AddValue( Vector4 v, float add );
 
-
 /**
 *
 */
-
 public static Vector4 vector4AddValue(Arena arena, Vector4 v, float add );
 
-
-
 /**
 *
 */
-
 public static Vector4 vector4Subtract( Vector4 v1, Vector4 v2 );
 
-
 /**
 *
 */
-
 public static Vector4 vector4Subtract(Arena arena, Vector4 v1, Vector4 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector4 vector4SubtractValue( Vector4 v, float add );
 
-
 /**
 *
 */
-
 public static Vector4 vector4SubtractValue(Arena arena, Vector4 v, float add );
 
-
-
 /**
 *
 */
-
 public static float vector4Length( Vector4 v );
 
-
-
 /**
 *
 */
-
 public static float vector4LengthSqr( Vector4 v );
 
-
-
 /**
 *
 */
-
 public static float vector4DotProduct( Vector4 v1, Vector4 v2 );
 
-
-
 /**
 *
 */
-
 public static float vector4Distance( Vector4 v1, Vector4 v2 );
 
-
-
 /**
 *
 */
-
 public static float vector4DistanceSqr( Vector4 v1, Vector4 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector4 vector4Scale( Vector4 v, float scale );
 
-
 /**
 *
 */
-
 public static Vector4 vector4Scale(Arena arena, Vector4 v, float scale );
 
-
-
 /**
 *
 */
-
 public static Vector4 vector4Multiply( Vector4 v1, Vector4 v2 );
 
-
 /**
 *
 */
-
 public static Vector4 vector4Multiply(Arena arena, Vector4 v1, Vector4 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector4 vector4Negate( Vector4 v );
 
-
 /**
 *
 */
-
 public static Vector4 vector4Negate(Arena arena, Vector4 v );
 
-
-
 /**
 *
 */
-
 public static Vector4 vector4Divide( Vector4 v1, Vector4 v2 );
 
-
 /**
 *
 */
-
 public static Vector4 vector4Divide(Arena arena, Vector4 v1, Vector4 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector4 vector4Normalize( Vector4 v );
 
-
 /**
 *
 */
-
 public static Vector4 vector4Normalize(Arena arena, Vector4 v );
 
-
-
 /**
 *
 */
-
 public static Vector4 vector4Min( Vector4 v1, Vector4 v2 );
 
-
 /**
 *
 */
-
 public static Vector4 vector4Min(Arena arena, Vector4 v1, Vector4 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector4 vector4Max( Vector4 v1, Vector4 v2 );
 
-
 /**
 *
 */
-
 public static Vector4 vector4Max(Arena arena, Vector4 v1, Vector4 v2 );
 
-
-
 /**
 *
 */
-
 public static Vector4 vector4Lerp( Vector4 v1, Vector4 v2, float amount );
 
-
 /**
 *
 */
-
 public static Vector4 vector4Lerp(Arena arena, Vector4 v1, Vector4 v2, float amount );
 
-
-
 /**
 *
 */
-
 public static Vector4 vector4MoveTowards( Vector4 v, Vector4 target, float maxDistance );
 
-
 /**
 *
 */
-
 public static Vector4 vector4MoveTowards(Arena arena, Vector4 v, Vector4 target, float maxDistance );
 
-
-
 /**
 *
 */
-
 public static Vector4 vector4Invert( Vector4 v );
 
-
 /**
 *
 */
-
 public static Vector4 vector4Invert(Arena arena, Vector4 v );
 
-
-
 /**
 *
 */
-
 public static int vector4Equals( Vector4 p, Vector4 q );
 
-
-
 /**
 *
 */
-
 public static float matrixDeterminant( Matrix mat );
 
-
-
 /**
 *
 */
-
 public static float matrixTrace( Matrix mat );
 
-
-
 /**
 *
 */
-
 public static Matrix matrixTranspose( Matrix mat );
 
-
 /**
 *
 */
-
 public static Matrix matrixTranspose(Arena arena, Matrix mat );
 
-
-
 /**
 *
 */
-
 public static Matrix matrixInvert( Matrix mat );
 
-
 /**
 *
 */
-
 public static Matrix matrixInvert(Arena arena, Matrix mat );
 
-
-
 /**
 *
 */
-
 public static Matrix matrixIdentity( );
 
-
 /**
 *
 */
-
 public static Matrix matrixIdentity(Arena arena );
 
-
-
 /**
 *
 */
-
 public static Matrix matrixAdd( Matrix left, Matrix right );
 
-
 /**
 *
 */
-
 public static Matrix matrixAdd(Arena arena, Matrix left, Matrix right );
 
-
-
 /**
 *
 */
-
 public static Matrix matrixSubtract( Matrix left, Matrix right );
 
-
 /**
 *
 */
-
 public static Matrix matrixSubtract(Arena arena, Matrix left, Matrix right );
 
-
-
 /**
 *
 */
-
 public static Matrix matrixMultiply( Matrix left, Matrix right );
 
-
 /**
 *
 */
-
 public static Matrix matrixMultiply(Arena arena, Matrix left, Matrix right );
 
-
-
 /**
 *
 */
-
 public static Matrix matrixTranslate( float x, float y, float z );
 
-
 /**
 *
 */
-
 public static Matrix matrixTranslate(Arena arena, float x, float y, float z );
 
-
-
 /**
 *
 */
-
 public static Matrix matrixRotate( Vector3 axis, float angle );
 
-
 /**
 *
 */
-
 public static Matrix matrixRotate(Arena arena, Vector3 axis, float angle );
 
-
-
 /**
 *
 */
-
 public static Matrix matrixRotateX( float angle );
 
-
 /**
 *
 */
-
 public static Matrix matrixRotateX(Arena arena, float angle );
 
-
-
 /**
 *
 */
-
 public static Matrix matrixRotateY( float angle );
 
-
 /**
 *
 */
-
 public static Matrix matrixRotateY(Arena arena, float angle );
 
-
-
 /**
 *
 */
-
 public static Matrix matrixRotateZ( float angle );
 
-
 /**
 *
 */
-
 public static Matrix matrixRotateZ(Arena arena, float angle );
 
-
-
 /**
 *
 */
-
 public static Matrix matrixRotateXYZ( Vector3 angle );
 
-
 /**
 *
 */
-
 public static Matrix matrixRotateXYZ(Arena arena, Vector3 angle );
 
-
-
 /**
 *
 */
-
 public static Matrix matrixRotateZYX( Vector3 angle );
 
-
 /**
 *
 */
-
 public static Matrix matrixRotateZYX(Arena arena, Vector3 angle );
 
-
-
 /**
 *
 */
-
 public static Matrix matrixScale( float x, float y, float z );
 
-
 /**
 *
 */
-
 public static Matrix matrixScale(Arena arena, float x, float y, float z );
 
-
-
 /**
 *
 */
-
 public static Matrix matrixFrustum( double left, double right, double bottom, double top, double nearPlane, double farPlane );
 
-
 /**
 *
 */
-
 public static Matrix matrixFrustum(Arena arena, double left, double right, double bottom, double top, double nearPlane, double farPlane );
 
-
-
 /**
 *
 */
-
 public static Matrix matrixPerspective( double fovY, double aspect, double nearPlane, double farPlane );
 
-
 /**
 *
 */
-
 public static Matrix matrixPerspective(Arena arena, double fovY, double aspect, double nearPlane, double farPlane );
 
-
-
 /**
 *
 */
-
 public static Matrix matrixOrtho( double left, double right, double bottom, double top, double nearPlane, double farPlane );
 
-
 /**
 *
 */
-
 public static Matrix matrixOrtho(Arena arena, double left, double right, double bottom, double top, double nearPlane, double farPlane );
 
-
-
 /**
 *
 */
-
 public static Matrix matrixLookAt( Vector3 eye, Vector3 target, Vector3 up );
 
-
 /**
 *
 */
-
 public static Matrix matrixLookAt(Arena arena, Vector3 eye, Vector3 target, Vector3 up );
 
-
-
 /**
 *
 */
-
 public static MemorySegment matrixToFloatV( Matrix mat );
 
-
 /**
 *
 */
-
 public static MemorySegment matrixToFloatV(Arena arena, Matrix mat );
 
-
-
 /**
 *
 */
-
 public static Vector4 quaternionAdd( Vector4 q1, Vector4 q2 );
 
-
 /**
 *
 */
-
 public static Vector4 quaternionAdd(Arena arena, Vector4 q1, Vector4 q2 );
 
-
-
 /**
 *
 */
-
 public static Vector4 quaternionAddValue( Vector4 q, float add );
 
-
 /**
 *
 */
-
 public static Vector4 quaternionAddValue(Arena arena, Vector4 q, float add );
 
-
-
 /**
 *
 */
-
 public static Vector4 quaternionSubtract( Vector4 q1, Vector4 q2 );
 
-
 /**
 *
 */
-
 public static Vector4 quaternionSubtract(Arena arena, Vector4 q1, Vector4 q2 );
 
-
-
 /**
 *
 */
-
 public static Vector4 quaternionSubtractValue( Vector4 q, float sub );
 
-
 /**
 *
 */
-
 public static Vector4 quaternionSubtractValue(Arena arena, Vector4 q, float sub );
 
-
-
 /**
 *
 */
-
 public static Vector4 quaternionIdentity( );
 
-
 /**
 *
 */
-
 public static Vector4 quaternionIdentity(Arena arena );
 
-
-
 /**
 *
 */
-
 public static float quaternionLength( Vector4 q );
 
-
-
 /**
 *
 */
-
 public static Vector4 quaternionNormalize( Vector4 q );
 
-
 /**
 *
 */
-
 public static Vector4 quaternionNormalize(Arena arena, Vector4 q );
 
-
-
 /**
 *
 */
-
 public static Vector4 quaternionInvert( Vector4 q );
 
-
 /**
 *
 */
-
 public static Vector4 quaternionInvert(Arena arena, Vector4 q );
 
-
-
 /**
 *
 */
-
 public static Vector4 quaternionMultiply( Vector4 q1, Vector4 q2 );
 
-
 /**
 *
 */
-
 public static Vector4 quaternionMultiply(Arena arena, Vector4 q1, Vector4 q2 );
 
-
-
 /**
 *
 */
-
 public static Vector4 quaternionScale( Vector4 q, float mul );
 
-
 /**
 *
 */
-
 public static Vector4 quaternionScale(Arena arena, Vector4 q, float mul );
 
-
-
 /**
 *
 */
-
 public static Vector4 quaternionDivide( Vector4 q1, Vector4 q2 );
 
-
 /**
 *
 */
-
 public static Vector4 quaternionDivide(Arena arena, Vector4 q1, Vector4 q2 );
 
-
-
 /**
 *
 */
-
 public static Vector4 quaternionLerp( Vector4 q1, Vector4 q2, float amount );
 
-
 /**
 *
 */
-
 public static Vector4 quaternionLerp(Arena arena, Vector4 q1, Vector4 q2, float amount );
 
-
-
 /**
 *
 */
-
 public static Vector4 quaternionNlerp( Vector4 q1, Vector4 q2, float amount );
 
-
 /**
 *
 */
-
 public static Vector4 quaternionNlerp(Arena arena, Vector4 q1, Vector4 q2, float amount );
 
-
-
 /**
 *
 */
-
 public static Vector4 quaternionSlerp( Vector4 q1, Vector4 q2, float amount );
 
-
 /**
 *
 */
-
 public static Vector4 quaternionSlerp(Arena arena, Vector4 q1, Vector4 q2, float amount );
 
-
-
 /**
 *
 */
-
 public static Vector4 quaternionCubicHermiteSpline( Vector4 q1, Vector4 outTangent1, Vector4 q2, Vector4 inTangent2, float t );
 
-
 /**
 *
 */
-
 public static Vector4 quaternionCubicHermiteSpline(Arena arena, Vector4 q1, Vector4 outTangent1, Vector4 q2, Vector4 inTangent2, float t );
 
-
-
 /**
 *
 */
-
 public static Vector4 quaternionFromVector3ToVector3( Vector3 from, Vector3 to );
 
-
 /**
 *
 */
-
 public static Vector4 quaternionFromVector3ToVector3(Arena arena, Vector3 from, Vector3 to );
 
-
-
 /**
 *
 */
-
 public static Vector4 quaternionFromMatrix( Matrix mat );
 
-
 /**
 *
 */
-
 public static Vector4 quaternionFromMatrix(Arena arena, Matrix mat );
 
-
-
 /**
 *
 */
-
 public static Matrix quaternionToMatrix( Vector4 q );
 
-
 /**
 *
 */
-
 public static Matrix quaternionToMatrix(Arena arena, Vector4 q );
 
-
-
 /**
 *
 */
-
 public static Vector4 quaternionFromAxisAngle( Vector3 axis, float angle );
 
-
 /**
 *
 */
-
 public static Vector4 quaternionFromAxisAngle(Arena arena, Vector3 axis, float angle );
 
-
-
 /**
 *
 */
-
 public static void quaternionToAxisAngle( Vector4 q, Vector3 outAxis, java.nio.FloatBuffer outAngle );
 
-
-
 /**
 *
 */
-
 public static Vector4 quaternionFromEuler( float pitch, float yaw, float roll );
 
-
 /**
 *
 */
-
 public static Vector4 quaternionFromEuler(Arena arena, float pitch, float yaw, float roll );
 
-
-
 /**
 *
 */
-
 public static Vector3 quaternionToEuler( Vector4 q );
 
-
 /**
 *
 */
-
 public static Vector3 quaternionToEuler(Arena arena, Vector4 q );
 
-
-
 /**
 *
 */
-
 public static Vector4 quaternionTransform( Vector4 q, Matrix mat );
 
-
 /**
 *
 */
-
 public static Vector4 quaternionTransform(Arena arena, Vector4 q, Matrix mat );
 
-
-
 /**
 *
 */
-
 public static int quaternionEquals( Vector4 p, Vector4 q );
 
-
-
 /**
 *
 */
-
 public static void matrixDecompose( Matrix mat, Vector3 translation, Vector4 rotation, Vector3 scale );
-
-
 
 /**
 * Choose the current matrix to be transformed
 */
-
 public static void rlMatrixMode( int mode );
-
-
 
 /**
 * Push the current matrix to stack
 */
-
 public static void rlPushMatrix( );
-
-
 
 /**
 * Pop latest inserted matrix from stack
 */
-
 public static void rlPopMatrix( );
-
-
 
 /**
 * Reset current matrix to identity matrix
 */
-
 public static void rlLoadIdentity( );
-
-
 
 /**
 * Multiply the current matrix by a translation matrix
 */
-
 public static void rlTranslatef( float x, float y, float z );
-
-
 
 /**
 * Multiply the current matrix by a rotation matrix
 */
-
 public static void rlRotatef( float angle, float x, float y, float z );
-
-
 
 /**
 * Multiply the current matrix by a scaling matrix
 */
-
 public static void rlScalef( float x, float y, float z );
-
-
 
 /**
 * Multiply the current matrix by another matrix
 */
-
 public static void rlMultMatrixf( MemorySegment matf );
 
-
-
 /**
 *
 */
-
 public static void rlFrustum( double left, double right, double bottom, double top, double znear, double zfar );
 
-
-
 /**
 *
 */
-
 public static void rlOrtho( double left, double right, double bottom, double top, double znear, double zfar );
-
-
 
 /**
 * Set the viewport area
 */
-
 public static void rlViewport( int x, int y, int width, int height );
-
-
 
 /**
 * Set clip planes distances
 */
-
 public static void rlSetClipPlanes( double nearPlane, double farPlane );
-
-
 
 /**
 * Get cull plane distance near
 */
-
 public static double rlGetCullDistanceNear( );
-
-
 
 /**
 * Get cull plane distance far
 */
-
 public static double rlGetCullDistanceFar( );
-
-
 
 /**
 * Initialize drawing mode (how to organize vertex)
 */
-
 public static void rlBegin( int mode );
-
-
 
 /**
 * Finish vertex providing
 */
-
 public static void rlEnd( );
-
-
 
 /**
 * Define one vertex (position) - 2 int
 */
-
 public static void rlVertex2i( int x, int y );
-
-
 
 /**
 * Define one vertex (position) - 2 float
 */
-
 public static void rlVertex2f( float x, float y );
-
-
 
 /**
 * Define one vertex (position) - 3 float
 */
-
 public static void rlVertex3f( float x, float y, float z );
-
-
 
 /**
 * Define one vertex (texture coordinate) - 2 float
 */
-
 public static void rlTexCoord2f( float x, float y );
-
-
 
 /**
 * Define one vertex (normal) - 3 float
 */
-
 public static void rlNormal3f( float x, float y, float z );
-
-
 
 /**
 * Define one vertex (color) - 4 byte
 */
-
 public static void rlColor4ub( byte r, byte g, byte b, byte a );
-
-
 
 /**
 * Define one vertex (color) - 3 float
 */
-
 public static void rlColor3f( float x, float y, float z );
-
-
 
 /**
 * Define one vertex (color) - 4 float
 */
-
 public static void rlColor4f( float x, float y, float z, float w );
-
-
 
 /**
 * Enable vertex array (VAO, if supported)
 */
-
 public static boolean rlEnableVertexArray( int vaoId );
-
-
 
 /**
 * Disable vertex array (VAO, if supported)
 */
-
 public static void rlDisableVertexArray( );
-
-
 
 /**
 * Enable vertex buffer (VBO)
 */
-
 public static void rlEnableVertexBuffer( int id );
-
-
 
 /**
 * Disable vertex buffer (VBO)
 */
-
 public static void rlDisableVertexBuffer( );
-
-
 
 /**
 * Enable vertex buffer element (VBO element)
 */
-
 public static void rlEnableVertexBufferElement( int id );
-
-
 
 /**
 * Disable vertex buffer element (VBO element)
 */
-
 public static void rlDisableVertexBufferElement( );
-
-
 
 /**
 * Enable vertex attribute index
 */
-
 public static void rlEnableVertexAttribute( int index );
-
-
 
 /**
 * Disable vertex attribute index
 */
-
 public static void rlDisableVertexAttribute( int index );
-
-
 
 /**
 * Select and active a texture slot
 */
-
 public static void rlActiveTextureSlot( int slot );
-
-
 
 /**
 * Enable texture
 */
-
 public static void rlEnableTexture( int id );
-
-
 
 /**
 * Disable texture
 */
-
 public static void rlDisableTexture( );
-
-
 
 /**
 * Enable texture cubemap
 */
-
 public static void rlEnableTextureCubemap( int id );
-
-
 
 /**
 * Disable texture cubemap
 */
-
 public static void rlDisableTextureCubemap( );
-
-
 
 /**
 * Set texture parameters (filter, wrap)
 */
-
 public static void rlTextureParameters( int id, int param, int value );
-
-
 
 /**
 * Set cubemap parameters (filter, wrap)
 */
-
 public static void rlCubemapParameters( int id, int param, int value );
-
-
 
 /**
 * Enable shader program
 */
-
 public static void rlEnableShader( int id );
-
-
 
 /**
 * Disable shader program
 */
-
 public static void rlDisableShader( );
-
-
 
 /**
 * Enable render texture (fbo)
 */
-
 public static void rlEnableFramebuffer( int id );
-
-
 
 /**
 * Disable render texture (fbo), return to default framebuffer
 */
-
 public static void rlDisableFramebuffer( );
-
-
 
 /**
 * Get the currently active render texture (fbo), 0 for default framebuffer
 */
-
 public static int rlGetActiveFramebuffer( );
-
-
 
 /**
 * Activate multiple draw color buffers
 */
-
 public static void rlActiveDrawBuffers( int count );
-
-
 
 /**
 * Blit active framebuffer to main framebuffer
 */
-
 public static void rlBlitFramebuffer( int srcX, int srcY, int srcWidth, int srcHeight, int dstX, int dstY, int dstWidth, int dstHeight, int bufferMask );
-
-
 
 /**
 * Bind framebuffer (FBO)
 */
-
 public static void rlBindFramebuffer( int target, int framebuffer );
-
-
 
 /**
 * Enable color blending
 */
-
 public static void rlEnableColorBlend( );
-
-
 
 /**
 * Disable color blending
 */
-
 public static void rlDisableColorBlend( );
-
-
 
 /**
 * Enable depth test
 */
-
 public static void rlEnableDepthTest( );
-
-
 
 /**
 * Disable depth test
 */
-
 public static void rlDisableDepthTest( );
-
-
 
 /**
 * Enable depth write
 */
-
 public static void rlEnableDepthMask( );
-
-
 
 /**
 * Disable depth write
 */
-
 public static void rlDisableDepthMask( );
-
-
 
 /**
 * Enable backface culling
 */
-
 public static void rlEnableBackfaceCulling( );
-
-
 
 /**
 * Disable backface culling
 */
-
 public static void rlDisableBackfaceCulling( );
-
-
 
 /**
 * Color mask control
 */
-
 public static void rlColorMask( boolean r, boolean g, boolean b, boolean a );
-
-
 
 /**
 * Set face culling mode
 */
-
 public static void rlSetCullFace( int mode );
-
-
 
 /**
 * Enable scissor test
 */
-
 public static void rlEnableScissorTest( );
-
-
 
 /**
 * Disable scissor test
 */
-
 public static void rlDisableScissorTest( );
-
-
 
 /**
 * Scissor test
 */
-
 public static void rlScissor( int x, int y, int width, int height );
-
-
 
 /**
 * Enable wire mode
 */
-
 public static void rlEnableWireMode( );
-
-
 
 /**
 * Enable point mode
 */
-
 public static void rlEnablePointMode( );
-
-
 
 /**
 * Disable wire (and point) mode
 */
-
 public static void rlDisableWireMode( );
-
-
 
 /**
 * Set the line drawing width
 */
-
 public static void rlSetLineWidth( float width );
-
-
 
 /**
 * Get the line drawing width
 */
-
 public static float rlGetLineWidth( );
-
-
 
 /**
 * Enable line aliasing
 */
-
 public static void rlEnableSmoothLines( );
-
-
 
 /**
 * Disable line aliasing
 */
-
 public static void rlDisableSmoothLines( );
-
-
 
 /**
 * Enable stereo rendering
 */
-
 public static void rlEnableStereoRender( );
-
-
 
 /**
 * Disable stereo rendering
 */
-
 public static void rlDisableStereoRender( );
-
-
 
 /**
 * Check if stereo render is enabled
 */
-
 public static boolean rlIsStereoRenderEnabled( );
-
-
 
 /**
 * Clear color buffer with color
 */
-
 public static void rlClearColor( byte r, byte g, byte b, byte a );
-
-
 
 /**
 * Clear used screen buffers (color and depth)
 */
-
 public static void rlClearScreenBuffers( );
-
-
 
 /**
 * Check and log OpenGL error codes
 */
-
 public static void rlCheckErrors( );
-
-
 
 /**
 * Set blending mode
 */
-
 public static void rlSetBlendMode( int mode );
-
-
 
 /**
 * Set blending mode factor and equation (using OpenGL factors)
 */
-
 public static void rlSetBlendFactors( int glSrcFactor, int glDstFactor, int glEquation );
-
-
 
 /**
 * Set blending mode factors and equations separately (using OpenGL factors)
 */
-
 public static void rlSetBlendFactorsSeparate( int glSrcRGB, int glDstRGB, int glSrcAlpha, int glDstAlpha, int glEqRGB, int glEqAlpha );
-
-
 
 /**
 * Initialize rlgl (buffers, shaders, textures, states)
 */
-
 public static void rlglInit( int width, int height );
-
-
 
 /**
 * De-initialize rlgl (buffers, shaders, textures)
 */
-
 public static void rlglClose( );
-
-
 
 /**
 * Load OpenGL extensions (loader function required)
 */
-
 public static void rlLoadExtensions( MemorySegment loader );
-
-
 
 /**
 * Get current OpenGL version
 */
-
 public static int rlGetVersion( );
-
-
 
 /**
 * Set current framebuffer width
 */
-
 public static void rlSetFramebufferWidth( int width );
-
-
 
 /**
 * Get default framebuffer width
 */
-
 public static int rlGetFramebufferWidth( );
-
-
 
 /**
 * Set current framebuffer height
 */
-
 public static void rlSetFramebufferHeight( int height );
-
-
 
 /**
 * Get default framebuffer height
 */
-
 public static int rlGetFramebufferHeight( );
-
-
 
 /**
 * Get default texture id
 */
-
 public static int rlGetTextureIdDefault( );
-
-
 
 /**
 * Get default shader id
 */
-
 public static int rlGetShaderIdDefault( );
 
-
-
 /**
 * Load a render batch system
 */
-
 public static rlRenderBatch rlLoadRenderBatch( int numBuffers, int bufferElements );
 
-
 /**
 * Load a render batch system
 */
-
 public static rlRenderBatch rlLoadRenderBatch(Arena arena, int numBuffers, int bufferElements );
-
-
 
 /**
 * Unload render batch system
 */
-
 public static void rlUnloadRenderBatch( rlRenderBatch batch );
-
-
 
 /**
 * Draw render batch data (Update->Draw->Reset)
 */
-
 public static void rlDrawRenderBatch( rlRenderBatch batch );
-
-
 
 /**
 * Set the active render batch for rlgl (NULL for default internal)
 */
-
 public static void rlSetRenderBatchActive( rlRenderBatch batch );
-
-
 
 /**
 * Update and draw internal render batch
 */
-
 public static void rlDrawRenderBatchActive( );
-
-
 
 /**
 * Check internal buffer overflow for a given number of vertex
 */
-
 public static boolean rlCheckRenderBatchLimit( int vCount );
-
-
 
 /**
 * Set current texture for render batch and check buffers limits
 */
-
 public static void rlSetTexture( int id );
-
-
 
 /**
 * Load vertex array (vao) if supported
 */
-
 public static int rlLoadVertexArray( );
-
-
 
 /**
 * Load a vertex buffer object
 */
-
 public static int rlLoadVertexBuffer( MemorySegment buffer, int size, boolean dynamic );
-
-
 
 /**
 * Load vertex buffer elements object
 */
-
 public static int rlLoadVertexBufferElement( MemorySegment buffer, int size, boolean dynamic );
-
-
 
 /**
 * Update vertex buffer object data on GPU buffer
 */
-
 public static void rlUpdateVertexBuffer( int bufferId, MemorySegment data, int dataSize, int offset );
-
-
 
 /**
 * Update vertex buffer elements data on GPU buffer
 */
-
 public static void rlUpdateVertexBufferElements( int id, MemorySegment data, int dataSize, int offset );
-
-
 
 /**
 * Unload vertex array (vao)
 */
-
 public static void rlUnloadVertexArray( int vaoId );
-
-
 
 /**
 * Unload vertex buffer object
 */
-
 public static void rlUnloadVertexBuffer( int vboId );
-
-
 
 /**
 * Set vertex attribute data configuration
 */
-
 public static void rlSetVertexAttribute( int index, int compSize, int type, boolean normalized, int stride, int offset );
-
-
 
 /**
 * Set vertex attribute data divisor
 */
-
 public static void rlSetVertexAttributeDivisor( int index, int divisor );
-
-
 
 /**
 * Set vertex attribute default value, when attribute to provided
 */
-
 public static void rlSetVertexAttributeDefault( int locIndex, MemorySegment value, int attribType, int count );
-
-
 
 /**
 * Draw vertex array (currently active vao)
 */
-
 public static void rlDrawVertexArray( int offset, int count );
-
-
 
 /**
 * Draw vertex array elements
 */
-
 public static void rlDrawVertexArrayElements( int offset, int count, MemorySegment buffer );
-
-
 
 /**
 * Draw vertex array (currently active vao) with instancing
 */
-
 public static void rlDrawVertexArrayInstanced( int offset, int count, int instances );
-
-
 
 /**
 * Draw vertex array elements with instancing
 */
-
 public static void rlDrawVertexArrayElementsInstanced( int offset, int count, MemorySegment buffer, int instances );
-
-
 
 /**
 * Load texture data
 */
-
 public static int rlLoadTexture( MemorySegment data, int width, int height, int format, int mipmapCount );
-
-
 
 /**
 * Load depth texture/renderbuffer (to be attached to fbo)
 */
-
 public static int rlLoadTextureDepth( int width, int height, boolean useRenderBuffer );
-
-
 
 /**
 * Load texture cubemap data
 */
-
 public static int rlLoadTextureCubemap( MemorySegment data, int size, int format, int mipmapCount );
-
-
 
 /**
 * Update texture with new data on GPU
 */
-
 public static void rlUpdateTexture( int id, int offsetX, int offsetY, int width, int height, int format, MemorySegment data );
-
-
 
 /**
 * Get OpenGL internal formats
 */
-
 public static void rlGetGlTextureFormats( int format, MemorySegment glInternalFormat, MemorySegment glFormat, MemorySegment glType );
-
-
 
 /**
 * Get name string for pixel format
 */
-
 public static String rlGetPixelFormatName( int format );
-
-
 
 /**
 * Unload texture from GPU memory
 */
-
 public static void rlUnloadTexture( int id );
-
-
 
 /**
 * Generate mipmap data for selected texture
 */
-
 public static void rlGenTextureMipmaps( int id, int width, int height, int format, java.nio.IntBuffer mipmaps );
-
-
 
 /**
 * Read texture pixel data
 */
-
 public static MemorySegment rlReadTexturePixels( int id, int width, int height, int format );
-
-
 
 /**
 * Load an empty framebuffer
 */
-
 public static int rlLoadFramebuffer( );
-
-
 
 /**
 * Attach texture/renderbuffer to a framebuffer
 */
-
 public static void rlFramebufferAttach( int fboId, int texId, int attachType, int texType, int mipLevel );
-
-
 
 /**
 * Verify framebuffer is complete
 */
-
 public static boolean rlFramebufferComplete( int id );
-
-
 
 /**
 * Delete framebuffer from GPU
 */
-
 public static void rlUnloadFramebuffer( int id );
-
-
 
 /**
 * Load shader from code strings
 */
-
 public static int rlLoadShaderCode( String vsCode, String fsCode );
-
-
 
 /**
 * Compile custom shader and return shader id (type: RL_VERTEX_SHADER, RL_FRAGMENT_SHADER, RL_COMPUTE_SHADER)
 */
-
 public static int rlCompileShader( String shaderCode, int type );
-
-
 
 /**
 * Load custom shader program
 */
-
 public static int rlLoadShaderProgram( int vShaderId, int fShaderId );
-
-
 
 /**
 * Unload shader program
 */
-
 public static void rlUnloadShaderProgram( int id );
-
-
 
 /**
 * Get shader location uniform
 */
-
 public static int rlGetLocationUniform( int shaderId, String uniformName );
-
-
 
 /**
 * Get shader location attribute
 */
-
 public static int rlGetLocationAttrib( int shaderId, String attribName );
-
-
 
 /**
 * Set shader value uniform
 */
-
 public static void rlSetUniform( int locIndex, MemorySegment value, int uniformType, int count );
-
-
 
 /**
 * Set shader value matrix
 */
-
 public static void rlSetUniformMatrix( int locIndex, Matrix mat );
-
-
 
 /**
 * Set shader value matrices
 */
-
 public static void rlSetUniformMatrices( int locIndex, MemorySegment mat, int count );
-
-
 
 /**
 * Set shader value sampler
 */
-
 public static void rlSetUniformSampler( int locIndex, int textureId );
-
-
 
 /**
 * Set shader currently active (id and locations)
 */
-
 public static void rlSetShader( int id, java.nio.IntBuffer locs );
-
-
 
 /**
 * Load compute shader program
 */
-
 public static int rlLoadComputeShaderProgram( int shaderId );
-
-
 
 /**
 * Dispatch compute shader (equivalent to *draw* for graphics pipeline)
 */
-
 public static void rlComputeShaderDispatch( int groupX, int groupY, int groupZ );
-
-
 
 /**
 * Load shader storage buffer object (SSBO)
 */
-
 public static int rlLoadShaderBuffer( int size, MemorySegment data, int usageHint );
-
-
 
 /**
 * Unload shader storage buffer object (SSBO)
 */
-
 public static void rlUnloadShaderBuffer( int ssboId );
-
-
 
 /**
 * Update SSBO buffer data
 */
-
 public static void rlUpdateShaderBuffer( int id, MemorySegment data, int dataSize, int offset );
-
-
 
 /**
 * Bind SSBO buffer
 */
-
 public static void rlBindShaderBuffer( int id, int index );
-
-
 
 /**
 * Read SSBO buffer data (GPU->CPU)
 */
-
 public static void rlReadShaderBuffer( int id, MemorySegment dest, int count, int offset );
-
-
 
 /**
 * Copy SSBO data between buffers
 */
-
 public static void rlCopyShaderBuffer( int destId, int srcId, int destOffset, int srcOffset, int count );
-
-
 
 /**
 * Get SSBO buffer size
 */
-
 public static int rlGetShaderBufferSize( int id );
-
-
 
 /**
 * Bind image texture
 */
-
 public static void rlBindImageTexture( int id, int index, int format, boolean readonly );
 
-
-
 /**
 * Get internal modelview matrix
 */
-
 public static Matrix rlGetMatrixModelview( );
 
-
 /**
 * Get internal modelview matrix
 */
-
 public static Matrix rlGetMatrixModelview(Arena arena );
 
-
-
 /**
 * Get internal projection matrix
 */
-
 public static Matrix rlGetMatrixProjection( );
 
-
 /**
 * Get internal projection matrix
 */
-
 public static Matrix rlGetMatrixProjection(Arena arena );
 
-
-
 /**
 * Get internal accumulated transform matrix
 */
-
 public static Matrix rlGetMatrixTransform( );
 
-
 /**
 * Get internal accumulated transform matrix
 */
-
 public static Matrix rlGetMatrixTransform(Arena arena );
 
-
-
 /**
 * Get internal projection matrix for stereo render (selected eye)
 */
-
 public static Matrix rlGetMatrixProjectionStereo( int eye );
 
-
 /**
 * Get internal projection matrix for stereo render (selected eye)
 */
-
 public static Matrix rlGetMatrixProjectionStereo(Arena arena, int eye );
 
-
-
 /**
 * Get internal view offset matrix for stereo render (selected eye)
 */
-
 public static Matrix rlGetMatrixViewOffsetStereo( int eye );
 
-
 /**
 * Get internal view offset matrix for stereo render (selected eye)
 */
-
 public static Matrix rlGetMatrixViewOffsetStereo(Arena arena, int eye );
-
-
 
 /**
 * Set a custom projection matrix (replaces internal projection matrix)
 */
-
 public static void rlSetMatrixProjection( Matrix proj );
-
-
 
 /**
 * Set a custom modelview matrix (replaces internal modelview matrix)
 */
-
 public static void rlSetMatrixModelview( Matrix view );
-
-
 
 /**
 * Set eyes projection matrices for stereo rendering
 */
-
 public static void rlSetMatrixProjectionStereo( Matrix right, Matrix left );
-
-
 
 /**
 * Set eyes view offsets matrices for stereo rendering
 */
-
 public static void rlSetMatrixViewOffsetStereo( Matrix right, Matrix left );
-
-
 
 /**
 * Load and draw a cube
 */
-
 public static void rlLoadDrawCube( );
-
-
 
 /**
 * Load and draw a quad
 */
-
 public static void rlLoadDrawQuad( );
