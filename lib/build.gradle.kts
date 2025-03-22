@@ -71,6 +71,8 @@ java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(23)
     }
+    withSourcesJar()
+    withJavadocJar()
 }
 
 tasks.named<Test>("test") {
