@@ -6,6 +6,7 @@ import java.nio.IntBuffer;
 import java.util.EnumSet;
 
 import com.seirengames.RaylibEnum.ConfigFlags;
+import com.seirengames.RaylibEnum.KeyboardKey;
 
 public class Raylib {
 
@@ -154,5 +155,12 @@ public class Raylib {
      */
     public static void maximizeWindow() {
         com.raylib.Raylib.maximizeWindow();
+    }
+
+    /**
+     * Check if a key is being pressed
+     */
+    public static boolean isKeyDown(KeyboardKey key) {
+        return com.raylib.Raylib.isKeyDown(key.value);
     }
 }
