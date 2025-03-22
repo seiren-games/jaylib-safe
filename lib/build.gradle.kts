@@ -9,6 +9,23 @@ plugins {
     // Apply the java-library plugin for API and implementation separation.
     `java-library`
     alias(libs.plugins.spotless)
+    `maven-publish`
+}
+
+publishing {
+    publications {
+        create<MavenPublication>("mavenJava") {
+            from(components["java"])
+            
+            // group, artifactId, version の設定を行います
+            groupId = "com.seirengames"
+            artifactId = "jaylib-safe"
+            version = "0.1.0"
+        }
+    }
+    repositories {
+        mavenLocal()
+    }
 }
 
 repositories {
