@@ -4,7 +4,9 @@ import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.EnumSet;
+import java.util.Optional;
 
+import com.raylib.Texture;
 import com.seirengames.RaylibEnum.ConfigFlags;
 import com.seirengames.RaylibEnum.KeyboardKey;
 
@@ -162,5 +164,27 @@ public class Raylib {
      */
     public static boolean isKeyDown(KeyboardKey key) {
         return com.raylib.Raylib.isKeyDown(key.value);
+    }
+
+    /**
+     * Load texture from file into GPU memory (VRAM)
+     *
+     * このラッパー関数は、com.raylib.Raylib.loadTexture を呼び出し、
+     * isTextureValid によってロードの成功を検証します。
+     * ロードに失敗した場合は Optional.empty() を返します。
+     */
+    public static Optional<Texture> loadTexture(String fileName) {
+        Texture texture = com.raylib.Raylib.loadTexture(fileName);
+        if (!com.raylib.Raylib.isTextureValid(texture)) {
+            return Optional.empty();
+        }
+        return Optional.of(texture);
+    }
+
+    /**
+     * Unload texture from GPU memory (VRAM)
+     */
+    public static void unloadTexture(Texture texture) {
+        com.raylib.Raylib.unloadTexture(texture);
     }
 }
