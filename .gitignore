@@ -9,7 +9,7 @@ build
 
 /tmp/
 
-repomix-output.txt
+repomix-output.xml
 /.idea/
 
 /tool/libs/
