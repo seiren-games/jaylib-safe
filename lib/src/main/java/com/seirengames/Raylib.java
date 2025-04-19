@@ -1,12 +1,17 @@
 package com.seirengames;
 
+import java.lang.foreign.Arena;
+import java.lang.foreign.MemorySegment;
 import java.nio.ByteBuffer;
 import java.nio.FloatBuffer;
 import java.nio.IntBuffer;
 import java.util.EnumSet;
 import java.util.Optional;
 
+import com.raylib.Color;
+import com.raylib.Font;
 import com.raylib.Texture;
+import com.raylib.Vector2;
 import com.seirengames.RaylibEnum.ConfigFlags;
 import com.seirengames.RaylibEnum.KeyboardKey;
 
@@ -187,4 +192,108 @@ public class Raylib {
     public static void unloadTexture(Texture texture) {
         com.raylib.Raylib.unloadTexture(texture);
     }
+
+    /**
+    * Measure string width for default font
+    */
+    public static int measureText( String text, int fontSize ) {
+        return com.raylib.Raylib.measureText(text, fontSize);
+    }
+
+    /**
+    * Measure string size for Font
+    */
+    public static Vector2 measureTextEx( Font font, String text, float fontSize, float spacing ) {
+        return com.raylib.Raylib.measureTextEx(font, text, fontSize, spacing);
+    }
+
+    /**
+    * Measure string size for Font
+    */
+    public static Vector2 measureTextEx(Arena arena, Font font, String text, float fontSize, float spacing) {
+        return com.raylib.Raylib.measureTextEx(arena, font, text, fontSize, spacing);
+    }
+
+        /**
+    * Get current screen width
+    */
+    public static int getScreenWidth( ) {
+        return com.raylib.Raylib.getScreenWidth();
+    }
+
+    /**
+    * Get current screen height
+    */
+    public static int getScreenHeight() {
+        return com.raylib.Raylib.getScreenHeight();
+    }
+    
+        /**
+    * Draw current FPS
+    */
+    public static void drawFPS( int posX, int posY ) {
+        com.raylib.Raylib.drawFPS(posX, posY);
+    }
+
+    /**
+    * Draw text (using default font)
+    */
+    public static void drawText( String text, int posX, int posY, int fontSize, Color color ) {
+        com.raylib.Raylib.drawText(text, posX, posY, fontSize, color);
+    }
+
+    /**
+    * Draw text using font and additional parameters
+    */
+    public static void drawTextEx( Font font, String text, Vector2 position, float fontSize, float spacing, Color tint ) {
+        com.raylib.Raylib.drawTextEx(font, text, position, fontSize, spacing, tint);
+    }
+
+    /**
+    * Draw text using Font and pro parameters (rotation)
+    */
+    public static void drawTextPro( Font font, String text, Vector2 position, Vector2 origin, float rotation, float fontSize, float spacing, Color tint ) {
+        com.raylib.Raylib.drawTextPro(font, text, position, origin, rotation, fontSize, spacing, tint);
+    }
+
+    /**
+    * Draw one character (codepoint)
+    */
+    public static void drawTextCodepoint( Font font, int codepoint, Vector2 position, float fontSize, Color tint ) {
+        com.raylib.Raylib.drawTextCodepoint(font, codepoint, position, fontSize, tint);
+    }
+
+    /**
+    * Draw multiple character (codepoint)
+    */
+    public static void drawTextCodepoints( Font font, MemorySegment codepoints, int codepointCount, Vector2 position, float fontSize, float spacing, Color tint ) {
+        com.raylib.Raylib.drawTextCodepoints(font, codepoints, codepointCount, position, fontSize, spacing, tint);
+    }
+    
+    public static Color LIGHTGRAY = com.raylib.Raylib.LIGHTGRAY;
+    public static Color GRAY = com.raylib.Raylib.GRAY;
+    public static Color DARKGRAY = com.raylib.Raylib.DARKGRAY;
+    public static Color YELLOW = com.raylib.Raylib.YELLOW;
+    public static Color GOLD = com.raylib.Raylib.GOLD;
+    public static Color ORANGE = com.raylib.Raylib.ORANGE;
+    public static Color PINK = com.raylib.Raylib.PINK;
+    public static Color RED = com.raylib.Raylib.RED;
+    public static Color MAROON = com.raylib.Raylib.MAROON;
+    public static Color GREEN = com.raylib.Raylib.GREEN;
+    public static Color LIME = com.raylib.Raylib.LIME;
+    public static Color DARKGREEN = com.raylib.Raylib.DARKGREEN;
+    public static Color SKYBLUE = com.raylib.Raylib.SKYBLUE;
+    public static Color BLUE = com.raylib.Raylib.BLUE;
+    public static Color DARKBLUE = com.raylib.Raylib.DARKBLUE;
+    public static Color PURPLE = com.raylib.Raylib.PURPLE;
+    public static Color VIOLET = com.raylib.Raylib.VIOLET;
+    public static Color DARKPURPLE = com.raylib.Raylib.DARKPURPLE;
+    public static Color BEIGE = com.raylib.Raylib.BEIGE;
+    public static Color BROWN = com.raylib.Raylib.BROWN;
+    public static Color DARKBROWN = com.raylib.Raylib.DARKBROWN;
+    public static Color WHITE = com.raylib.Raylib.WHITE;
+    public static Color BLACK = com.raylib.Raylib.BLACK;
+    public static Color BLANK = com.raylib.Raylib.BLANK;
+    public static Color MAGENTA = com.raylib.Raylib.MAGENTA;
+    public static Color RAYWHITE = com.raylib.Raylib.RAYWHITE;
 }
