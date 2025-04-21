@@ -14,6 +14,8 @@ import com.raylib.Texture;
 import com.raylib.Vector2;
 import com.seirengames.RaylibEnum.ConfigFlags;
 import com.seirengames.RaylibEnum.KeyboardKey;
+import com.seirengames.RaylibEnum.MouseButton;
+import com.seirengames.RaylibEnum.MouseCursor;
 
 public class Raylib {
 
@@ -194,82 +196,176 @@ public class Raylib {
     }
 
     /**
-    * Measure string width for default font
-    */
-    public static int measureText( String text, int fontSize ) {
+     * Measure string width for default font
+     */
+    public static int measureText(String text, int fontSize) {
         return com.raylib.Raylib.measureText(text, fontSize);
     }
 
     /**
-    * Measure string size for Font
-    */
-    public static Vector2 measureTextEx( Font font, String text, float fontSize, float spacing ) {
+     * Measure string size for Font
+     */
+    public static Vector2 measureTextEx(Font font, String text, float fontSize, float spacing) {
         return com.raylib.Raylib.measureTextEx(font, text, fontSize, spacing);
     }
 
     /**
-    * Measure string size for Font
-    */
+     * Measure string size for Font
+     */
     public static Vector2 measureTextEx(Arena arena, Font font, String text, float fontSize, float spacing) {
         return com.raylib.Raylib.measureTextEx(arena, font, text, fontSize, spacing);
     }
 
-        /**
-    * Get current screen width
-    */
-    public static int getScreenWidth( ) {
+    /**
+     * Get current screen width
+     */
+    public static int getScreenWidth() {
         return com.raylib.Raylib.getScreenWidth();
     }
 
     /**
-    * Get current screen height
-    */
+     * Get current screen height
+     */
     public static int getScreenHeight() {
         return com.raylib.Raylib.getScreenHeight();
     }
-    
-        /**
-    * Draw current FPS
-    */
-    public static void drawFPS( int posX, int posY ) {
+
+    /**
+     * Draw current FPS
+     */
+    public static void drawFPS(int posX, int posY) {
         com.raylib.Raylib.drawFPS(posX, posY);
     }
 
     /**
-    * Draw text (using default font)
-    */
-    public static void drawText( String text, int posX, int posY, int fontSize, Color color ) {
+     * Draw text (using default font)
+     */
+    public static void drawText(String text, int posX, int posY, int fontSize, Color color) {
         com.raylib.Raylib.drawText(text, posX, posY, fontSize, color);
     }
 
     /**
-    * Draw text using font and additional parameters
-    */
-    public static void drawTextEx( Font font, String text, Vector2 position, float fontSize, float spacing, Color tint ) {
+     * Draw text using font and additional parameters
+     */
+    public static void drawTextEx(Font font, String text, Vector2 position, float fontSize, float spacing, Color tint) {
         com.raylib.Raylib.drawTextEx(font, text, position, fontSize, spacing, tint);
     }
 
     /**
-    * Draw text using Font and pro parameters (rotation)
-    */
-    public static void drawTextPro( Font font, String text, Vector2 position, Vector2 origin, float rotation, float fontSize, float spacing, Color tint ) {
+     * Draw text using Font and pro parameters (rotation)
+     */
+    public static void drawTextPro(Font font, String text, Vector2 position, Vector2 origin, float rotation,
+            float fontSize, float spacing, Color tint) {
         com.raylib.Raylib.drawTextPro(font, text, position, origin, rotation, fontSize, spacing, tint);
     }
 
     /**
-    * Draw one character (codepoint)
-    */
-    public static void drawTextCodepoint( Font font, int codepoint, Vector2 position, float fontSize, Color tint ) {
+     * Draw one character (codepoint)
+     */
+    public static void drawTextCodepoint(Font font, int codepoint, Vector2 position, float fontSize, Color tint) {
         com.raylib.Raylib.drawTextCodepoint(font, codepoint, position, fontSize, tint);
     }
 
     /**
-    * Draw multiple character (codepoint)
-    */
-    public static void drawTextCodepoints( Font font, MemorySegment codepoints, int codepointCount, Vector2 position, float fontSize, float spacing, Color tint ) {
+     * Draw multiple character (codepoint)
+     */
+    public static void drawTextCodepoints(Font font, MemorySegment codepoints, int codepointCount, Vector2 position,
+            float fontSize, float spacing, Color tint) {
         com.raylib.Raylib.drawTextCodepoints(font, codepoints, codepointCount, position, fontSize, spacing, tint);
     }
-    
+
+    /**
+     * Check if a key has been pressed once
+     */
+    public static boolean isKeyPressed(KeyboardKey key) {
+        return com.raylib.Raylib.isKeyPressed(key.value);
+    }
+
+    /**
+     * Check if a key has been pressed again
+     */
+    public static boolean isKeyPressedRepeat(KeyboardKey key) {
+        return com.raylib.Raylib.isKeyPressedRepeat(key.value);
+    }
+
+    /**
+     * Check if a key has been released once
+     */
+    public static boolean isKeyReleased(KeyboardKey key) {
+        return com.raylib.Raylib.isKeyReleased(key.value);
+    }
+
+    /**
+     * Check if a key is NOT being pressed
+     */
+    public static boolean isKeyUp(KeyboardKey key) {
+        return com.raylib.Raylib.isKeyUp(key.value);
+    }
+
+    /**
+     * Get key pressed (keycode), call it multiple times for keys queued, returns 0
+     * when the queue is empty
+     */
+    public static Optional<KeyboardKey> getKeyPressed() {
+        int code = com.raylib.Raylib.getKeyPressed();
+        if (code == 0)
+            return Optional.empty();
+        return Optional.ofNullable(KeyboardKey.fromValue(code));
+    }
+
+    /**
+     * Get char pressed (unicode), call it multiple times for chars queued, returns
+     * 0 when the queue is empty
+     */
+    public static Optional<KeyboardKey> getCharPressed() {
+        int code = com.raylib.Raylib.getCharPressed();
+        if (code == 0)
+            return Optional.empty();
+        return Optional.ofNullable(KeyboardKey.fromValue(code));
+    }
+
+    /**
+     * Set a custom key to exit program (default is ESC)
+     */
+    public static void setExitKey(KeyboardKey key) {
+        com.raylib.Raylib.setExitKey(key.value);
+    }
+
+    /**
+     * Check if a mouse button has been pressed once
+     */
+    public static boolean isMouseButtonPressed(MouseButton button) {
+        return com.raylib.Raylib.isMouseButtonPressed(button.value);
+    }
+
+    /**
+     * Check if a mouse button is being pressed
+     */
+    public static boolean isMouseButtonDown(MouseButton button) {
+        return com.raylib.Raylib.isMouseButtonDown(button.value);
+    }
+
+    /**
+     * Check if a mouse button has been released once
+     */
+    public static boolean isMouseButtonReleased(MouseButton button) {
+        return com.raylib.Raylib.isMouseButtonReleased(button.value);
+    }
+
+    /**
+     * Check if a mouse button is NOT being pressed
+     */
+    public static boolean isMouseButtonUp(MouseButton button) {
+        return com.raylib.Raylib.isMouseButtonUp(button.value);
+    }
+
+    /**
+     * Set mouse cursor
+     */
+    public static void setMouseCursor(MouseCursor cursor) {
+        com.raylib.Raylib.setMouseCursor(cursor.value);
+    }
+
     public static Color LIGHTGRAY = com.raylib.Raylib.LIGHTGRAY;
     public static Color GRAY = com.raylib.Raylib.GRAY;
     public static Color DARKGRAY = com.raylib.Raylib.DARKGRAY;
