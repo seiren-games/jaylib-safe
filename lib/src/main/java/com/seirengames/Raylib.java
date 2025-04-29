@@ -10,6 +10,8 @@ import java.util.Optional;
 
 import com.raylib.Color;
 import com.raylib.Font;
+import com.raylib.NPatchInfo;
+import com.raylib.Rectangle;
 import com.raylib.Texture;
 import com.raylib.Vector2;
 import com.seirengames.RaylibEnum.ConfigFlags;
@@ -373,13 +375,56 @@ public class Raylib {
         return com.raylib.Raylib.fade(color, alpha);
     }
 
-        /**
-    * Draw a color-filled rectangle
-    */
+    /**
+     * Draw a color-filled rectangle
+     */
     public static void drawRectangle(int posX, int posY, int width, int height, Color color) {
         com.raylib.Raylib.drawRectangle(posX, posY, width, height, color);
     }
 
+    /**
+     * Draw a Texture2D
+     */
+    public static void drawTexture(Texture texture, int posX, int posY, Color tint) {
+        com.raylib.Raylib.drawTexture(texture, posX, posY, tint);
+    }
+
+    /**
+     * Draw a Texture2D with position defined as Vector2
+     */
+    public static void drawTextureV(Texture texture, Vector2 position, Color tint) {
+        com.raylib.Raylib.drawTextureV(texture, position, tint);
+    }
+
+    /**
+     * Draw a Texture2D with extended parameters
+     */
+    public static void drawTextureEx(Texture texture, Vector2 position, float rotation, float scale, Color tint) {
+        com.raylib.Raylib.drawTextureEx(texture, position, rotation, scale, tint);
+    }
+
+    /**
+     * Draw a part of a texture defined by a rectangle
+     */
+    public static void drawTextureRec(Texture texture, Rectangle source, Vector2 position, Color tint) {
+        com.raylib.Raylib.drawTextureRec(texture, source, position, tint);
+    }
+
+    /**
+     * Draw a part of a texture defined by a rectangle with 'pro' parameters
+     */
+    public static void drawTexturePro(Texture texture, Rectangle source, Rectangle dest, Vector2 origin, float rotation,
+            Color tint) {
+        com.raylib.Raylib.drawTexturePro(texture, source, dest, origin, rotation, tint);
+    }
+
+    /**
+     * Draws a texture (or part of it) that stretches or shrinks nicely
+     */
+    public static void drawTextureNPatch(Texture texture, NPatchInfo nPatchInfo, Rectangle dest, Vector2 origin,
+            float rotation, Color tint) {
+        com.raylib.Raylib.drawTextureNPatch(texture, nPatchInfo, dest, origin, rotation, tint);
+    }
 
     public static Color LIGHTGRAY = com.raylib.Raylib.LIGHTGRAY;
     public static Color GRAY = com.raylib.Raylib.GRAY;
