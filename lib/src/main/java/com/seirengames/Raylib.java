@@ -366,6 +366,21 @@ public class Raylib {
         com.raylib.Raylib.setMouseCursor(cursor.value);
     }
 
+    /**
+     * Get color with alpha applied, alpha goes from 0.0f to 1.0f
+     */
+    public static Color fade(Color color, float alpha) {
+        return com.raylib.Raylib.fade(color, alpha);
+    }
+
+        /**
+    * Draw a color-filled rectangle
+    */
+    public static void drawRectangle(int posX, int posY, int width, int height, Color color) {
+        com.raylib.Raylib.drawRectangle(posX, posY, width, height, color);
+    }
+
+
     public static Color LIGHTGRAY = com.raylib.Raylib.LIGHTGRAY;
     public static Color GRAY = com.raylib.Raylib.GRAY;
     public static Color DARKGRAY = com.raylib.Raylib.DARKGRAY;
